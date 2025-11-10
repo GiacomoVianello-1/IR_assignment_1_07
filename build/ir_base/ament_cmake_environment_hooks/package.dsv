@@ -1,0 +1,4 @@
+source;share/ir_base/local_setup.bash
+source;share/ir_base/local_setup.dsv
+source;share/ir_base/local_setup.sh
+source;share/ir_base/local_setup.zsh

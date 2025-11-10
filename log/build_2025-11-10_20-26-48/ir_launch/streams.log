@@ -1,0 +1,50 @@
+[0.009s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch
+[0.045s] -- The C compiler identification is GNU 13.3.0
+[0.085s] -- The CXX compiler identification is GNU 13.3.0
+[0.098s] -- Detecting C compiler ABI info
+[0.159s] -- Detecting C compiler ABI info - done
+[0.168s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.168s] -- Detecting C compile features
+[0.169s] -- Detecting C compile features - done
+[0.177s] -- Detecting CXX compiler ABI info
+[0.247s] -- Detecting CXX compiler ABI info - done
+[0.257s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.257s] -- Detecting CXX compile features
+[0.258s] -- Detecting CXX compile features - done
+[0.263s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.377s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.483s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.572s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.572s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.573s] -- Added test 'lint_cmake' to check CMake code style
+[0.574s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.574s] -- Added test 'xmllint' to check XML markup files
+[0.576s] -- Configuring done (0.6s)
+[0.577s] -- Generating done (0.0s)
+[0.578s] -- Build files have been written to: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch
+[0.583s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch
+[0.584s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch -- -j16 -l16
+[0.619s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch -- -j16 -l16
+[0.619s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch
+[0.624s] -- Install configuration: ""
+[0.624s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ament_index/resource_index/package_run_dependencies/ir_launch
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ament_index/resource_index/parent_prefix_path/ir_launch
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/environment/ament_prefix_path.sh
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/environment/ament_prefix_path.dsv
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/environment/path.sh
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/environment/path.dsv
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/local_setup.bash
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/local_setup.sh
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/local_setup.zsh
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/local_setup.dsv
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.dsv
+[0.625s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ament_index/resource_index/packages/ir_launch
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/cmake/ir_launchConfig.cmake
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/cmake/ir_launchConfig-version.cmake
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.xml
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/launch
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/launch/assignment_1.launch.py
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/launch/exercise_4.launch.py
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/launch/spawn_tb3_launch.py
+[0.626s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/launch/assignment_2.launch.py
+[0.627s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch

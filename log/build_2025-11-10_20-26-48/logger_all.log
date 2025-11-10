@@ -1,0 +1,422 @@
+[0.086s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.086s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7eae7733e000>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7eae77495850>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7eae77495850>>)
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.123s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ros'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['cmake', 'python']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'cmake'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'python'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['python_setup_py']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'python_setup_py'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ros'
+[0.148s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/apriltag_ros' with type 'ros.ament_cmake' and name 'apriltag_ros'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ros'
+[0.149s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_base' with type 'ros.ament_cmake' and name 'ir_base'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ros'
+[0.150s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_desription' with type 'ros.ament_cmake' and name 'ir_desription'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ignore_ament_install'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['colcon_pkg']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'colcon_pkg'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['colcon_meta']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'colcon_meta'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['ros']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ros'
+[0.150s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_launch' with type 'ros.ament_cmake' and name 'ir_launch'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ignore_ament_install'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['colcon_pkg']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'colcon_pkg'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['colcon_meta']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'colcon_meta'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['ros']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_movit_config' with type 'ros.ament_cmake' and name 'ir_movit_config'
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.167s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 459 installed packages in /opt/ros/jazzy
+[0.168s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_target' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.202s] DEBUG:colcon.colcon_core.verb:Building package 'apriltag_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros', 'merge_install': False, 'path': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros', 'symlink_install': False, 'test_result_base': None}
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_target' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_clean_cache' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_clean_first' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_force_configure' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'ament_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'catkin_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.202s] DEBUG:colcon.colcon_core.verb:Building package 'ir_base' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base', 'merge_install': False, 'path': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_base', 'symlink_install': False, 'test_result_base': None}
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_target' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_clean_cache' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_clean_first' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_force_configure' from command line to 'False'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'ament_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'catkin_cmake_args' from command line to 'None'
+[0.202s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.202s] DEBUG:colcon.colcon_core.verb:Building package 'ir_desription' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription', 'merge_install': False, 'path': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription', 'symlink_install': False, 'test_result_base': None}
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_target' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_clean_cache' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_clean_first' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_force_configure' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'ament_cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'catkin_cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.203s] DEBUG:colcon.colcon_core.verb:Building package 'ir_launch' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch', 'merge_install': False, 'path': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch', 'symlink_install': False, 'test_result_base': None}
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_target' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.203s] DEBUG:colcon.colcon_core.verb:Building package 'ir_movit_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config', 'merge_install': False, 'path': '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config', 'symlink_install': False, 'test_result_base': None}
+[0.203s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.204s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.204s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription' with build type 'ament_cmake'
+[0.204s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription'
+[0.207s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.207s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.210s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros' with build type 'ament_cmake'
+[0.210s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros'
+[0.210s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.210s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.212s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_base' with build type 'ament_cmake'
+[0.212s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_base'
+[0.212s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.212s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.214s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch' with build type 'ament_cmake'
+[0.214s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch'
+[0.214s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.214s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.219s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription
+[0.220s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros
+[0.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_base -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base
+[0.224s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch
+[0.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription
+[0.797s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription -- -j16 -l16
+[0.798s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch
+[0.798s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch -- -j16 -l16
+[0.807s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_base -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base
+[0.808s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base -- -j16 -l16
+[0.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription -- -j16 -l16
+[0.833s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription
+[0.833s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch -- -j16 -l16
+[0.834s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch
+[0.835s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base -- -j16 -l16
+[0.836s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base
+[0.842s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_launch)
+[0.842s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch' for CMake module files
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch' for CMake config files
+[0.854s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_launch', 'cmake_prefix_path')
+[0.854s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.ps1'
+[0.855s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.dsv'
+[0.855s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.sh'
+[0.856s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/bin'
+[0.856s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/lib/pkgconfig/ir_launch.pc'
+[0.856s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/lib/python3.12/site-packages'
+[0.856s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/bin'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.ps1'
+[0.857s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.dsv'
+[0.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.sh'
+[0.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.bash'
+[0.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.zsh'
+[0.858s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/colcon-core/packages/ir_launch)
+[0.859s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_launch)
+[0.859s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch' for CMake module files
+[0.859s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch' for CMake config files
+[0.859s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_launch', 'cmake_prefix_path')
+[0.859s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.ps1'
+[0.860s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.dsv'
+[0.860s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.sh'
+[0.860s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/bin'
+[0.860s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/lib/pkgconfig/ir_launch.pc'
+[0.860s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/lib/python3.12/site-packages'
+[0.861s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/bin'
+[0.861s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.ps1'
+[0.861s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.dsv'
+[0.861s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.sh'
+[0.862s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.bash'
+[0.862s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/ir_launch/package.zsh'
+[0.862s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_launch/share/colcon-core/packages/ir_launch)
+[0.863s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_desription)
+[0.863s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription
+[0.863s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription' for CMake module files
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription' for CMake config files
+[0.864s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_desription', 'cmake_prefix_path')
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.ps1'
+[0.865s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.dsv'
+[0.865s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.sh'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/bin'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/lib/pkgconfig/ir_desription.pc'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/lib/python3.12/site-packages'
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/bin'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.ps1'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.dsv'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.sh'
+[0.866s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.bash'
+[0.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.zsh'
+[0.867s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/colcon-core/packages/ir_desription)
+[0.867s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_desription)
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription' for CMake module files
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription' for CMake config files
+[0.867s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_desription', 'cmake_prefix_path')
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.ps1'
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.dsv'
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.sh'
+[0.868s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/bin'
+[0.868s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/lib/pkgconfig/ir_desription.pc'
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/lib/python3.12/site-packages'
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/bin'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.ps1'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.dsv'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.sh'
+[0.870s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.bash'
+[0.870s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/ir_desription/package.zsh'
+[0.870s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription/share/colcon-core/packages/ir_desription)
+[0.870s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_base)
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base' for CMake module files
+[0.871s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_base
+[0.871s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base' for CMake config files
+[0.871s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_base', 'cmake_prefix_path')
+[0.871s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.ps1'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.dsv'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.sh'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/bin'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/lib/pkgconfig/ir_base.pc'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/lib/python3.12/site-packages'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/bin'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.ps1'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.dsv'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.sh'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.bash'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.zsh'
+[0.874s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/colcon-core/packages/ir_base)
+[0.874s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_base)
+[0.874s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base' for CMake module files
+[0.874s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base' for CMake config files
+[0.875s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_base', 'cmake_prefix_path')
+[0.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.ps1'
+[0.875s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.dsv'
+[0.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/hook/cmake_prefix_path.sh'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/bin'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/lib/pkgconfig/ir_base.pc'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/lib/python3.12/site-packages'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/bin'
+[0.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.ps1'
+[0.876s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.dsv'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.sh'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.bash'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/ir_base/package.zsh'
+[0.877s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_base/share/colcon-core/packages/ir_base)
+[0.877s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config' with build type 'ament_cmake'
+[0.877s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config'
+[0.878s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.878s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.884s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config
+[1.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros
+[1.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros -- -j16 -l16
+[1.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config
+[1.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config -- -j16 -l16
+[4.812s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config -- -j16 -l16
+[4.813s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+[4.823s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_movit_config)
+[4.823s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config' for CMake module files
+[4.823s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+[4.824s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config' for CMake config files
+[4.824s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_movit_config', 'cmake_prefix_path')
+[4.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.ps1'
+[4.824s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.dsv'
+[4.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.sh'
+[4.825s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib'
+[4.825s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/bin'
+[4.825s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/pkgconfig/ir_movit_config.pc'
+[4.825s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/python3.12/site-packages'
+[4.825s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/bin'
+[4.825s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.ps1'
+[4.826s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.dsv'
+[4.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.sh'
+[4.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.bash'
+[4.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.zsh'
+[4.826s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/colcon-core/packages/ir_movit_config)
+[4.827s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_movit_config)
+[4.827s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config' for CMake module files
+[4.827s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config' for CMake config files
+[4.827s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_movit_config', 'cmake_prefix_path')
+[4.827s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.ps1'
+[4.828s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.dsv'
+[4.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.sh'
+[4.828s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib'
+[4.828s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/bin'
+[4.828s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/pkgconfig/ir_movit_config.pc'
+[4.828s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/python3.12/site-packages'
+[4.829s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/bin'
+[4.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.ps1'
+[4.829s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.dsv'
+[4.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.sh'
+[4.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.bash'
+[4.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.zsh'
+[4.830s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/colcon-core/packages/ir_movit_config)
+[9.946s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros -- -j16 -l16
+[9.947s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+[9.958s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(apriltag_ros)
+[9.958s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+[9.958s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros' for CMake module files
+[9.959s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros' for CMake config files
+[9.959s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'cmake_prefix_path')
+[9.959s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.ps1'
+[9.959s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.dsv'
+[9.960s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.sh'
+[9.960s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib'
+[9.960s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'ld_library_path_lib')
+[9.960s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.ps1'
+[9.961s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.dsv'
+[9.961s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.sh'
+[9.961s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/bin'
+[9.961s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/pkgconfig/apriltag_ros.pc'
+[9.962s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/python3.12/site-packages'
+[9.962s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/bin'
+[9.962s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.ps1'
+[9.963s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.dsv'
+[9.963s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.sh'
+[9.963s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.bash'
+[9.964s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.zsh'
+[9.964s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/colcon-core/packages/apriltag_ros)
+[9.964s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(apriltag_ros)
+[9.964s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros' for CMake module files
+[9.965s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros' for CMake config files
+[9.965s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'cmake_prefix_path')
+[9.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.ps1'
+[9.965s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.dsv'
+[9.966s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.sh'
+[9.966s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib'
+[9.966s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'ld_library_path_lib')
+[9.966s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.ps1'
+[9.967s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.dsv'
+[9.967s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.sh'
+[9.967s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/bin'
+[9.967s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/pkgconfig/apriltag_ros.pc'
+[9.968s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/python3.12/site-packages'
+[9.968s] Level 1:colcon.colcon_core.environment:checking '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/bin'
+[9.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.ps1'
+[9.969s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.dsv'
+[9.969s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.sh'
+[9.969s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.bash'
+[9.969s] INFO:colcon.colcon_core.shell:Creating package script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.zsh'
+[9.970s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/colcon-core/packages/apriltag_ros)
+[9.970s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.970s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.970s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[9.970s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.985s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.985s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.985s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[10.003s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[10.003s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/local_setup.ps1'
+[10.004s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/_local_setup_util_ps1.py'
+[10.005s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/setup.ps1'
+[10.005s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/local_setup.sh'
+[10.006s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/_local_setup_util_sh.py'
+[10.006s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/setup.sh'
+[10.007s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/local_setup.bash'
+[10.007s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/setup.bash'
+[10.008s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/local_setup.zsh'
+[10.008s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/setup.zsh'

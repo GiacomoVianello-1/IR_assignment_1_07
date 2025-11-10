@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtags.a CMakeFiles/tags.dir/src/tag_functions.cpp.o
+/usr/bin/ranlib libtags.a

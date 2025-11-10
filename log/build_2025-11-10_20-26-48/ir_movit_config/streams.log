@@ -1,0 +1,103 @@
+[0.006s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config
+[0.052s] -- The C compiler identification is GNU 13.3.0
+[0.100s] -- The CXX compiler identification is GNU 13.3.0
+[0.113s] -- Detecting C compiler ABI info
+[0.181s] -- Detecting C compiler ABI info - done
+[0.192s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.192s] -- Detecting C compile features
+[0.192s] -- Detecting C compile features - done
+[0.200s] -- Detecting CXX compiler ABI info
+[0.277s] -- Detecting CXX compiler ABI info - done
+[0.287s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.287s] -- Detecting CXX compile features
+[0.287s] -- Detecting CXX compile features - done
+[0.290s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.401s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.501s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.538s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.550s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.564s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.580s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.644s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.647s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.720s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.739s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.760s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.821s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.930s] -- Configuring done (0.9s)
+[0.937s] -- Generating done (0.0s)
+[0.940s] -- Build files have been written to: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+[0.948s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config
+[0.948s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config -- -j16 -l16
+[0.994s] [ 50%] [32mBuilding CXX object CMakeFiles/short_joint_state_publisher.dir/src/short_joint_state_publisher.cpp.o[0m
+[3.790s] [100%] [32m[1mLinking CXX executable short_joint_state_publisher[0m
+[3.924s] [100%] Built target short_joint_state_publisher
+[3.934s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config -- -j16 -l16
+[3.935s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+[3.941s] -- Install configuration: ""
+[3.941s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/package_run_dependencies/ir_movit_config
+[3.941s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/parent_prefix_path/ir_movit_config
+[3.941s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.sh
+[3.941s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.dsv
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/path.sh
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/path.dsv
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.bash
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.sh
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.zsh
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.dsv
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.dsv
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/packages/ir_movit_config
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig.cmake
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig-version.cmake
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.xml
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_ur.py
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_base.launch.py
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/test.launch.py
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/fake_hw.launch.py
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/gazebo.launch.py
+[3.942s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/tmp.py
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_movit.launch.py
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/simulation_complete.launch.py
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+[3.943s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+[3.944s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+[3.944s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+[3.944s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+[3.944s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/.setup_assistant
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+[3.944s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+[3.944s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher
+[3.944s] -- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher" to ""
+[3.946s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
