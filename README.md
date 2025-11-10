@@ -1,7 +1,7 @@
 # 🤖 Intelligent Robotics — Assignment 1  
 ## Group 07  
 - Giacomo Vianello (ID: 2140028)  
-- Salvatore Ferracane (ID: [to be added])  
+- Salvatore Ferracane (ID: 2154255)  
 
 ## 📘 Project Overview  
 
