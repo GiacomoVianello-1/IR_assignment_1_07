@@ -18,9 +18,11 @@ ros2 run apriltag_ros apriltag_node --ros-args \
   -r camera_info:=/rgb_camera/camera_info \
   --params-file $(ros2 pkg prefix apriltag_ros)/share/apriltag_ros/cfg/tags_36h11.yaml
 ```
-**Note**: Update the configuration file (`tags_36h11.yaml`) to match the actual tag size used in simulation. In this setup, the tags measure **0.05 m x 0.05 m**.
+**Note**: Instead of modifying the default configuration file (`tags_36h11.yaml`) in the `apriltag_ros` package, we created a custom launch file within our own package. This launch file sets up the `apriltag_node` with the correct parameters, including the actual tag size of **0.05 m × 0.05 m**. To start the node, run
+```
+ros2 launch assignment_1_07 apriltag.launch.py
+```
 
-**TODO**: *Automatize this process in a proper launch file*.
 
 ### Published topics
 Once running, the node provides:
@@ -34,4 +36,6 @@ To confirm that the node is working:
 3. Add a **Display -> Image** and select `/rgb_camera/image` to see the camera feed.
 4. Add a **Display -> TF** to visualize the coordinate frames of detected tags (e.g., `tag36h11:0`).
 
-Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt the `odom` frame.
+Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt the `odom` frame. 
+
+Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turlebot sensors.
