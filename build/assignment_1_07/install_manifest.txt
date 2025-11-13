@@ -1,4 +1,6 @@
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_selector
 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//launch/apriltag.launch.py
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//config/apriltag_params.yaml
 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/package_run_dependencies/assignment_1_07
 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/parent_prefix_path/assignment_1_07
 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.sh

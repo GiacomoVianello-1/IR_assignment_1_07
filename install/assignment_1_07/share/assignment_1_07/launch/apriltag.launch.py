@@ -1,8 +1,29 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from ament_index_python.packages import get_package_share_directory
+import os
 
 def generate_launch_description():
+    cfg = os.path.join(
+        get_package_share_directory('assignment_1_07'),
+        'config',
+        'apriltag_params.yaml'
+    )
+
+    # path to another launch file to include
+    other_launch = os.path.join(
+        get_package_share_directory('ir_launch'),
+        'launch',
+        'assignment_1.launch.py'
+    )
+
     return LaunchDescription([
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(other_launch),
+        ),
+        # AprilTag detection node      
         Node(
             package='apriltag_ros',
             executable='apriltag_node',
@@ -12,16 +33,19 @@ def generate_launch_description():
                 ('image_rect', '/rgb_camera/image'),
                 ('camera_info', '/rgb_camera/camera_info'),
             ],
+            parameters=[cfg]
+        ),
+
+        # Goal selector node
+        Node(
+            package='assignment_1_07',
+            executable='goal_selector',
+            name='goal_selector',
+            output='screen',
             parameters=[{
-                'family': '36h11',
-                'size': 0.05,   # tag size in meters
-                'max_hamming': 0,
-                'detector.threads': 4,
-                'detector.decimate': 1.0,
-                'detector.blur': 0.0,
-                'detector.refine': True,
-                'detector.sharpening': 0.25,
-                'detector.debug': False,
+                'target_frame': 'odom',            # change in 'map' if using SLAM
+                'tag_frame_prefix': 'tag36h11:',   # must match the prefix in apriltag_params.yaml
+                'tf_timeout_sec': 0.3
             }]
-        )
+        ),
     ])

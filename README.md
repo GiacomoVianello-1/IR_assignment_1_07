@@ -22,7 +22,7 @@ ros2 run apriltag_ros apriltag_node --ros-args \
 ```
 ros2 launch assignment_1_07 apriltag.launch.py
 ```
-
+Moreover, the same launch file we created (`apriltag.launch.py`) launches automatically the provided launch file `ir_launch assignment_1.launch.py`.
 
 ### Published topics
 Once running, the node provides:
@@ -39,3 +39,22 @@ To confirm that the node is working:
 Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt the `odom` frame. 
 
 Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turlebot sensors.
+
+## 🎯 Goal Selector Node
+The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on c/tf` (preferred) and the `/detections` topic.
+
+### Behavior and design
+- **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.
+
+- **Pose acquisition**: obtains each tag pose by doing a TF lookup from the configured target_frame (`odom` or `map`) to the tag frame (e.g. `tag36h11:1`).
+
+- **Goal calculation**: computes a goal as the midpoint between two detected tags (first two detections). The published goal is a `geometry_msgs/PoseStamped` in the chosen target frame.
+
+- **Output**: publishes the computed goal on `/goal_pose` (`geometry_msgs/PoseStamped`). 
+
+### Parameters
+- **target_frame** (string, default: `"odom"`): frame in which the goal is published and in which TF lookups are performed.
+- **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
+- **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
+
+These parameters can be adjusted in the provided launch file.

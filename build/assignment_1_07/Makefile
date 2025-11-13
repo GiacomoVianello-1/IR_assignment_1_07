@@ -197,6 +197,43 @@ assignment_1_07_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment_1_07_uninstall.dir/build.make CMakeFiles/assignment_1_07_uninstall.dir/build
 .PHONY : assignment_1_07_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named goal_selector
+
+# Build rule for target.
+goal_selector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 goal_selector
+.PHONY : goal_selector
+
+# fast build rule for target.
+goal_selector/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/build
+.PHONY : goal_selector/fast
+
+src/goal_selector.o: src/goal_selector.cpp.o
+.PHONY : src/goal_selector.o
+
+# target to build an object file
+src/goal_selector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/src/goal_selector.cpp.o
+.PHONY : src/goal_selector.cpp.o
+
+src/goal_selector.i: src/goal_selector.cpp.i
+.PHONY : src/goal_selector.i
+
+# target to preprocess a source file
+src/goal_selector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/src/goal_selector.cpp.i
+.PHONY : src/goal_selector.cpp.i
+
+src/goal_selector.s: src/goal_selector.cpp.s
+.PHONY : src/goal_selector.s
+
+# target to generate assembly for a file
+src/goal_selector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/src/goal_selector.cpp.s
+.PHONY : src/goal_selector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... assignment_1_07_uninstall"
 	@echo "... uninstall"
+	@echo "... goal_selector"
+	@echo "... src/goal_selector.o"
+	@echo "... src/goal_selector.i"
+	@echo "... src/goal_selector.s"
 .PHONY : help
 
 

@@ -1,0 +1,11 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/goal_selector.dir/src/goal_selector.cpp.o[0m
+[01m[K/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/src/goal_selector.cpp:[m[K In member function ‘[01m[Kvoid GoalSelector::[01;32m[KdetectionsCallback[m[K(apriltag_msgs::msg::AprilTagDetectionArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/src/goal_selector.cpp:44:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct apriltag_msgs::msg::AprilTagDetection_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpose[m[K’
+   44 |             pose_cam.header = det.[01;31m[Kpose[m[K.header;
+      |                                   [01;31m[K^~~~[m[K
+[01m[K/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/src/goal_selector.cpp:45:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct apriltag_msgs::msg::AprilTagDetection_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpose[m[K’
+   45 |             pose_cam.pose = det.[01;31m[Kpose[m[K.pose.pose;
+      |                                 [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/goal_selector.dir/build.make:76: CMakeFiles/goal_selector.dir/src/goal_selector.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/goal_selector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
