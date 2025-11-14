@@ -210,6 +210,19 @@ goal_selector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/build
 .PHONY : goal_selector/fast
 
+#=============================================================================
+# Target rules for targets named nav2_orchestrator
+
+# Build rule for target.
+nav2_orchestrator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nav2_orchestrator
+.PHONY : nav2_orchestrator
+
+# fast build rule for target.
+nav2_orchestrator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/build
+.PHONY : nav2_orchestrator/fast
+
 src/goal_selector.o: src/goal_selector.cpp.o
 .PHONY : src/goal_selector.o
 
@@ -234,6 +247,30 @@ src/goal_selector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/src/goal_selector.cpp.s
 .PHONY : src/goal_selector.cpp.s
 
+src/nav2_orchestrator.o: src/nav2_orchestrator.cpp.o
+.PHONY : src/nav2_orchestrator.o
+
+# target to build an object file
+src/nav2_orchestrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/src/nav2_orchestrator.cpp.o
+.PHONY : src/nav2_orchestrator.cpp.o
+
+src/nav2_orchestrator.i: src/nav2_orchestrator.cpp.i
+.PHONY : src/nav2_orchestrator.i
+
+# target to preprocess a source file
+src/nav2_orchestrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/src/nav2_orchestrator.cpp.i
+.PHONY : src/nav2_orchestrator.cpp.i
+
+src/nav2_orchestrator.s: src/nav2_orchestrator.cpp.s
+.PHONY : src/nav2_orchestrator.s
+
+# target to generate assembly for a file
+src/nav2_orchestrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/src/nav2_orchestrator.cpp.s
+.PHONY : src/nav2_orchestrator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,9 +287,13 @@ help:
 	@echo "... assignment_1_07_uninstall"
 	@echo "... uninstall"
 	@echo "... goal_selector"
+	@echo "... nav2_orchestrator"
 	@echo "... src/goal_selector.o"
 	@echo "... src/goal_selector.i"
 	@echo "... src/goal_selector.s"
+	@echo "... src/nav2_orchestrator.o"
+	@echo "... src/nav2_orchestrator.i"
+	@echo "... src/nav2_orchestrator.s"
 .PHONY : help
 
 

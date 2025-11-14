@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ass
 
 # The main recursive "all" target.
 all: CMakeFiles/goal_selector.dir/all
+all: CMakeFiles/nav2_orchestrator.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +75,7 @@ preinstall:
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/assignment_1_07_uninstall.dir/clean
 clean: CMakeFiles/goal_selector.dir/clean
+clean: CMakeFiles/nav2_orchestrator.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -153,6 +155,32 @@ goal_selector: CMakeFiles/goal_selector.dir/rule
 CMakeFiles/goal_selector.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/clean
 .PHONY : CMakeFiles/goal_selector.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nav2_orchestrator.dir
+
+# All Build rule for target.
+CMakeFiles/nav2_orchestrator.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num=3,4 "Built target nav2_orchestrator"
+.PHONY : CMakeFiles/nav2_orchestrator.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nav2_orchestrator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nav2_orchestrator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+.PHONY : CMakeFiles/nav2_orchestrator.dir/rule
+
+# Convenience name for target.
+nav2_orchestrator: CMakeFiles/nav2_orchestrator.dir/rule
+.PHONY : nav2_orchestrator
+
+# clean rule for target.
+CMakeFiles/nav2_orchestrator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/clean
+.PHONY : CMakeFiles/nav2_orchestrator.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

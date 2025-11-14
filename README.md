@@ -9,20 +9,39 @@ This repository contains our solution to [Assignment 1](Assignment_1.pdf) for th
 
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
 
+## 🏃‍♂️‍➡️ Run the Project
+The first step is to build and source the entire ROS 2 workspace:
+```
+colcon build
+source install/setup.bash
+```
+To run our project, we provide a structured and configurable launch file called `global.launch.py`. It can be started with:
+```
+ros2 launch assignment_1_07 global.launch.py
+```
+This launch file orchestrates the whole assignment setup. Specifically, it:
+- Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
+- Starts the **AprilTag detection node** with the correct topic remappings and parameters.
+- Launches our **Goal Selector node**, which computes navigation goals from detected tags.
+- Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL.
+- **TO BE COMPLETED**
+
+This way, a single command brings up the entire system, ready for testing and demonstration.
+
 ## 📷 Apriltags and Camera Connections
 
-To enable AprilTag detection, launch the apriltag_node executable with the appropriate topic remappings and configuration file:
+We rely on the external package `apriltag_ros`, which uses the AprilTag library to detect tags in camera images and publish their pose, ID, and metadata.
+Normally, enabling AprilTag detection requires adjusting the default configuration file (`tags_36h11.yaml`) inside the `apriltag_ros` package. For example, one could run:
 ```sh
 ros2 run apriltag_ros apriltag_node --ros-args \
   -r image_rect:=/rgb_camera/image \
   -r camera_info:=/rgb_camera/camera_info \
   --params-file $(ros2 pkg prefix apriltag_ros)/share/apriltag_ros/cfg/tags_36h11.yaml
 ```
-**Note**: Instead of modifying the default configuration file (`tags_36h11.yaml`) in the `apriltag_ros` package, we created a custom launch file within our own package. This launch file sets up the `apriltag_node` with the correct parameters, including the actual tag size of **0.05 m × 0.05 m**. To start the node, run
-```
-ros2 launch assignment_1_07 apriltag.launch.py
-```
-Moreover, the same launch file we created (`apriltag.launch.py`) launches automatically the provided launch file `ir_launch assignment_1.launch.py`.
+However, instead of modifying the default configuration file, we created our own custom launch file (`global.launch.py`) inside the `assignment_1_07` package. This approach has several advantages:
+- **Correct parameters**: The launch file automatically loads the configuration from `assignment_1_07/config/apriltag_params.yaml`, which specifies the actual tag size (**0.05 m × 0.05 m**) and other relevant parameters.
+- **Maintainability**: If the AprilTag setup changes in the future (e.g., different tag family or size), we only need to update our YAML file without touching the external package.
+- **Integration**: The launch file ensures that the AprilTag node runs alongside the rest of our system (goal selector, orchestrator, etc.), so everything is initialized consistently.
 
 ### Published topics
 Once running, the node provides:
@@ -41,7 +60,7 @@ Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt 
 Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turlebot sensors.
 
 ## 🎯 Goal Selector Node
-The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on c/tf` (preferred) and the `/detections` topic.
+The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` (preferred) and the `/detections` topic.
 
 ### Behavior and design
 - **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.
@@ -57,4 +76,37 @@ The Goal Selector node reads AprilTag detections and publishes a navigation goal
 - **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
 - **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
 
-These parameters can be adjusted in the provided launch file.
+These parameters can be adjusted in the provided launch file (`global.launch.py`).
+
+## 🎼 Nav2 Orchestrator Node
+The Nav2Orchestrator node automates the initialization of the full navigation stack by interacting directly with the lifecycle managers of both localization and navigation. Instead of requiring manual service calls or user input in RViz, this node ensures that all components are correctly configured and activated in sequence.
+
+### Behavior and design
+
+Our design is motivated by a key observation: after activating the localization stack via `/lifecycle_manager_localization/manage_nodes`, the navigation lifecycle manager (server) will reject a `STARTUP` request (`success=False`) if the system has not yet received a valid initial pose estimate. We have no clue on why this happens, but, to address this, we structured the orchestrator in 4 execution steps:
+1. Start localization lifecycle manager.
+2. Publish the initial pose to AMCL.
+3. Wait briefly for AMCL to process the initial pose.
+4. Start navigation lifecycle manager.
+
+More in detail, we addressed:
+- **Lifecycle management**: 
+  - Connects to `/lifecycle_manager_localization/manage_nodes` and `/lifecycle_manager_navigation/manage_nodes`.
+  - Sends `STARTUP` commands to bring all managed nodes into the `active` state.
+
+- **Initial pose publication**:
+  - Publishes a `geometry_msgs/PoseWithCovarianceStamped` message on `/initialpose` immediately after localization is started.
+  - This initializes AMCL without requiring the user to manually set the “2D Pose Estimate” in RViz.
+  - The pose (x, y, yaw) can be customized via ROS parameters.
+
+Additionally, the node includes configurable timeouts for service discovery and service calls, along with detailed logging for each lifecycle transition and initial pose publication. This design guarantees that the navigation stack is only activated once localization is stable, resulting in a more reliable and fully automated startup procedure.
+
+### Parameters
+
+- **initial_x** (double, default: 0.0): X coordinate of the initial pose in the map frame.
+- **initial_y** (double, default: 0.0): Y coordinate of the initial pose in the map frame.
+- **initial_yaw** (double, default: 0.0): Orientation (yaw, in radians) of the initial pose.
+- **service_wait_timeout_sec** (double, default: 10.0): Maximum time to wait for lifecycle services to become available.
+- **call_timeout_sec** (double, default: 10.0): Maximum time to wait for a lifecycle service call to complete.
+
+These parameters can be adjusted in the provided launch file (`global.launch.py`).
