@@ -1,0 +1,30 @@
+[0.008s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07 -- -j16 -l16
+[0.058s] [ 33%] Built target goal_sender
+[0.058s] [100%] Built target goal_selector
+[0.058s] [100%] Built target nav2_orchestrator
+[0.068s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07 -- -j16 -l16
+[0.077s] Invoking command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07
+[0.084s] -- Install configuration: ""
+[0.084s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_selector
+[0.084s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_sender
+[0.084s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/nav2_orchestrator
+[0.084s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//launch
+[0.084s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//launch/global.launch.py
+[0.084s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//config
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//config/apriltag_params.yaml
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/package_run_dependencies/assignment_1_07
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/parent_prefix_path/assignment_1_07
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.sh
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.dsv
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/path.sh
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/path.dsv
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.bash
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.sh
+[0.085s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.zsh
+[0.086s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.dsv
+[0.086s] -- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/package.dsv
+[0.086s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/packages/assignment_1_07
+[0.086s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config.cmake
+[0.086s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config-version.cmake
+[0.086s] -- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/package.xml
+[0.087s] Invoked command in '/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07

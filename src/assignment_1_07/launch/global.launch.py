@@ -1,6 +1,7 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
+from launch.actions import TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -36,19 +37,6 @@ def generate_launch_description():
             parameters=[cfg]
         ),
 
-        # Goal selector node
-        Node(
-            package='assignment_1_07',
-            executable='goal_selector',
-            name='goal_selector',
-            output='screen',
-            parameters=[{
-                'target_frame': 'odom',            # change in 'map' if using SLAM
-                'tag_frame_prefix': 'tag36h11:',   # must match the prefix in apriltag_params.yaml
-                'tf_timeout_sec': 0.3
-            }]
-        ),
-
         # Navigation2 orchestrator node: activate nav2 stack
         Node(
             package='assignment_1_07',
@@ -64,4 +52,31 @@ def generate_launch_description():
                 'amcl_pose_wait_sec': 10.0
             }]
         ),
+
+        # Goal selector node
+        Node(
+            package='assignment_1_07',
+            executable='goal_selector',
+            name='goal_selector',
+            output='screen',
+            parameters=[{
+                'target_frame': 'map',            
+                'tag_frame_prefix': 'tag36h11:',   # must match the prefix in apriltag_params.yaml
+                'tf_timeout_sec': 0.3
+            }]
+        ),
+
+        # Goal sender node: Delayed start to ensure everything else is up and running
+        TimerAction(
+            period=6.0,
+            actions=[
+                Node(
+                    package='assignment_1_07',
+                    executable='goal_sender',
+                    name='goal_sender',
+                    output='screen',
+                )
+            ]
+        )
+
     ])

@@ -223,6 +223,19 @@ nav2_orchestrator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/build
 .PHONY : nav2_orchestrator/fast
 
+#=============================================================================
+# Target rules for targets named goal_sender
+
+# Build rule for target.
+goal_sender: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 goal_sender
+.PHONY : goal_sender
+
+# fast build rule for target.
+goal_sender/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/build
+.PHONY : goal_sender/fast
+
 src/goal_selector.o: src/goal_selector.cpp.o
 .PHONY : src/goal_selector.o
 
@@ -246,6 +259,30 @@ src/goal_selector.s: src/goal_selector.cpp.s
 src/goal_selector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/src/goal_selector.cpp.s
 .PHONY : src/goal_selector.cpp.s
+
+src/goal_sender.o: src/goal_sender.cpp.o
+.PHONY : src/goal_sender.o
+
+# target to build an object file
+src/goal_sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/src/goal_sender.cpp.o
+.PHONY : src/goal_sender.cpp.o
+
+src/goal_sender.i: src/goal_sender.cpp.i
+.PHONY : src/goal_sender.i
+
+# target to preprocess a source file
+src/goal_sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/src/goal_sender.cpp.i
+.PHONY : src/goal_sender.cpp.i
+
+src/goal_sender.s: src/goal_sender.cpp.s
+.PHONY : src/goal_sender.s
+
+# target to generate assembly for a file
+src/goal_sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/src/goal_sender.cpp.s
+.PHONY : src/goal_sender.cpp.s
 
 src/nav2_orchestrator.o: src/nav2_orchestrator.cpp.o
 .PHONY : src/nav2_orchestrator.o
@@ -287,10 +324,14 @@ help:
 	@echo "... assignment_1_07_uninstall"
 	@echo "... uninstall"
 	@echo "... goal_selector"
+	@echo "... goal_sender"
 	@echo "... nav2_orchestrator"
 	@echo "... src/goal_selector.o"
 	@echo "... src/goal_selector.i"
 	@echo "... src/goal_selector.s"
+	@echo "... src/goal_sender.o"
+	@echo "... src/goal_sender.i"
+	@echo "... src/goal_sender.s"
 	@echo "... src/nav2_orchestrator.o"
 	@echo "... src/nav2_orchestrator.i"
 	@echo "... src/nav2_orchestrator.s"

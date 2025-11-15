@@ -22,8 +22,9 @@ ros2 launch assignment_1_07 global.launch.py
 This launch file orchestrates the whole assignment setup. Specifically, it:
 - Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
 - Starts the **AprilTag detection node** with the correct topic remappings and parameters.
-- Launches our **Goal Selector node**, which computes navigation goals from detected tags.
 - Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL.
+- Launches our **Goal Selector node**, which computes navigation goals from detected tags and republishes them every 5 seconds.
+- Launches the **Goal Sender node**, which listens to `/goal_pose_raw` and sends the goal to Nav2 via the `navigate_to_pose` action.
 - **TO BE COMPLETED**
 
 This way, a single command brings up the entire system, ready for testing and demonstration.
@@ -59,24 +60,6 @@ Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt 
 
 Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turlebot sensors.
 
-## 🎯 Goal Selector Node
-The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` (preferred) and the `/detections` topic.
-
-### Behavior and design
-- **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.
-
-- **Pose acquisition**: obtains each tag pose by doing a TF lookup from the configured target_frame (`odom` or `map`) to the tag frame (e.g. `tag36h11:1`).
-
-- **Goal calculation**: computes a goal as the midpoint between two detected tags (first two detections). The published goal is a `geometry_msgs/PoseStamped` in the chosen target frame.
-
-- **Output**: publishes the computed goal on `/goal_pose` (`geometry_msgs/PoseStamped`). 
-
-### Parameters
-- **target_frame** (string, default: `"odom"`): frame in which the goal is published and in which TF lookups are performed.
-- **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
-- **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
-
-These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
 ## 🎼 Nav2 Orchestrator Node
 The Nav2Orchestrator node automates the initialization of the full navigation stack by interacting directly with the lifecycle managers of both localization and navigation. Instead of requiring manual service calls or user input in RViz, this node ensures that all components are correctly configured and activated in sequence.
@@ -110,3 +93,34 @@ Additionally, the node includes configurable timeouts for service discovery and 
 - **call_timeout_sec** (double, default: 10.0): Maximum time to wait for a lifecycle service call to complete.
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
+
+
+## 🎯 Goal Selector Node
+The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` (preferred) and the `/detections` topic.
+
+### Behavior and design
+- **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.
+
+- **Pose acquisition**: obtains each tag pose by doing a TF lookup from the configured target_frame (`odom` or `map`) to the tag frame (e.g. `tag36h11:1`).
+
+- **Goal calculation**: computes a goal as the midpoint between two detected tags (first two detections). The published goal is a `geometry_msgs/PoseStamped` in the chosen target frame.
+
+- **Output**: republishes the computed goal every 5 seconds on `/goal_pose_raw` (`geometry_msgs/PoseStamped`). 
+
+### Parameters
+- **target_frame** (string, default: `"odom"`): frame in which the goal is published and in which TF lookups are performed.
+- **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
+- **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
+
+These parameters can be adjusted in the provided launch file (`global.launch.py`).
+
+## 📡 Goal Sender Node
+
+The Goal Sender node listens to `/goal_pose_raw` and acts as an action client for Nav2. Whenever a new goal is received, it sends it to the `navigate_to_pose` action server, triggering navigation.
+
+### Behavior and design
+- **Input**: subscribes to `/goal_pose_raw` (`geometry_msgs/PoseStamped`).
+- **Action client**: connects to `navigate_to_pose` (Nav2).
+- **Execution**: sends the goal once, waits for Nav2 to complete, and logs the result (success, aborted, canceled).
+
+This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.

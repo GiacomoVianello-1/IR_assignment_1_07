@@ -30,6 +30,7 @@ ament_target_dependencies(goal_selector
   apriltag_msgs
 )
 
+# build nav2_orchestrator node
 add_executable(nav2_orchestrator src/nav2_orchestrator.cpp)
 ament_target_dependencies(nav2_orchestrator 
   rclcpp
@@ -37,9 +38,19 @@ ament_target_dependencies(nav2_orchestrator
   nav2_msgs
 )
 
+# build goal_sender node
+add_executable(goal_sender src/goal_sender.cpp)
+ament_target_dependencies(goal_sender 
+  rclcpp 
+  rclcpp_action 
+  geometry_msgs 
+  nav2_msgs
+)
+
 # install executables
 install(TARGETS
   goal_selector
+  goal_sender
   nav2_orchestrator
   DESTINATION lib/${PROJECT_NAME}/
 )
@@ -53,6 +64,5 @@ install(DIRECTORY launch
 install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}/
 )
-
 
 ament_package()

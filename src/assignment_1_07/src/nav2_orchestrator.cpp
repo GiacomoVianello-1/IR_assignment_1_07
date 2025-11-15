@@ -1,4 +1,3 @@
-// src/nav2_orchestrator.cpp
 #include <chrono>
 #include <memory>
 #include <thread>
@@ -11,12 +10,9 @@
 
 using namespace std::chrono_literals;
 
-class Nav2Orchestrator : public rclcpp::Node
-{
-public:
-  Nav2Orchestrator()
-  : Node("nav2_orchestrator")
-  {
+// === Nav2 Orchestrator Node ===
+class Nav2Orchestrator : public rclcpp::Node{
+public:Nav2Orchestrator(): Node("nav2_orchestrator"){
     init_x_ = this->declare_parameter<double>("initial_x", 0.0);
     init_y_ = this->declare_parameter<double>("initial_y", 0.0);
     init_yaw_ = this->declare_parameter<double>("initial_yaw", 0.0);
@@ -29,8 +25,7 @@ public:
     initpose_pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/initialpose", 10);
   }
 
-  void run()
-  {
+  void run(){
     // 1. Startup localization
     send_startup(cli_localization_, "localization");
 
@@ -43,9 +38,7 @@ public:
   }
 
 private:
-  void send_startup(const rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr &cli,
-                    const std::string &name)
-  {
+  void send_startup(const rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr &cli, const std::string &name){
     if (!cli->wait_for_service(10s)) {
       RCLCPP_ERROR(get_logger(), "Service %s not available", name.c_str());
       return;
@@ -62,8 +55,7 @@ private:
     }
   }
 
-  void publish_initial_pose()
-  {
+  void publish_initial_pose(){
     geometry_msgs::msg::PoseWithCovarianceStamped msg;
     msg.header.frame_id = "map";
     msg.header.stamp = this->now();
@@ -80,10 +72,10 @@ private:
   rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr cli_localization_;
   rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr cli_navigation_;
   rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr initpose_pub_;
-};
 
-int main(int argc, char **argv)
-{
+}; // Class Nav2Orchestrator
+
+int main(int argc, char **argv){
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Nav2Orchestrator>();
   node->run();

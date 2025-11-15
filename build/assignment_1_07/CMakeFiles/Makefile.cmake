@@ -1054,4 +1054,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/assignment_1_07_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/goal_selector.dir/DependInfo.cmake"
   "CMakeFiles/nav2_orchestrator.dir/DependInfo.cmake"
+  "CMakeFiles/goal_sender.dir/DependInfo.cmake"
   )
