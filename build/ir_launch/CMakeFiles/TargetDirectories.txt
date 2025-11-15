@@ -1,0 +1,9 @@
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/uninstall.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/ir_launch_uninstall.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/test.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/edit_cache.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/rebuild_cache.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/list_install_components.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/install.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/install/local.dir
+/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles/install/strip.dir

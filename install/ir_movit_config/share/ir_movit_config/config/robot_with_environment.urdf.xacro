@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur_gripper">
+    
+    <xacro:macro name="wall" params="name size xyz rpy parent">
+      <!-- Convert size string to numbers -->
+      <xacro:property name="sx" value="${float(size.split()[0])}"/>
+      <xacro:property name="sy" value="${float(size.split()[1])}"/>
+      <xacro:property name="sz" value="${float(size.split()[2])}"/>
+
+      <link name="${name}_link">
+        <visual>
+          <origin xyz="0 0 ${sz/2}" rpy="0 0 0"/>
+          <geometry>
+            <box size="${sx} ${sy} ${sz}"/>
+          </geometry>
+          <material name="grey">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+          </material>
+        </visual>
+        <collision>
+          <origin xyz="0 0 ${sz/2}" rpy="0 0 0"/>
+          <geometry>
+            <box size="${sx} ${sy} ${sz}"/>
+          </geometry>
+        </collision>
+        <inertial>
+          <mass value="1.0"/>
+          <origin xyz="0 0 ${sz/2}" rpy="0 0 0"/>
+          <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                   iyy="1.0" iyz="0.0"
+                   izz="1.0"/>
+        </inertial>
+      </link>
+
+      <joint name="${parent}_to_${name}" type="fixed">
+        <parent link="${parent}"/>
+        <child link="${name}_link"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+      </joint>
+    </xacro:macro>
+    
+   <xacro:macro name="floor_box" params="name size xyz rpy parent">
+  <xacro:property name="sx" value="${float(size.split()[0])}"/>
+  <xacro:property name="sy" value="${float(size.split()[1])}"/>
+  <xacro:property name="sz" value="${float(size.split()[2])}"/>
+
+    <link name="${name}_link">
+      <visual>
+        <!-- Center of box at sz/2 below joint origin -->
+        <origin xyz="0 0 ${-sz/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${sx} ${sy} ${sz}"/>
+        </geometry>
+        <material name="grey">
+          <color rgba="0.8 0.8 0.8 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${-sz/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${sx} ${sy} ${sz}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1.0"/>
+        <origin xyz="0 0 ${-sz/2}" rpy="0 0 0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                 iyy="1.0" iyz="0.0"
+                 izz="1.0"/>
+      </inertial>
+    </link>
+
+    <joint name="${parent}_to_${name}" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+  </xacro:macro>
+
+
+
+
+  <xacro:arg name="initial_positions_file" default="$(find ir_movit_config)/config/initial_positions.yaml" />
+
+    <!-- Import ur_gripper urdf file -->
+    <xacro:include filename="$(find ir_desription)/urdf/ur_gripper.urdf" />
+    
+    <!-- <xacro:wall name="wall_1"  size="1.2 0.15 2.5"     xyz="-5.79107 2.49368 0"   rpy="0 0 1.5708"   parent="world"/>
+    <xacro:wall name="wall_2"  size="1.79256 0.15 2.5" xyz="-6.61216 3.04631 0"   rpy="0 0 -3.1203"  parent="world"/>
+    <xacro:wall name="wall_3"  size="3.68565 0.15 2.5" xyz="-7.38434 1.26123 0"   rpy="0 0 -1.5545"  parent="world"/>
+    <xacro:wall name="wall_4"  size="1.77744 0.15 2.5" xyz="-6.56193 -0.508986 0" rpy="0 0 -0.003224" parent="world"/>
+    <xacro:wall name="wall_5"  size="1.35672 0.15 2.5" xyz="-5.75827 0.136795 0"  rpy="0 0 1.5846"   parent="world"/>
+    <xacro:wall name="wall_6"  size="5.64664 0.15 2.5" xyz="-3.02009 0.766397 0"  rpy="0 0 0.007796" parent="world"/>
+    <xacro:wall name="wall_7"  size="4.38998 0.15 2.5" xyz="-0.242291 -1.34162 0" rpy="0 0 -1.54891" parent="world"/>
+    <xacro:wall name="wall_8"  size="7.75 0.15 2.5"    xyz="3.60739 -3.55107 0"   rpy="0 0 0"        parent="world"/>
+    <xacro:wall name="wall_9"  size="5.25 0.15 2.5"    xyz="7.40739 -1.00107 0"   rpy="0 0 1.5708"   parent="world"/>
+    <xacro:wall name="wall_10" size="1.25 0.15 2.5"    xyz="7.13239 2.02524 0"    rpy="0 0 2.0944"   parent="world"/>
+    <xacro:wall name="wall_11" size="1.20114 0.15 2.5" xyz="6.85739 3.02713 0"    rpy="0 0 1.5708"   parent="world"/>
+    <xacro:wall name="wall_12" size="3.5 0.15 2.5"     xyz="5.18239 3.55269 0"    rpy="0 0 3.14159"  parent="world"/>
+    <xacro:wall name="wall_13" size="0.951136 0.15 2.5" xyz="3.50739 3.15213 0"   rpy="0 0 -1.5708"  parent="world"/>
+    <xacro:wall name="wall_14" size="4.25 0.15 2.5"    xyz="1.45739 2.75156 0"    rpy="0 0 3.14159"  parent="world"/>
+    <xacro:wall name="wall_15" size="0.9 0.15 2.5"     xyz="-0.805112 2.3835 0"   rpy="0 0 -2.0944"  parent="world"/>
+    <xacro:wall name="wall_16" size="4.92373 0.15 2.5" xyz="-3.40434 1.98962 0"   rpy="0 0 -3.13077" parent="world"/> -->
+    <xacro:wall name="wall_17" size="3.5 0.15 2.5"     xyz="3.10875 -0.378342 0"  rpy="0 0 -1.5708"  parent="world"/>
+    
+
+    <xacro:floor_box 
+        name="ground_plane"
+        size="40 40 0.1"
+        xyz="0 0 0"
+        rpy="0 0 0"
+        parent="world"/>
+
+
+  <xacro:macro name="table" params="name surface_size column_size base_size pose parent scale">
+
+  <!-- Split sizes and apply scaling -->
+  <xacro:property name="sx_surf" value="${float(surface_size.split()[0]) * float(scale)}"/>
+  <xacro:property name="sy_surf" value="${float(surface_size.split()[1]) * float(scale)}"/>
+  <xacro:property name="sz_surf" value="${float(surface_size.split()[2]) * float(scale)}"/>
+
+  <xacro:property name="sx_col" value="${float(column_size.split()[0]) * float(scale)}"/>
+  <xacro:property name="sy_col" value="${float(column_size.split()[1]) * float(scale)}"/>
+  <xacro:property name="sz_col" value="${float(column_size.split()[2]) * float(scale)}"/>
+
+  <xacro:property name="sx_base" value="${float(base_size.split()[0]) * float(scale)}"/>
+  <xacro:property name="sy_base" value="${float(base_size.split()[1]) * float(scale)}"/>
+  <xacro:property name="sz_base" value="${float(base_size.split()[2]) * float(scale)}"/>
+
+  <!-- Vertical offsets -->
+  <xacro:property name="z_col_bottom" value="${sz_base}"/>
+  <xacro:property name="z_surf_bottom" value="${sz_base + sz_col}"/>
+
+  <link name="${name}_link">
+
+    <!-- Base -->
+    <visual name="base_visual">
+      <origin xyz="0 0 ${sz_base/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_base} ${sy_base} ${sz_base}"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+    <collision name="base_collision">
+      <origin xyz="0 0 ${sz_base/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_base} ${sy_base} ${sz_base}"/>
+      </geometry>
+    </collision>
+
+    <!-- Column -->
+    <visual name="column_visual">
+      <origin xyz="0 0 ${z_col_bottom + sz_col/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_col} ${sy_col} ${sz_col}"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision name="column_collision">
+      <origin xyz="0 0 ${z_col_bottom + sz_col/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_col} ${sy_col} ${sz_col}"/>
+      </geometry>
+    </collision>
+
+    <!-- Surface (table top) -->
+    <visual name="surface_visual">
+      <origin xyz="0 0 ${z_surf_bottom + sz_surf/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_surf} ${sy_surf} ${sz_surf}"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision name="surface_collision">
+      <origin xyz="0 0 ${z_surf_bottom + sz_surf/2}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${sx_surf} ${sy_surf} ${sz_surf}"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="${parent}_to_${name}" type="fixed">
+    <parent link="${parent}"/>
+    <child link="${name}_link"/>
+    <origin xyz="${pose}" rpy="0 0 0"/>
+  </joint>
+
+</xacro:macro>
+
+
+  <xacro:table
+    name="cafe_table"
+    surface_size="0.913 0.913 0.04"
+    column_size="0.042 0.042 0.74"
+    base_size="0.56 0.56 0.04"
+    pose="4 -1.1 0"
+    parent="world"
+    scale="0.4"/>
+
+  <xacro:table
+    name="cafe_table2"
+    surface_size="0.913 0.913 0.04"
+    column_size="0.042 0.042 0.74"
+    base_size="0.56 0.56 0.04"
+    pose="4.6 -0.5 0"
+    parent="world"
+    scale="0.4"/>
+
+    <!-- Import control_xacro 
+    <xacro:include filename="ur_gripper.ros2_control.xacro" /> -->
+
+
+   
+
+</robot>

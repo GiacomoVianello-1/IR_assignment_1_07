@@ -1,0 +1,33 @@
+[ 20%] Built target tags
+[ 40%] Built target apriltag_node
+[ 60%] Built target conversion
+[ 80%] Built target pose_estimation
+[100%] Built target AprilTagNode
+-- Install configuration: ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/apriltag_ros/apriltag_node
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/apriltag_ros/apriltag_node" to ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/library_path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/library_path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/libAprilTagNode.so
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/lib/libAprilTagNode.so" to ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/cfg
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/cfg/qos_overrides.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/cfg/tags_36h11.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/launch
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/launch/camera_36h11.launch.yml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/ament_index/resource_index/package_run_dependencies/apriltag_ros
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/ament_index/resource_index/parent_prefix_path/apriltag_ros
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/ament_prefix_path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/ament_prefix_path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/environment/path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/local_setup.bash
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/local_setup.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/local_setup.zsh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/local_setup.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/ament_index/resource_index/packages/apriltag_ros
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/ament_index/resource_index/rclcpp_components/apriltag_ros
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/cmake/apriltag_rosConfig.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/cmake/apriltag_rosConfig-version.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros/share/apriltag_ros/package.xml

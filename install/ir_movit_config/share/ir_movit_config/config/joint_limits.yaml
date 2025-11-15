@@ -1,0 +1,32 @@
+#default_velocity_scaling_factor: 0.1
+#default_acceleration_scaling_factor: 0.1
+
+joint_limits:
+  elbow_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  shoulder_lift_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  shoulder_pan_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  wrist_1_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  wrist_2_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  wrist_3_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+
+  robotiq_85_left_finger_tip_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  robotiq_85_left_inner_knuckle_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0
+  robotiq_85_left_knuckle_joint:
+    has_acceleration_limits: true
+    max_acceleration: 5.0

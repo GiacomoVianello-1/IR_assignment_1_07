@@ -1,0 +1,97 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Configuring done (0.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+[ 50%] [32mBuilding CXX object CMakeFiles/short_joint_state_publisher.dir/src/short_joint_state_publisher.cpp.o[0m
+[100%] [32m[1mLinking CXX executable short_joint_state_publisher[0m
+[100%] Built target short_joint_state_publisher
+-- Install configuration: ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/package_run_dependencies/ir_movit_config
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/parent_prefix_path/ir_movit_config
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/environment/path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.bash
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.zsh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/local_setup.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ament_index/resource_index/packages/ir_movit_config
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig-version.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/package.xml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_ur.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_base.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/test.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/fake_hw.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/gazebo.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/tmp.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/ir_movit.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/launch/simulation_complete.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/.setup_assistant
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+-- Up-to-date: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher" to ""
