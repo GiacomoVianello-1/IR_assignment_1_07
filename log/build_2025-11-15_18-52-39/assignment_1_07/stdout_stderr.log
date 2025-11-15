@@ -1,0 +1,72 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found tf2: 0.36.14 (/opt/ros/jazzy/share/tf2/cmake)
+-- Found tf2_ros: 0.36.14 (/opt/ros/jazzy/share/tf2_ros/cmake)
+-- Found tf2_geometry_msgs: 0.36.14 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found apriltag_msgs: 2.0.1 (/opt/ros/jazzy/share/apriltag_msgs/cmake)
+-- Found nav2_msgs: 1.3.9 (/opt/ros/jazzy/share/nav2_msgs/cmake)
+-- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)
+-- Configuring done (1.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07
+[ 16%] [32mBuilding CXX object CMakeFiles/goal_selector.dir/src/goal_selector.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/goal_sender.dir/src/goal_sender.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/nav2_orchestrator.dir/src/nav2_orchestrator.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable nav2_orchestrator[0m
+[ 66%] Built target nav2_orchestrator
+[ 83%] [32m[1mLinking CXX executable goal_sender[0m
+[ 83%] Built target goal_sender
+[100%] [32m[1mLinking CXX executable goal_selector[0m
+[100%] Built target goal_selector
+-- Install configuration: ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_selector
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_selector" to ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_sender
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/goal_sender" to ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/nav2_orchestrator
+-- Set non-toolchain portion of runtime path of "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/lib/assignment_1_07/nav2_orchestrator" to ""
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//launch
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//launch/global.launch.py
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//config
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07//config/apriltag_params.yaml
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/package_run_dependencies/assignment_1_07
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/parent_prefix_path/assignment_1_07
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/path.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/environment/path.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.bash
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.sh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.zsh
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/local_setup.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/package.dsv
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/ament_index/resource_index/packages/assignment_1_07
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config-version.cmake
+-- Installing: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07/share/assignment_1_07/package.xml

@@ -1,0 +1,19 @@
+controller_names:
+  - ir_arm_controller
+  - ir_gripper_controller
+
+ir_arm_controller:
+  type: FollowJointTrajectory
+  action_ns: /ir_arm_controller/follow_joint_trajectory
+  joints:
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_joint
+    - wrist_1_joint
+    - wrist_2_joint
+    - wrist_3_joint
+
+ir_gripper_controller:
+  type: GripperCommand
+  action_ns: /ir_gripper_controller/gripper_action
+
