@@ -2,7 +2,7 @@
 
 # since this file is sourced use either the provided AMENT_CURRENT_PREFIX
 # or fall back to the destination set at configure time
-: ${AMENT_CURRENT_PREFIX:="/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_movit_config"}
+: ${AMENT_CURRENT_PREFIX:="/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config"}
 if [ ! -d "$AMENT_CURRENT_PREFIX" ]; then
   if [ -z "$COLCON_CURRENT_PREFIX" ]; then
     echo "The compile time prefix path '$AMENT_CURRENT_PREFIX' doesn't " \

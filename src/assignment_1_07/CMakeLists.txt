@@ -5,9 +5,11 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# Find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
@@ -47,12 +49,20 @@ ament_target_dependencies(goal_sender
   nav2_msgs
 )
 
-# install executables
+# install executables C++
 install(TARGETS
   goal_selector
   goal_sender
   nav2_orchestrator
   DESTINATION lib/${PROJECT_NAME}/
+)
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+# Install Python executables
+install(PROGRAMS
+  assignment_1_07/table_detection_node.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 # install launch files

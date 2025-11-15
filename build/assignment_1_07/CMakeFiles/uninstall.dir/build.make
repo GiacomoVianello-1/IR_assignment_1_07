@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07 /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

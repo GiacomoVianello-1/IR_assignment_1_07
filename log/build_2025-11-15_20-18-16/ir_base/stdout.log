@@ -1,0 +1,201 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/salvatore/Desktop/IR_assignment_1_07/build/ir_base
+-- Install configuration: ""
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ament_index/resource_index/package_run_dependencies/ir_base
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ament_index/resource_index/parent_prefix_path/ir_base
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/environment/ament_prefix_path.sh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/environment/ament_prefix_path.dsv
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/environment/path.sh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/environment/path.dsv
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/local_setup.bash
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/local_setup.sh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/local_setup.zsh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/local_setup.dsv
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.dsv
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ament_index/resource_index/packages/ir_base
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/cmake/ir_baseConfig.cmake
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/cmake/ir_baseConfig-version.cmake
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.xml
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/launch
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/launch/ir_arena.launch.py
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/launch/ir_arena_turtle.launch.py
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_nav.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_ur.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_ur.sdf.xacro
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/apples_world.sdf.xacro
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_empty_ur.sdf.xacro
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_empty.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/empy.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab.sdf.xacro
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_empty.sdf.xacro
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/worlds/iaslab_camera_tables.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/params
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/params/ur_bridge.yaml
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/params/turtlebot3_waffle_bridge.yaml
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/params/nav2_params.yaml
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/maps
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/maps/lab_map.yaml
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/maps/lab_map.pgm
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-06
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-06/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-06/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/latest
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-03-44
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-03-44/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-03-44/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-26
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-26/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-40-26/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-17-19
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-17-19/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-17-19/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_11-54-02
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_11-54-02/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_11-54-02/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/latest_build
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-18-28
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-18-28/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-18-28/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/COLCON_IGNORE
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-15-26
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-15-26/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-15-26/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-04-38
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-04-38/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-04-38/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-23-38
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-23-38/logger_all.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/log/build_2025-09-05_12-23-38/events.log
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/_local_setup_util_sh.py
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/_local_setup_util_ps1.py
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/local_setup.ps1
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/setup.zsh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/setup.bash
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/.colcon_install_layout
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/local_setup.sh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/local_setup.bash
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/setup.ps1
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/COLCON_IGNORE
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/local_setup.zsh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/install/setup.sh
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_0
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_0/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_0/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_1
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_1/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/loading_station_1/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/unloading_station_0
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/unloading_station_0/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/docks/unloading_station_0/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/meshes/cafe_table.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/materials
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/materials/textures
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/materials/textures/Wood_Floor_Dark.jpg
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/materials/textures/Maple.jpg
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/cafe_table/model-1_4.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Hexagon
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Hexagon/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Hexagon/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Hexagon/meshes/hexagon.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Hexagon/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle/meshes/triangle_centered.stl
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle/meshes/triangle.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/Triangle/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonSmall
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonSmall/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonSmall/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonSmall/meshes/octagon_small.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonSmall/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonBig
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonBig/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonBig/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonBig/meshes/octagon_big.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/objects/OctagonBig/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00009.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00007.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00014.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00013.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00010.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00012.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00005.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00015.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00101.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00100.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00011.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00006.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00002.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00000.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00003.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00008.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00001.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/textures/tag36_11_00004.png
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag11.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag7.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag12.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag3.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag13.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag2.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag6.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag15.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag5.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag4.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag8.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag10.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag1.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag14.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag9.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/artag/materials/scripts/artag0.material
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/build
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/build/.built_by
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/build/COLCON_IGNORE
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls/arena_walls
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls/arena_walls/model.config
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls/arena_walls/meshes
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls/arena_walls/meshes/arena.dae
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/models/walls/arena_walls/model.sdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/rviz
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/rviz/exercise_4.rviz
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/urdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/urdf/camera.urdf
+-- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/urdf/turtlebot3_waffle.urdf

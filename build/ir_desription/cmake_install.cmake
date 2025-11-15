@@ -1,8 +1,8 @@
-# Install script for directory: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription
+# Install script for directory: /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/ir_desription")
+  set(CMAKE_INSTALL_PREFIX "/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,11 +43,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ir_desription")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ir_desription")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ir_desription")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ir_desription")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -55,7 +55,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -63,54 +63,54 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/packages/ir_desription")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_index/share/ament_index/resource_index/packages/ir_desription")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription/cmake" TYPE FILE FILES
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_core/ir_desriptionConfig.cmake"
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/ament_cmake_core/ir_desriptionConfig-version.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_core/ir_desriptionConfig.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/ament_cmake_core/ir_desriptionConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription/meshes")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription/meshes")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription/config")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_desription/urdf")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ir_desription" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription/urdf")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -121,5 +121,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_desription/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

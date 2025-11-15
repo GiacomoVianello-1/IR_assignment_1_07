@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
 
 # Utility rule file for apriltag_ros_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/apriltag_ros_uninstall.dir/compiler_depend.make
 include CMakeFiles/apriltag_ros_uninstall.dir/progress.make
 
 CMakeFiles/apriltag_ros_uninstall:
-	/usr/bin/cmake -P /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 apriltag_ros_uninstall: CMakeFiles/apriltag_ros_uninstall
 apriltag_ros_uninstall: CMakeFiles/apriltag_ros_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/apriltag_ros_uninstall.dir/clean:
 .PHONY : CMakeFiles/apriltag_ros_uninstall.dir/clean
 
 CMakeFiles/apriltag_ros_uninstall.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/apriltag_ros_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/apriltag_ros_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/apriltag_ros_uninstall.dir/depend
 

@@ -1,0 +1,496 @@
+[0.093s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.093s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7e208ea8dee0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7e208ea8de20>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7e208ea8de20>>)
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.126s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/salvatore/Desktop/IR_assignment_1_07'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/assignment_1_07) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/assignment_1_07' with type 'ros.ament_cmake' and name 'assignment_1_07'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/apriltag_ros) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/apriltag_ros' with type 'ros.ament_cmake' and name 'apriltag_ros'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'colcon_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['colcon_meta']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'colcon_meta'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extensions ['ros']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_base) by extension 'ros'
+[0.159s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_base' with type 'ros.ament_cmake' and name 'ir_base'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ignore_ament_install'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['colcon_pkg']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'colcon_pkg'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['colcon_meta']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'colcon_meta'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_desription) by extension 'ros'
+[0.159s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_desription' with type 'ros.ament_cmake' and name 'ir_desription'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['colcon_meta']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'colcon_meta'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extensions ['ros']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_launch) by extension 'ros'
+[0.160s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_launch' with type 'ros.ament_cmake' and name 'ir_launch'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['colcon_meta']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/ir_2526/ir_movit_config) by extension 'ros'
+[0.161s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ir_2526/ir_movit_config' with type 'ros.ament_cmake' and name 'ir_movit_config'
+[0.161s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.161s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.161s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.161s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.161s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.176s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.179s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 474 installed packages in /opt/ros/jazzy
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_args' from command line to 'None'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_target' from command line to 'None'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.237s] Level 5:colcon.colcon_core.verb:set package 'apriltag_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.238s] DEBUG:colcon.colcon_core.verb:Building package 'apriltag_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros', 'symlink_install': False, 'test_result_base': None}
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_target' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_clean_cache' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_clean_first' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'cmake_force_configure' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'ament_cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'catkin_cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'assignment_1_07' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.238s] DEBUG:colcon.colcon_core.verb:Building package 'assignment_1_07' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07', 'symlink_install': False, 'test_result_base': None}
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_target' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_clean_cache' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_clean_first' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'cmake_force_configure' from command line to 'False'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'ament_cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'catkin_cmake_args' from command line to 'None'
+[0.238s] Level 5:colcon.colcon_core.verb:set package 'ir_base' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.238s] DEBUG:colcon.colcon_core.verb:Building package 'ir_base' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_base', 'symlink_install': False, 'test_result_base': None}
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_desription' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'ir_desription' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription', 'symlink_install': False, 'test_result_base': None}
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_launch' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'ir_launch' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch', 'symlink_install': False, 'test_result_base': None}
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_target' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.239s] Level 5:colcon.colcon_core.verb:set package 'ir_movit_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.239s] DEBUG:colcon.colcon_core.verb:Building package 'ir_movit_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config', 'merge_install': False, 'path': '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config', 'symlink_install': False, 'test_result_base': None}
+[0.240s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.240s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.240s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription' with build type 'ament_cmake'
+[0.240s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription'
+[0.242s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.242s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.242s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.246s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros' with build type 'ament_cmake'
+[0.246s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros'
+[0.246s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.247s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.250s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07' with build type 'ament_cmake'
+[0.250s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07'
+[0.250s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.250s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.253s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_base' with build type 'ament_cmake'
+[0.254s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_base'
+[0.254s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.254s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.257s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch' with build type 'ament_cmake'
+[0.257s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch'
+[0.257s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.257s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.264s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription
+[0.267s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros
+[0.269s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07
+[0.271s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_base -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base
+[0.291s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch
+[1.071s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_desription -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription
+[1.071s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription -- -j12 -l12
+[1.072s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_base -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base
+[1.073s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_base -- -j12 -l12
+[1.111s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription -- -j12 -l12
+[1.122s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription
+[1.123s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_base -- -j12 -l12
+[1.124s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_base
+[1.128s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch
+[1.129s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch -- -j12 -l12
+[1.149s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_desription)
+[1.157s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_desription
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription' for CMake module files
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription' for CMake config files
+[1.170s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_desription', 'cmake_prefix_path')
+[1.170s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.ps1'
+[1.170s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.dsv'
+[1.171s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.sh'
+[1.171s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/bin'
+[1.171s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/lib/pkgconfig/ir_desription.pc'
+[1.172s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/lib/python3.12/site-packages'
+[1.172s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/bin'
+[1.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.ps1'
+[1.173s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.dsv'
+[1.173s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.sh'
+[1.174s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.bash'
+[1.174s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.zsh'
+[1.175s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/colcon-core/packages/ir_desription)
+[1.175s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_desription)
+[1.175s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription' for CMake module files
+[1.176s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription' for CMake config files
+[1.176s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_desription', 'cmake_prefix_path')
+[1.176s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.ps1'
+[1.177s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.dsv'
+[1.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/hook/cmake_prefix_path.sh'
+[1.177s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/bin'
+[1.178s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/lib/pkgconfig/ir_desription.pc'
+[1.178s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/lib/python3.12/site-packages'
+[1.178s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/bin'
+[1.178s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.ps1'
+[1.179s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.dsv'
+[1.179s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.sh'
+[1.179s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.bash'
+[1.180s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/ir_desription/package.zsh'
+[1.180s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription/share/colcon-core/packages/ir_desription)
+[1.181s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config' with build type 'ament_cmake'
+[1.181s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config'
+[1.181s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.181s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.187s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_base)
+[1.188s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base' for CMake module files
+[1.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_base
+[1.189s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base' for CMake config files
+[1.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_base', 'cmake_prefix_path')
+[1.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.ps1'
+[1.191s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.dsv'
+[1.192s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.sh'
+[1.193s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/bin'
+[1.193s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/lib/pkgconfig/ir_base.pc'
+[1.193s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/lib/python3.12/site-packages'
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/bin'
+[1.195s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.ps1'
+[1.195s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.dsv'
+[1.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.sh'
+[1.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.bash'
+[1.197s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.zsh'
+[1.197s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/colcon-core/packages/ir_base)
+[1.198s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_base)
+[1.198s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base' for CMake module files
+[1.199s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base' for CMake config files
+[1.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_base', 'cmake_prefix_path')
+[1.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.ps1'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.dsv'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/hook/cmake_prefix_path.sh'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/bin'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/lib/pkgconfig/ir_base.pc'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/lib/python3.12/site-packages'
+[1.204s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/bin'
+[1.204s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.ps1'
+[1.205s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.dsv'
+[1.206s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.sh'
+[1.207s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.bash'
+[1.207s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/ir_base/package.zsh'
+[1.208s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_base/share/colcon-core/packages/ir_base)
+[1.209s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch -- -j12 -l12
+[1.210s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch
+[1.213s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config
+[1.223s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_launch)
+[1.223s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch' for CMake module files
+[1.223s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch
+[1.225s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch' for CMake config files
+[1.225s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_launch', 'cmake_prefix_path')
+[1.225s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.ps1'
+[1.226s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.dsv'
+[1.226s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.sh'
+[1.227s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/bin'
+[1.227s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/lib/pkgconfig/ir_launch.pc'
+[1.227s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/lib/python3.12/site-packages'
+[1.228s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/bin'
+[1.228s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.ps1'
+[1.229s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.dsv'
+[1.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.sh'
+[1.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.bash'
+[1.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.zsh'
+[1.231s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/colcon-core/packages/ir_launch)
+[1.231s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_launch)
+[1.232s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch' for CMake module files
+[1.232s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch' for CMake config files
+[1.233s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_launch', 'cmake_prefix_path')
+[1.233s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.ps1'
+[1.233s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.dsv'
+[1.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/hook/cmake_prefix_path.sh'
+[1.235s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/bin'
+[1.235s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/lib/pkgconfig/ir_launch.pc'
+[1.235s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/lib/python3.12/site-packages'
+[1.236s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/bin'
+[1.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.ps1'
+[1.237s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.dsv'
+[1.237s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.sh'
+[1.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.bash'
+[1.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/ir_launch/package.zsh'
+[1.239s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_launch/share/colcon-core/packages/ir_launch)
+[2.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros
+[2.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros -- -j12 -l12
+[2.059s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07
+[2.061s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 -- -j12 -l12
+[2.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config
+[2.551s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config -- -j12 -l12
+[7.130s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config -- -j12 -l12
+[7.131s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config
+[7.150s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_movit_config)
+[7.151s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config' for CMake module files
+[7.151s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config
+[7.152s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config' for CMake config files
+[7.152s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_movit_config', 'cmake_prefix_path')
+[7.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.ps1'
+[7.153s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.dsv'
+[7.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.sh'
+[7.155s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib'
+[7.155s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/bin'
+[7.155s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/pkgconfig/ir_movit_config.pc'
+[7.155s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/python3.12/site-packages'
+[7.156s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/bin'
+[7.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.ps1'
+[7.157s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.dsv'
+[7.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.sh'
+[7.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.bash'
+[7.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.zsh'
+[7.159s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/colcon-core/packages/ir_movit_config)
+[7.160s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ir_movit_config)
+[7.160s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config' for CMake module files
+[7.161s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config' for CMake config files
+[7.162s] Level 1:colcon.colcon_core.shell:create_environment_hook('ir_movit_config', 'cmake_prefix_path')
+[7.162s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.ps1'
+[7.163s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.dsv'
+[7.163s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/hook/cmake_prefix_path.sh'
+[7.164s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib'
+[7.164s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/bin'
+[7.164s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/pkgconfig/ir_movit_config.pc'
+[7.164s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/python3.12/site-packages'
+[7.165s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/bin'
+[7.165s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.ps1'
+[7.166s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.dsv'
+[7.167s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.sh'
+[7.168s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.bash'
+[7.168s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.zsh'
+[7.169s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/colcon-core/packages/ir_movit_config)
+[11.767s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 -- -j12 -l12
+[11.769s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
+[11.829s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(assignment_1_07)
+[11.829s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07' for CMake module files
+[11.830s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
+[11.830s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07' for CMake config files
+[11.830s] Level 1:colcon.colcon_core.shell:create_environment_hook('assignment_1_07', 'cmake_prefix_path')
+[11.831s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.ps1'
+[11.831s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.dsv'
+[11.831s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.sh'
+[11.832s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib'
+[11.832s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/bin'
+[11.832s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/pkgconfig/assignment_1_07.pc'
+[11.832s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages'
+[11.832s] Level 1:colcon.colcon_core.shell:create_environment_hook('assignment_1_07', 'pythonpath')
+[11.832s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.ps1'
+[11.832s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.dsv'
+[11.833s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.sh'
+[11.833s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/bin'
+[11.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.ps1'
+[11.834s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.dsv'
+[11.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.sh'
+[11.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.bash'
+[11.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.zsh'
+[11.835s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/colcon-core/packages/assignment_1_07)
+[11.836s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(assignment_1_07)
+[11.836s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07' for CMake module files
+[11.836s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07' for CMake config files
+[11.836s] Level 1:colcon.colcon_core.shell:create_environment_hook('assignment_1_07', 'cmake_prefix_path')
+[11.837s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.ps1'
+[11.837s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.dsv'
+[11.837s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/cmake_prefix_path.sh'
+[11.838s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib'
+[11.838s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/bin'
+[11.838s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/pkgconfig/assignment_1_07.pc'
+[11.838s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages'
+[11.838s] Level 1:colcon.colcon_core.shell:create_environment_hook('assignment_1_07', 'pythonpath')
+[11.838s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.ps1'
+[11.838s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.dsv'
+[11.839s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/hook/pythonpath.sh'
+[11.839s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/bin'
+[11.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.ps1'
+[11.840s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.dsv'
+[11.840s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.sh'
+[11.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.bash'
+[11.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.zsh'
+[11.842s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/colcon-core/packages/assignment_1_07)
+[13.113s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros -- -j12 -l12
+[13.114s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
+[13.130s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(apriltag_ros)
+[13.130s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros' for CMake module files
+[13.130s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
+[13.131s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros' for CMake config files
+[13.131s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'cmake_prefix_path')
+[13.131s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.ps1'
+[13.132s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.dsv'
+[13.132s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.sh'
+[13.132s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib'
+[13.132s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'ld_library_path_lib')
+[13.132s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.ps1'
+[13.133s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.dsv'
+[13.133s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.sh'
+[13.133s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/bin'
+[13.133s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib/pkgconfig/apriltag_ros.pc'
+[13.134s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib/python3.12/site-packages'
+[13.134s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/bin'
+[13.134s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.ps1'
+[13.134s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.dsv'
+[13.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.sh'
+[13.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.bash'
+[13.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.zsh'
+[13.136s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/colcon-core/packages/apriltag_ros)
+[13.136s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(apriltag_ros)
+[13.136s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros' for CMake module files
+[13.137s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros' for CMake config files
+[13.137s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'cmake_prefix_path')
+[13.137s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.ps1'
+[13.137s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.dsv'
+[13.138s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/cmake_prefix_path.sh'
+[13.138s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib'
+[13.138s] Level 1:colcon.colcon_core.shell:create_environment_hook('apriltag_ros', 'ld_library_path_lib')
+[13.138s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.ps1'
+[13.138s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.dsv'
+[13.139s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/hook/ld_library_path_lib.sh'
+[13.139s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/bin'
+[13.139s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib/pkgconfig/apriltag_ros.pc'
+[13.139s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/lib/python3.12/site-packages'
+[13.140s] Level 1:colcon.colcon_core.environment:checking '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/bin'
+[13.140s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.ps1'
+[13.140s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.dsv'
+[13.141s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.sh'
+[13.141s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.bash'
+[13.141s] INFO:colcon.colcon_core.shell:Creating package script '/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/apriltag_ros/package.zsh'
+[13.142s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros/share/colcon-core/packages/apriltag_ros)
+[13.142s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[13.142s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[13.142s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[13.142s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[13.148s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[13.149s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[13.149s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[13.161s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[13.161s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/salvatore/Desktop/IR_assignment_1_07/install/local_setup.ps1'
+[13.162s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/salvatore/Desktop/IR_assignment_1_07/install/_local_setup_util_ps1.py'
+[13.162s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/salvatore/Desktop/IR_assignment_1_07/install/setup.ps1'
+[13.163s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/salvatore/Desktop/IR_assignment_1_07/install/local_setup.sh'
+[13.164s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/salvatore/Desktop/IR_assignment_1_07/install/_local_setup_util_sh.py'
+[13.164s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/salvatore/Desktop/IR_assignment_1_07/install/setup.sh'
+[13.165s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/salvatore/Desktop/IR_assignment_1_07/install/local_setup.bash'
+[13.165s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/salvatore/Desktop/IR_assignment_1_07/install/setup.bash'
+[13.166s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/salvatore/Desktop/IR_assignment_1_07/install/local_setup.zsh'
+[13.166s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/salvatore/Desktop/IR_assignment_1_07/install/setup.zsh'

@@ -1,0 +1,103 @@
+[0.032s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config
+[0.088s] -- The C compiler identification is GNU 13.3.0
+[0.144s] -- The CXX compiler identification is GNU 13.3.0
+[0.162s] -- Detecting C compiler ABI info
+[0.248s] -- Detecting C compiler ABI info - done
+[0.267s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.267s] -- Detecting C compile features
+[0.267s] -- Detecting C compile features - done
+[0.278s] -- Detecting CXX compiler ABI info
+[0.375s] -- Detecting CXX compiler ABI info - done
+[0.392s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.393s] -- Detecting CXX compile features
+[0.394s] -- Detecting CXX compile features - done
+[0.401s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.547s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.673s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.732s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.752s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.775s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.800s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.905s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.910s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.012s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.035s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.062s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.167s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.341s] -- Configuring done (1.3s)
+[1.353s] -- Generating done (0.0s)
+[1.357s] -- Build files have been written to: /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config
+[1.369s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config
+[1.369s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config -- -j12 -l12
+[1.425s] [ 50%] [32mBuilding CXX object CMakeFiles/short_joint_state_publisher.dir/src/short_joint_state_publisher.cpp.o[0m
+[5.747s] [100%] [32m[1mLinking CXX executable short_joint_state_publisher[0m
+[5.936s] [100%] Built target short_joint_state_publisher
+[5.948s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config -- -j12 -l12
+[5.950s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config
+[5.959s] -- Install configuration: ""
+[5.959s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ament_index/resource_index/package_run_dependencies/ir_movit_config
+[5.959s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ament_index/resource_index/parent_prefix_path/ir_movit_config
+[5.959s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.sh
+[5.959s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/environment/ament_prefix_path.dsv
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/environment/path.sh
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/environment/path.dsv
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/local_setup.bash
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/local_setup.sh
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/local_setup.zsh
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/local_setup.dsv
+[5.960s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.dsv
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ament_index/resource_index/packages/ir_movit_config
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig.cmake
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/cmake/ir_movit_configConfig-version.cmake
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/package.xml
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch
+[5.961s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/ir_ur.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/test.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/simulation_complete.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/ir_movit.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/fake_hw.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/tmp.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/ir_base.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/launch/gazebo.launch.py
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config
+[5.962s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+[5.963s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+[5.964s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+[5.965s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+[5.965s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/.setup_assistant
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/pilz_cartesian_limits.yaml
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ros2_controllers.yaml
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_servo.yaml
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/controllers.yaml
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit.rviz
+[5.965s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/robot_with_environment.urdf.xacro
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/kinematics.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/joint_limits_old.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/joint_limits.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.srdf
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/r_controller.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.ros2_control.xacro
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit_controllers.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/moveit_config.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/fake_joint_driver.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/old_ros2_controllers.yaml
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/ur_gripper.urdf.xacro
+[5.966s] -- Up-to-date: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/share/ir_movit_config/config/initial_positions.yaml
+[5.966s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher
+[5.967s] -- Set non-toolchain portion of runtime path of "/home/salvatore/Desktop/IR_assignment_1_07/install/ir_movit_config/lib/ir_movit_config/short_joint_state_publisher" to ""
+[5.970s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config' returned '0': AMENT_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/salvatore/Desktop/IR_assignment_1_07/install/ir_desription:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config

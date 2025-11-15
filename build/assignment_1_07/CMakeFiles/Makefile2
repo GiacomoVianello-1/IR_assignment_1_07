@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ass
 all: CMakeFiles/goal_selector.dir/all
 all: CMakeFiles/nav2_orchestrator.dir/all
 all: CMakeFiles/goal_sender.dir/all
+all: CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -78,6 +79,8 @@ clean: CMakeFiles/assignment_1_07_uninstall.dir/clean
 clean: CMakeFiles/goal_selector.dir/clean
 clean: CMakeFiles/nav2_orchestrator.dir/clean
 clean: CMakeFiles/goal_sender.dir/clean
+clean: CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/clean
+clean: CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -87,14 +90,14 @@ clean: CMakeFiles/goal_sender.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/assignment_1_07_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -113,14 +116,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/assignment_1_07_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment_1_07_uninstall.dir/build.make CMakeFiles/assignment_1_07_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment_1_07_uninstall.dir/build.make CMakeFiles/assignment_1_07_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num= "Built target assignment_1_07_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num= "Built target assignment_1_07_uninstall"
 .PHONY : CMakeFiles/assignment_1_07_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/assignment_1_07_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/assignment_1_07_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : CMakeFiles/assignment_1_07_uninstall.dir/rule
 
 # Convenience name for target.
@@ -139,14 +142,14 @@ CMakeFiles/assignment_1_07_uninstall.dir/clean:
 CMakeFiles/goal_selector.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_selector.dir/build.make CMakeFiles/goal_selector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num=1,2 "Built target goal_selector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num=1,2 "Built target goal_selector"
 .PHONY : CMakeFiles/goal_selector.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/goal_selector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/goal_selector.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : CMakeFiles/goal_selector.dir/rule
 
 # Convenience name for target.
@@ -165,14 +168,14 @@ CMakeFiles/goal_selector.dir/clean:
 CMakeFiles/nav2_orchestrator.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2_orchestrator.dir/build.make CMakeFiles/nav2_orchestrator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num=5,6 "Built target nav2_orchestrator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num=5,6 "Built target nav2_orchestrator"
 .PHONY : CMakeFiles/nav2_orchestrator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nav2_orchestrator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nav2_orchestrator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : CMakeFiles/nav2_orchestrator.dir/rule
 
 # Convenience name for target.
@@ -191,14 +194,14 @@ CMakeFiles/nav2_orchestrator.dir/clean:
 CMakeFiles/goal_sender.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles --progress-num=3,4 "Built target goal_sender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num=3,4 "Built target goal_sender"
 .PHONY : CMakeFiles/goal_sender.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/goal_sender.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/goal_sender.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : CMakeFiles/goal_sender.dir/rule
 
 # Convenience name for target.
@@ -209,6 +212,58 @@ goal_sender: CMakeFiles/goal_sender.dir/rule
 CMakeFiles/goal_sender.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/clean
 .PHONY : CMakeFiles/goal_sender.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir
+
+# All Build rule for target.
+CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build.make CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build.make CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num= "Built target ament_cmake_python_copy_assignment_1_07"
+.PHONY : CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
+.PHONY : CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/rule
+
+# Convenience name for target.
+ament_cmake_python_copy_assignment_1_07: CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/rule
+.PHONY : ament_cmake_python_copy_assignment_1_07
+
+# clean rule for target.
+CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build.make CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/clean
+.PHONY : CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir
+
+# All Build rule for target.
+CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/all: CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build.make CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build.make CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles --progress-num= "Built target ament_cmake_python_build_assignment_1_07_egg"
+.PHONY : CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
+.PHONY : CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/rule
+
+# Convenience name for target.
+ament_cmake_python_build_assignment_1_07_egg: CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/rule
+.PHONY : ament_cmake_python_build_assignment_1_07_egg
+
+# clean rule for target.
+CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build.make CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/clean
+.PHONY : CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

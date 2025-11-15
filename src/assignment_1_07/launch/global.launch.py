@@ -1,7 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription
-from launch.actions import TimerAction
+from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -24,6 +23,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(other_launch),
         ),
+
         # AprilTag detection node      
         Node(
             package='apriltag_ros',
@@ -66,6 +66,14 @@ def generate_launch_description():
             }]
         ),
 
+        # Table detection node (Python)
+        Node(
+            package='assignment_1_07',
+            executable='table_detection_node.py',
+            name='table_detection_node',
+            output='screen',
+        ),
+
         # Goal sender node: Delayed start to ensure everything else is up and running
         TimerAction(
             period=6.0,
@@ -78,5 +86,4 @@ def generate_launch_description():
                 )
             ]
         )
-
     ])

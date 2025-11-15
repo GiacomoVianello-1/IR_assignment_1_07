@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
 
 # Include any dependencies generated for this target.
 include CMakeFiles/conversion.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/conversion.dir/progress.make
 include CMakeFiles/conversion.dir/flags.make
 
 CMakeFiles/conversion.dir/src/conversion.cpp.o: CMakeFiles/conversion.dir/flags.make
-CMakeFiles/conversion.dir/src/conversion.cpp.o: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/conversion.cpp
+CMakeFiles/conversion.dir/src/conversion.cpp.o: /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/conversion.cpp
 CMakeFiles/conversion.dir/src/conversion.cpp.o: CMakeFiles/conversion.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/conversion.dir/src/conversion.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conversion.dir/src/conversion.cpp.o -MF CMakeFiles/conversion.dir/src/conversion.cpp.o.d -o CMakeFiles/conversion.dir/src/conversion.cpp.o -c /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/conversion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/conversion.dir/src/conversion.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conversion.dir/src/conversion.cpp.o -MF CMakeFiles/conversion.dir/src/conversion.cpp.o.d -o CMakeFiles/conversion.dir/src/conversion.cpp.o -c /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/conversion.cpp
 
 CMakeFiles/conversion.dir/src/conversion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/conversion.dir/src/conversion.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/conversion.cpp > CMakeFiles/conversion.dir/src/conversion.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/conversion.cpp > CMakeFiles/conversion.dir/src/conversion.cpp.i
 
 CMakeFiles/conversion.dir/src/conversion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/conversion.dir/src/conversion.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/conversion.cpp -o CMakeFiles/conversion.dir/src/conversion.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/conversion.cpp -o CMakeFiles/conversion.dir/src/conversion.cpp.s
 
 # Object files for target conversion
 conversion_OBJECTS = \
@@ -93,7 +93,7 @@ conversion_EXTERNAL_OBJECTS =
 libconversion.a: CMakeFiles/conversion.dir/src/conversion.cpp.o
 libconversion.a: CMakeFiles/conversion.dir/build.make
 libconversion.a: CMakeFiles/conversion.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libconversion.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libconversion.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/conversion.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/conversion.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/conversion.dir/clean:
 .PHONY : CMakeFiles/conversion.dir/clean
 
 CMakeFiles/conversion.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/conversion.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/conversion.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/conversion.dir/depend
 

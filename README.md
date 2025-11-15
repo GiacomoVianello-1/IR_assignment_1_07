@@ -9,6 +9,37 @@ This repository contains our solution to [Assignment 1](Assignment_1.pdf) for th
 
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
 
+## 📌 Workspace
+This project uses a **hybrid ROS2 workspace** to develop nodes in both **C++** and **Python**, ensuring flexibility and avoiding compatibility issues.  
+The package structure, together with the `CMakeLists.txt` and `package.xml`, has been adapted following the guidelines from this [tutorial](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/).
+---
+
+## 📂 Package Structure
+/IR_assignment_1_07/src/assignment_1_07
+├── assignment_1_07
+│   ├── __init__.py
+│   └── table_detection_node.py
+├── CMakeLists.txt
+├── config
+│   └── apriltag_params.yaml
+├── launch
+│   └── global.launch.py
+├── LICENSE
+├── package.xml
+└── src
+    ├── goal_selector.cpp
+    └── nav2_orchestrator.cpp
+
+where:
+- All **Python nodes** are placed inside the `/assignment_1_07` folder (executables).  
+- All **C++ nodes** are placed inside the `/src` folder.  
+
+**NOTA:** 
+Python executables must include the shebang:
+```
+#!/usr/bin/env python3
+```
+
 ## 🏃‍♂️‍➡️ Run the Project
 The first step is to build and source the entire ROS 2 workspace:
 ```

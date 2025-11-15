@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-78365b8882c3a8568693.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "assignment_1_07",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_assignment_1_07_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_assignment_1_07_egg-9f84f3ec36b0b83c190a.json",
+					"name" : "ament_cmake_python_build_assignment_1_07_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_assignment_1_07::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_assignment_1_07-813861d5150532b3a407.json",
+					"name" : "ament_cmake_python_copy_assignment_1_07",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "assignment_1_07_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-assignment_1_07_uninstall-caad410247521167f212.json",
+					"name" : "assignment_1_07_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "goal_selector::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-goal_selector-3310865a25a53cd66612.json",
+					"name" : "goal_selector",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "goal_sender::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-goal_sender-1d3cb3ccda075c44f3c1.json",
+					"name" : "goal_sender",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nav2_orchestrator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nav2_orchestrator-996a59e0f3add1e6c7b8.json",
+					"name" : "nav2_orchestrator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-a5d10a7abbea766ed0f7.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07",
+		"source" : "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

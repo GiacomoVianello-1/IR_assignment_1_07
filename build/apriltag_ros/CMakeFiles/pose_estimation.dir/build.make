@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pose_estimation.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/pose_estimation.dir/progress.make
 include CMakeFiles/pose_estimation.dir/flags.make
 
 CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o: CMakeFiles/pose_estimation.dir/flags.make
-CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/pose_estimation.cpp
+CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o: /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/pose_estimation.cpp
 CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o: CMakeFiles/pose_estimation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o -MF CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o.d -o CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o -c /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/pose_estimation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o -MF CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o.d -o CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o -c /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/pose_estimation.cpp
 
 CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/pose_estimation.cpp > CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/pose_estimation.cpp > CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.i
 
 CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/pose_estimation.cpp -o CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/pose_estimation.cpp -o CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.s
 
 # Object files for target pose_estimation
 pose_estimation_OBJECTS = \
@@ -93,7 +93,7 @@ pose_estimation_EXTERNAL_OBJECTS =
 libpose_estimation.a: CMakeFiles/pose_estimation.dir/src/pose_estimation.cpp.o
 libpose_estimation.a: CMakeFiles/pose_estimation.dir/build.make
 libpose_estimation.a: CMakeFiles/pose_estimation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpose_estimation.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpose_estimation.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/pose_estimation.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pose_estimation.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/pose_estimation.dir/clean:
 .PHONY : CMakeFiles/pose_estimation.dir/clean
 
 CMakeFiles/pose_estimation.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/pose_estimation.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/pose_estimation.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/pose_estimation.dir/depend
 

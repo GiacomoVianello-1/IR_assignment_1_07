@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_movit_config /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_movit_config/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_movit_config /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config /home/salvatore/Desktop/IR_assignment_1_07/build/ir_movit_config/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

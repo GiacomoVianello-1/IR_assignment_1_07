@@ -1,8 +1,8 @@
-# Install script for directory: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07
+# Install script for directory: /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/assignment_1_07")
+  set(CMAKE_INSTALL_PREFIX "/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_selector"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/goal_selector")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/goal_selector")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_selector" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_selector")
     file(RPATH_CHANGE
@@ -63,7 +63,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles/goal_selector.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles/goal_selector.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -73,7 +73,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_sender"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/goal_sender")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/goal_sender")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_sender" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/goal_sender")
     file(RPATH_CHANGE
@@ -87,7 +87,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles/goal_sender.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles/goal_sender.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -97,7 +97,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/nav2_orchestrator"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/nav2_orchestrator")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE EXECUTABLE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/nav2_orchestrator")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/nav2_orchestrator" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07/nav2_orchestrator")
     file(RPATH_CHANGE
@@ -111,23 +111,51 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles/nav2_orchestrator.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles/nav2_orchestrator.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/pythonpath.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/pythonpath.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/assignment_1_07")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_python/assignment_1_07/assignment_1_07.egg-info/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/assignment_1_07")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/site-packages/assignment_1_07" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07/assignment_1_07/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(
+        COMMAND
+        "/usr/bin/python3" "-m" "compileall"
+        "/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07"
+      )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_1_07" TYPE PROGRAM FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07/assignment_1_07/table_detection_node.py")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07/launch")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07/config")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/assignment_1_07")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/assignment_1_07")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -135,7 +163,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -143,42 +171,42 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/packages/assignment_1_07")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_index/share/ament_index/resource_index/packages/assignment_1_07")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07/cmake" TYPE FILE FILES
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_core/assignment_1_07Config.cmake"
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/ament_cmake_core/assignment_1_07Config-version.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_core/assignment_1_07Config.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/ament_cmake_core/assignment_1_07Config-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_1_07" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -189,5 +217,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

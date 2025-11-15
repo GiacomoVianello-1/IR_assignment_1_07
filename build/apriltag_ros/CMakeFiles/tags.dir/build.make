@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tags.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/tags.dir/progress.make
 include CMakeFiles/tags.dir/flags.make
 
 CMakeFiles/tags.dir/src/tag_functions.cpp.o: CMakeFiles/tags.dir/flags.make
-CMakeFiles/tags.dir/src/tag_functions.cpp.o: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/tag_functions.cpp
+CMakeFiles/tags.dir/src/tag_functions.cpp.o: /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/tag_functions.cpp
 CMakeFiles/tags.dir/src/tag_functions.cpp.o: CMakeFiles/tags.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tags.dir/src/tag_functions.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tags.dir/src/tag_functions.cpp.o -MF CMakeFiles/tags.dir/src/tag_functions.cpp.o.d -o CMakeFiles/tags.dir/src/tag_functions.cpp.o -c /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/tag_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tags.dir/src/tag_functions.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tags.dir/src/tag_functions.cpp.o -MF CMakeFiles/tags.dir/src/tag_functions.cpp.o.d -o CMakeFiles/tags.dir/src/tag_functions.cpp.o -c /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/tag_functions.cpp
 
 CMakeFiles/tags.dir/src/tag_functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tags.dir/src/tag_functions.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/tag_functions.cpp > CMakeFiles/tags.dir/src/tag_functions.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/tag_functions.cpp > CMakeFiles/tags.dir/src/tag_functions.cpp.i
 
 CMakeFiles/tags.dir/src/tag_functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tags.dir/src/tag_functions.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/src/tag_functions.cpp -o CMakeFiles/tags.dir/src/tag_functions.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/src/tag_functions.cpp -o CMakeFiles/tags.dir/src/tag_functions.cpp.s
 
 # Object files for target tags
 tags_OBJECTS = \
@@ -93,7 +93,7 @@ tags_EXTERNAL_OBJECTS =
 libtags.a: CMakeFiles/tags.dir/src/tag_functions.cpp.o
 libtags.a: CMakeFiles/tags.dir/build.make
 libtags.a: CMakeFiles/tags.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtags.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtags.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/tags.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tags.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/tags.dir/clean:
 .PHONY : CMakeFiles/tags.dir/clean
 
 CMakeFiles/tags.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/tags.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/tags.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/tags.dir/depend
 

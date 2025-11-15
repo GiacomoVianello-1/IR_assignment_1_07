@@ -1,8 +1,8 @@
-# Install script for directory: /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+# Install script for directory: /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/install/apriltag_ros")
+  set(CMAKE_INSTALL_PREFIX "/home/salvatore/Desktop/IR_assignment_1_07/install/apriltag_ros")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/apriltag_ros/apriltag_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/apriltag_ros" TYPE EXECUTABLE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/apriltag_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/apriltag_ros" TYPE EXECUTABLE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/apriltag_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/apriltag_ros/apriltag_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/apriltag_ros/apriltag_node")
     file(RPATH_CHANGE
@@ -63,7 +63,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/apriltag_node.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/apriltag_node.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -71,7 +71,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/library_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/library_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -81,7 +81,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libAprilTagNode.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/libAprilTagNode.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/libAprilTagNode.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libAprilTagNode.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libAprilTagNode.so")
     file(RPATH_CHANGE
@@ -98,19 +98,19 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/cfg")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE DIRECTORY FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE DIRECTORY FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/launch")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/apriltag_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/apriltag_ros")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/apriltag_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/apriltag_ros")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -118,7 +118,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -126,46 +126,46 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/environment" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/packages/apriltag_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/packages/apriltag_ros")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rclcpp_components" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/apriltag_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rclcpp_components" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/apriltag_ros")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros/cmake" TYPE FILE FILES
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_core/apriltag_rosConfig.cmake"
-    "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/ament_cmake_core/apriltag_rosConfig-version.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_core/apriltag_rosConfig.cmake"
+    "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/ament_cmake_core/apriltag_rosConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_ros" TYPE FILE FILES "/home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -176,5 +176,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

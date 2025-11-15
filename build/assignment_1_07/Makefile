@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/assignment_1_07
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/assignment_1_07/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -236,6 +236,32 @@ goal_sender/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goal_sender.dir/build.make CMakeFiles/goal_sender.dir/build
 .PHONY : goal_sender/fast
 
+#=============================================================================
+# Target rules for targets named ament_cmake_python_copy_assignment_1_07
+
+# Build rule for target.
+ament_cmake_python_copy_assignment_1_07: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_assignment_1_07
+.PHONY : ament_cmake_python_copy_assignment_1_07
+
+# fast build rule for target.
+ament_cmake_python_copy_assignment_1_07/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build.make CMakeFiles/ament_cmake_python_copy_assignment_1_07.dir/build
+.PHONY : ament_cmake_python_copy_assignment_1_07/fast
+
+#=============================================================================
+# Target rules for targets named ament_cmake_python_build_assignment_1_07_egg
+
+# Build rule for target.
+ament_cmake_python_build_assignment_1_07_egg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_build_assignment_1_07_egg
+.PHONY : ament_cmake_python_build_assignment_1_07_egg
+
+# fast build rule for target.
+ament_cmake_python_build_assignment_1_07_egg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build.make CMakeFiles/ament_cmake_python_build_assignment_1_07_egg.dir/build
+.PHONY : ament_cmake_python_build_assignment_1_07_egg/fast
+
 src/goal_selector.o: src/goal_selector.cpp.o
 .PHONY : src/goal_selector.o
 
@@ -321,6 +347,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... ament_cmake_python_build_assignment_1_07_egg"
+	@echo "... ament_cmake_python_copy_assignment_1_07"
 	@echo "... assignment_1_07_uninstall"
 	@echo "... uninstall"
 	@echo "... goal_selector"

@@ -9,9 +9,11 @@
 
   <!-- Build tool -->
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
 
   <!-- Build and exec dependencies -->
   <depend>rclcpp</depend>
+  <depend>rclpy</depend>
   <depend>rclcpp_action</depend>
   <depend>tf2</depend>
   <depend>tf2_ros</depend>

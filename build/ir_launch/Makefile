@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/ir_launch
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/ir_launch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch/CMakeFiles /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/ir_launch/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/salvatore/Desktop/IR_assignment_1_07/build/ir_launch/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

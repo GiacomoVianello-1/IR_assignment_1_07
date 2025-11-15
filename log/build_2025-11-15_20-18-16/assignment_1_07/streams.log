@@ -1,0 +1,103 @@
+[0.018s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07
+[0.075s] -- The C compiler identification is GNU 13.3.0
+[0.134s] -- The CXX compiler identification is GNU 13.3.0
+[0.153s] -- Detecting C compiler ABI info
+[0.240s] -- Detecting C compiler ABI info - done
+[0.249s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.249s] -- Detecting C compile features
+[0.250s] -- Detecting C compile features - done
+[0.258s] -- Detecting CXX compiler ABI info
+[0.357s] -- Detecting CXX compiler ABI info - done
+[0.367s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.367s] -- Detecting CXX compile features
+[0.368s] -- Detecting CXX compile features - done
+[0.372s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.530s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.669s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.735s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.756s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.779s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.805s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.917s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.917s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.018s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.039s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.063s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.155s] -- Found rclpy: 7.1.5 (/opt/ros/jazzy/share/rclpy/cmake)
+[1.159s] -- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[1.216s] -- Found tf2: 0.36.14 (/opt/ros/jazzy/share/tf2/cmake)
+[1.264s] -- Found tf2_ros: 0.36.14 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[1.364s] -- Found tf2_geometry_msgs: 0.36.14 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[1.387s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[1.389s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.389s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.396s] -- Found apriltag_msgs: 2.0.1 (/opt/ros/jazzy/share/apriltag_msgs/cmake)
+[1.415s] -- Found nav2_msgs: 1.3.9 (/opt/ros/jazzy/share/nav2_msgs/cmake)
+[1.550s] -- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)
+[1.763s] -- Configuring done (1.7s)
+[1.788s] -- Generating done (0.0s)
+[1.797s] -- Build files have been written to: /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
+[1.809s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/salvatore/Desktop/IR_assignment_1_07/src/assignment_1_07 -DCMAKE_INSTALL_PREFIX=/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07
+[1.810s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 -- -j12 -l12
+[1.866s] [ 16%] [32mBuilding CXX object CMakeFiles/goal_selector.dir/src/goal_selector.cpp.o[0m
+[1.869s] [ 33%] [32mBuilding CXX object CMakeFiles/goal_sender.dir/src/goal_sender.cpp.o[0m
+[1.870s] [ 50%] [32mBuilding CXX object CMakeFiles/nav2_orchestrator.dir/src/nav2_orchestrator.cpp.o[0m
+[1.876s] [ 50%] Built target ament_cmake_python_copy_assignment_1_07
+[2.116s] running egg_info
+[2.117s] creating assignment_1_07.egg-info
+[2.142s] writing assignment_1_07.egg-info/PKG-INFO
+[2.142s] writing dependency_links to assignment_1_07.egg-info/dependency_links.txt
+[2.142s] writing top-level names to assignment_1_07.egg-info/top_level.txt
+[2.143s] writing manifest file 'assignment_1_07.egg-info/SOURCES.txt'
+[2.216s] reading manifest file 'assignment_1_07.egg-info/SOURCES.txt'
+[2.217s] writing manifest file 'assignment_1_07.egg-info/SOURCES.txt'
+[2.249s] [ 50%] Built target ament_cmake_python_build_assignment_1_07_egg
+[7.431s] [ 66%] [32m[1mLinking CXX executable nav2_orchestrator[0m
+[7.689s] [ 66%] Built target nav2_orchestrator
+[10.451s] [ 83%] [32m[1mLinking CXX executable goal_sender[0m
+[10.798s] [ 83%] Built target goal_sender
+[11.175s] [100%] [32m[1mLinking CXX executable goal_selector[0m
+[11.505s] [100%] Built target goal_selector
+[11.516s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07 -- -j12 -l12
+[11.518s] Invoking command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07
+[11.526s] -- Install configuration: ""
+[11.526s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/goal_selector
+[11.531s] -- Set non-toolchain portion of runtime path of "/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/goal_selector" to ""
+[11.531s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/goal_sender
+[11.535s] -- Set non-toolchain portion of runtime path of "/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/goal_sender" to ""
+[11.535s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/nav2_orchestrator
+[11.537s] -- Set non-toolchain portion of runtime path of "/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/nav2_orchestrator" to ""
+[11.537s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/pythonpath.sh
+[11.537s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/pythonpath.dsv
+[11.537s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info
+[11.537s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info/top_level.txt
+[11.537s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info/PKG-INFO
+[11.538s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info/dependency_links.txt
+[11.538s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07-0.0.0-py3.12.egg-info/SOURCES.txt
+[11.538s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07
+[11.538s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07/__init__.py
+[11.538s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07/table_detection_node.py
+[11.570s] Listing '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07'...
+[11.570s] Compiling '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07/__init__.py'...
+[11.570s] Compiling '/home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/python3.12/site-packages/assignment_1_07/table_detection_node.py'...
+[11.574s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/lib/assignment_1_07/table_detection_node.py
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07//launch
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07//launch/global.launch.py
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07//config
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07//config/apriltag_params.yaml
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/ament_index/resource_index/package_run_dependencies/assignment_1_07
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/ament_index/resource_index/parent_prefix_path/assignment_1_07
+[11.575s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.sh
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/ament_prefix_path.dsv
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/path.sh
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/environment/path.dsv
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/local_setup.bash
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/local_setup.sh
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/local_setup.zsh
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/local_setup.dsv
+[11.576s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.dsv
+[11.577s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/ament_index/resource_index/packages/assignment_1_07
+[11.577s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config.cmake
+[11.577s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/cmake/assignment_1_07Config-version.cmake
+[11.577s] -- Installing: /home/salvatore/Desktop/IR_assignment_1_07/install/assignment_1_07/share/assignment_1_07/package.xml
+[11.579s] Invoked command in '/home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/salvatore/Desktop/IR_assignment_1_07/build/assignment_1_07

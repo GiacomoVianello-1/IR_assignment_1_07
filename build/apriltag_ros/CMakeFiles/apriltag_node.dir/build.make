@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros
+CMAKE_SOURCE_DIR = /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros
+CMAKE_BINARY_DIR = /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros
 
 # Include any dependencies generated for this target.
 include CMakeFiles/apriltag_node.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/apriltag_node.dir/flags.make
 CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o: CMakeFiles/apriltag_node.dir/flags.make
 CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o: rclcpp_components/node_main_apriltag_node.cpp
 CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o: CMakeFiles/apriltag_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o -MF CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o.d -o CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o -c /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o -MF CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o.d -o CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.o -c /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp
 
 CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp > CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp > CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.i
 
 CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp -o CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/rclcpp_components/node_main_apriltag_node.cpp -o CMakeFiles/apriltag_node.dir/rclcpp_components/node_main_apriltag_node.cpp.s
 
 # Object files for target apriltag_node
 apriltag_node_OBJECTS = \
@@ -161,7 +161,7 @@ apriltag_node: /opt/ros/jazzy/lib/libtracetools.so
 apriltag_node: /opt/ros/jazzy/lib/librcl_logging_interface.so
 apriltag_node: /opt/ros/jazzy/lib/librcutils.so
 apriltag_node: CMakeFiles/apriltag_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable apriltag_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable apriltag_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/apriltag_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -173,6 +173,6 @@ CMakeFiles/apriltag_node.dir/clean:
 .PHONY : CMakeFiles/apriltag_node.dir/clean
 
 CMakeFiles/apriltag_node.dir/depend:
-	cd /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/src/ir_2526/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros /home/giacomo/IR_LABS/Assignments/ws_07_assignments/build/apriltag_ros/CMakeFiles/apriltag_node.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/src/ir_2526/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros /home/salvatore/Desktop/IR_assignment_1_07/build/apriltag_ros/CMakeFiles/apriltag_node.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/apriltag_node.dir/depend
 
