@@ -4,6 +4,8 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 
+
+// ========= GoalSender Node =============
 class GoalSender : public rclcpp::Node {
 public:
   using NavigateToPose = nav2_msgs::action::NavigateToPose;
@@ -43,13 +45,13 @@ private:
       goal_in_progress_ = false;
       switch (result.code) {
         case rclcpp_action::ResultCode::SUCCEEDED:
-          RCLCPP_INFO(get_logger(), "Navigation succeeded!");
+          RCLCPP_INFO(get_logger(), "✅ Navigation succeeded!"); // Add some emoji to distinguish success, failure, and cancellation in the logs
           break;
         case rclcpp_action::ResultCode::ABORTED:
-          RCLCPP_ERROR(get_logger(), "Navigation aborted");
+          RCLCPP_ERROR(get_logger(), "⚠️ Navigation aborted");
           break;
         case rclcpp_action::ResultCode::CANCELED:
-          RCLCPP_WARN(get_logger(), "Navigation canceled");
+          RCLCPP_WARN(get_logger(), "❌ Navigation canceled"); 
           break;
         default:
           RCLCPP_ERROR(get_logger(), "Unknown result code");
@@ -63,7 +65,8 @@ private:
   rclcpp_action::Client<NavigateToPose>::SharedPtr action_client_;
   rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr goal_sub_;
   bool goal_in_progress_;
-};
+
+}; // End of GoalSender Node
 
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);

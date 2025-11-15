@@ -10,7 +10,7 @@
 
 using namespace std::chrono_literals;
 
-// === Nav2 Orchestrator Node ===
+// ========== Nav2Orchestrator Node =============
 class Nav2Orchestrator : public rclcpp::Node{
 public:Nav2Orchestrator(): Node("nav2_orchestrator"){
     init_x_ = this->declare_parameter<double>("initial_x", 0.0);

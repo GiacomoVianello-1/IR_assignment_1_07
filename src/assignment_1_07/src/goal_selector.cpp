@@ -12,21 +12,18 @@
 
 using namespace std::chrono_literals;
 
+// ========== GoalSelector Node =============
 class GoalSelector : public rclcpp::Node {
 public:
-  GoalSelector()
-  : Node("goal_selector"),
-    tf_buffer_(this->get_clock()),
-    tf_listener_(tf_buffer_),
-    goal_computed_(false)
-  {
+  GoalSelector(): Node("goal_selector"), tf_buffer_(this->get_clock()), tf_listener_(tf_buffer_), goal_computed_(false){
+
     detections_sub_ = this->create_subscription<apriltag_msgs::msg::AprilTagDetectionArray>(
       "/detections", 10,
       std::bind(&GoalSelector::detectionsCallback, this, std::placeholders::_1));
 
     goal_pub_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("/goal_pose_raw", 10);
 
-    // Timer per ripubblicare periodicamente il goal (ogni 5 secondi)
+    // Timer to publish goal at 5 seconds interval
     publish_timer_ = this->create_wall_timer(
       5s,
       std::bind(&GoalSelector::publishGoal, this));
@@ -73,7 +70,7 @@ private:
       return;
     }
 
-    // Calcola il goal come punto medio
+    // Compute goal as midpoint between first two tag poses
     current_goal_.header.stamp = now();
     current_goal_.header.frame_id = target_frame_;
     current_goal_.pose.position.x = (tag_poses[0].pose.position.x + tag_poses[1].pose.position.x) / 2.0;
@@ -82,8 +79,7 @@ private:
     current_goal_.pose.orientation.w = 1.0;
 
     goal_computed_ = true;
-    RCLCPP_INFO(get_logger(), "Goal computed at (%.3f, %.3f)", 
-                current_goal_.pose.position.x, current_goal_.pose.position.y);
+    // RCLCPP_INFO(get_logger(), "Goal computed at (%.3f, %.3f)", current_goal_.pose.position.x, current_goal_.pose.position.y);
   }
 
   void publishGoal() {
@@ -109,7 +105,8 @@ private:
 
   bool goal_computed_;
   geometry_msgs::msg::PoseStamped current_goal_;
-};
+  
+}; // End of GoalSelector Node
 
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
