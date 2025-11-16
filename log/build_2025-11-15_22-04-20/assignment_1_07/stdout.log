@@ -1,3 +1,0 @@
-[ 16%] [32mBuilding CXX object CMakeFiles/goal_sender.dir/src/goal_sender.cpp.o[0m
-[ 50%] Built target nav2_orchestrator
-[ 83%] Built target goal_selector
