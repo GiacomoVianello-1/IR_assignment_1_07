@@ -5,6 +5,7 @@
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "assignment_1_07/srv/get_goal.hpp"
+#include "std_msgs/msg/bool.hpp"
 
 using namespace std::chrono_literals;
 
@@ -13,27 +14,46 @@ public:
   using NavigateToPose = nav2_msgs::action::NavigateToPose;
   using GoalHandleNavigateToPose = rclcpp_action::ClientGoalHandle<NavigateToPose>;
 
-  GoalSender() : Node("goal_sender"), goal_in_progress_(false) {
+  GoalSender() : Node("goal_sender"), goal_in_progress_(false), nav2_ready_(false) {
     // Action client for Nav2
     action_client_ = rclcpp_action::create_client<NavigateToPose>(this, "navigate_to_pose");
 
     // Client for the GetGoal service
     goal_client_ = this->create_client<assignment_1_07::srv::GetGoal>("/get_goal");
 
+    // Subscription al segnale dell’orchestrator
+    nav2_ready_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+      "/nav2_ready", 10,
+      [this](const std_msgs::msg::Bool::SharedPtr msg) {
+        nav2_ready_ = msg->data;
+        RCLCPP_INFO(this->get_logger(), "Nav2 ready = %s", nav2_ready_ ? "true" : "false");
+      });
+
     // Declare parameters for tag IDs
     tag_id_1_ = this->declare_parameter<int>("tag_id_1", 1);
     tag_id_2_ = this->declare_parameter<int>("tag_id_2", 10);
 
-    // Request a goal every 2 seconds until successful
+    // Timer to periodically request goals
     timer_ = this->create_wall_timer(2s, std::bind(&GoalSender::requestGoal, this));
 
     RCLCPP_INFO(get_logger(), "✅ GoalSender ready (tag1=%d, tag2=%d)", tag_id_1_, tag_id_2_);
   }
 
-
 private:
   void requestGoal() {
-    if (!goal_client_->wait_for_service(5s)) {
+    // Wait for Nav2 readiness
+    if (!nav2_ready_) {
+      RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator signal...");
+      return;
+    }
+
+    // Don't request a new goal if one is in progress
+    if (goal_in_progress_) {
+      RCLCPP_DEBUG(get_logger(), "Navigation in progress, skipping goal request.");
+      return;
+    }
+
+    if (!goal_client_->wait_for_service(1s)) {
       RCLCPP_WARN(get_logger(), "⚠️ Service /get_goal not available yet.");
       return;
     }
@@ -50,35 +70,46 @@ private:
           RCLCPP_WARN(get_logger(), "⚠️ Goal request failed: %s", result->message.c_str());
           return;
         }
+
+        // Avoid sending the same goal repeatedly
+        double dx = result->goal.pose.position.x - last_goal_.pose.position.x;
+        double dy = result->goal.pose.position.y - last_goal_.pose.position.y;
+        if (std::hypot(dx, dy) < 0.1) {
+          RCLCPP_DEBUG(get_logger(), "Goal unchanged, skipping.");
+          return;
+        }
+
+        last_goal_ = result->goal;
         sendGoal(result->goal);
       }
     );
-
-    timer_->cancel();
   }
 
   void sendGoal(const geometry_msgs::msg::PoseStamped &goal_msg){
-    if (goal_in_progress_) {
-      RCLCPP_WARN(get_logger(), "⚠️ Goal already in progress");
+    if (!nav2_ready_) {
+      RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready, skipping goal send.");
       return;
     }
 
-    if (!action_client_->wait_for_action_server(5s)) {
+    if (goal_in_progress_) {
+      RCLCPP_DEBUG(get_logger(), "⚠️ Goal already in progress");
+      return;
+    }
+
+    if (!action_client_->wait_for_action_server(1s)) {
       RCLCPP_ERROR(get_logger(), "❌ NavigateToPose action server not available");
       return;
     }
 
     RCLCPP_INFO(get_logger(),
-      "📨 Sending goal: (%.2f, %.2f, %.2f) in frame %s",
+      "📨 Sending goal: (%.2f, %.2f) in frame %s",
       goal_msg.pose.position.x,
       goal_msg.pose.position.y,
-      goal_msg.pose.position.z,
       goal_msg.header.frame_id.c_str()
     );
 
     goal_in_progress_ = true;
 
-    // Build the goal for Nav2
     NavigateToPose::Goal nav_goal;
     nav_goal.pose = goal_msg;
 
@@ -90,7 +121,8 @@ private:
 
         switch (result.code) {
           case rclcpp_action::ResultCode::SUCCEEDED:
-            RCLCPP_INFO(get_logger(), "🎯 Navigation succeeded!");
+            RCLCPP_INFO(get_logger(), "🎯 Navigation succeeded! Shut down nodes");
+            rclcpp::shutdown(); // Optional: shut down after reaching goal
             break;
           case rclcpp_action::ResultCode::ABORTED:
             RCLCPP_ERROR(get_logger(), "⚠️ Navigation aborted");
@@ -104,17 +136,19 @@ private:
         }
       };
 
-      // Send the goal to Nav2
-      action_client_->async_send_goal(nav_goal, options);
-    }
-  
+    action_client_->async_send_goal(nav_goal, options);
+  }
+
   // Parameters 
   int tag_id_1_;
   int tag_id_2_;
   rclcpp_action::Client<NavigateToPose>::SharedPtr action_client_;
   rclcpp::Client<assignment_1_07::srv::GetGoal>::SharedPtr goal_client_;
+  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_ready_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
   bool goal_in_progress_;
+  bool nav2_ready_;
+  geometry_msgs::msg::PoseStamped last_goal_;
 };
 
 int main(int argc, char **argv){
