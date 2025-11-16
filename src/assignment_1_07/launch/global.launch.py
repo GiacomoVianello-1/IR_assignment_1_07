@@ -66,7 +66,24 @@ def generate_launch_description():
             }]
         ),
 
-        # Python Nodes - - - - - - - - - - - - - - -
+        # Goal sender node: Delayed start to ensure everything else is up and running
+        TimerAction(
+            period=10.0,
+            actions=[
+                Node(
+                    package='assignment_1_07',
+                    executable='goal_sender',
+                    name='goal_sender',
+                    output='screen',
+                    parameters=[{
+                        'tag_id_1': 1,                  # first tag
+                        'tag_id_2': 10                  # second tag
+                    }]  
+                )
+            ]
+        ),
+
+                # Python Nodes - - - - - - - - - - - - - - -
         Node(
             package='assignment_1_07',
             executable='table_detection_node.py',
@@ -89,20 +106,4 @@ def generate_launch_description():
         ),
 
 
-        # Goal sender node: Delayed start to ensure everything else is up and running
-        TimerAction(
-            period=6.0,
-            actions=[
-                Node(
-                    package='assignment_1_07',
-                    executable='goal_sender',
-                    name='goal_sender',
-                    output='screen',
-                    parameters=[{
-                        'tag_id_1': 1,                  # first tag
-                        'tag_id_2': 10                  # second tag
-                    }]  
-                )
-            ]
-        )
     ])
