@@ -14,7 +14,6 @@
   <!-- Build and exec dependencies -->
 
   <depend>rclpy</depend>
-  <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
   <!-- Vision -->
   <depend>cv_bridge</depend>
