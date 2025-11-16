@@ -59,8 +59,8 @@ This launch file orchestrates the whole assignment setup. Specifically, it:
 - Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
 - Starts the **AprilTag detection node** with the correct topic remappings and parameters.
 - Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL.
-- Launches our **Goal Selector node**, which computes navigation goals from detected tags and republishes them every 5 seconds.
-- Launches the **Goal Sender node**, which listens to `/goal_pose_raw` and sends the goal to Nav2 via the `navigate_to_pose` action.
+- Launches the **Goal Selector node**, which works using both TF lookups of detected tags and a **custom service** to deliver the computed goal to other  nodes.
+- Launches the **Goal Sender node**, which calls the `/get_current_goal` service, retrieves the latest computed goal, and sends it through the Nav2 action `navigate_to_pose`.
 - **TO BE COMPLETED**
 
 This way, a single command brings up the entire system, ready for testing and demonstration.
@@ -94,7 +94,7 @@ To confirm that the node is working:
 
 Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt the `odom` frame. 
 
-Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turlebot sensors.
+Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turltebot sensors.
 
 
 ## 🎼 Nav2 Orchestrator Node
@@ -141,23 +141,34 @@ The Goal Selector node reads AprilTag detections and publishes a navigation goal
 
 - **Goal calculation**: computes a goal as the midpoint between two detected tags (first two detections). The published goal is a `geometry_msgs/PoseStamped` in the chosen target frame.
 
-- **Output**: republishes the computed goal every 5 seconds on `/goal_pose_raw` (`geometry_msgs/PoseStamped`). 
+- **Output**: Serves this goal through a **ROS 2 service**
+  ```
+  /get_current_goal    (GetGoal.srv)
+  ```
+  whose interface is
+  ```
+  # Request
+  # empty request
+  ---
+  # Response
+  geometry_msgs/PoseStamped goal
+  ```
+  **Why a service?** Previously, the node published goals periodically to a topic (`/goal_pose_raw`), but this caused synchronization issues. The service-based approach ensures that the GoalSender always receives the most up-to-date goal and no unnecessary topic publishing is required.
 
 ### Parameters
-- **target_frame** (string, default: `"odom"`): frame in which the goal is published and in which TF lookups are performed.
+- **target_frame** (string, default: `"map"`): frame in which the goal is published and in which TF lookups are performed.
 - **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
 - **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
 ## 📡 Goal Sender Node
-
-The Goal Sender node listens to `/goal_pose_raw` and acts as an action client for Nav2. Whenever a new goal is received, it sends it to the `navigate_to_pose` action server, triggering navigation.
+The Goal Sender node is responsible for requesting the latest navigation goal from the Goal Selector and sending it to Nav2 through the `navigate_to_pose` action. It does not subscribe anymore to a topic (`/goal_pose_raw`), as goals are now exchanged deterministically via a service.
 
 ### Behavior and design
-- **Input**: subscribes to `/goal_pose_raw` (`geometry_msgs/PoseStamped`).
-- **Action client**: connects to `navigate_to_pose` (Nav2).
-- **Execution**: sends the goal once, waits for Nav2 to complete, and logs the result (success, aborted, canceled).
+- **Service client**: requests the current goal by calling `/get_current_goal`.
+- **Action client**: connects to Nav2’s `navigate_to_pose` action server.
+- **Execution**: calls the `GetGoal` service to retrieve the most recent `PoseStamped` goal computed by the Goal Selector, sends the goal to Nav2 using the `NavigateToPose` action, waits for the navigation result, and logs the outcome.
 
 This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
 
@@ -232,3 +243,5 @@ It combines **LIDAR-based clustering**, **RGB/Depth camera processing**, and a *
 
 This modular design allows each sensor to contribute complementary information, improving robustness in cluttered environments.
 
+
+This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.

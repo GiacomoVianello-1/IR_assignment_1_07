@@ -98,6 +98,10 @@ def generate_launch_description():
                     executable='goal_sender',
                     name='goal_sender',
                     output='screen',
+                    parameters=[{
+                        'tag_id_1': 1,                  # first tag
+                        'tag_id_2': 10                  # second tag
+                    }]  
                 )
             ]
         )

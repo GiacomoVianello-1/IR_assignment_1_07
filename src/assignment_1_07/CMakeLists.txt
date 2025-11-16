@@ -19,7 +19,13 @@ find_package(apriltag_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 
+# generate service files
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "srv/GetGoal.srv"
+  DEPENDENCIES geometry_msgs
+)
 
 # build goal_selector node
 add_executable(goal_selector src/goal_selector.cpp)
@@ -47,6 +53,9 @@ ament_target_dependencies(goal_sender
   rclcpp_action 
   geometry_msgs 
   nav2_msgs
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
 )
 
 # install executables C++
@@ -76,5 +85,12 @@ install(DIRECTORY launch
 install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}/
 )
+
+# link generated service files
+rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+
+# link the target libraries
+target_link_libraries(goal_selector "${cpp_typesupport_target}")
+target_link_libraries(goal_sender "${cpp_typesupport_target}")
 
 ament_package()
