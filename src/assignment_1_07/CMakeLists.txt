@@ -62,6 +62,8 @@ ament_python_install_package(${PROJECT_NAME})
 # Install Python executables
 install(PROGRAMS
   assignment_1_07/table_detection_node.py
+  assignment_1_07/Detection_Lidar.py
+  assignment_1_07/Detection_Camera.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
