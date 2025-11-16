@@ -1,3 +1,0 @@
-source;share/apriltag_ros/environment/ament_prefix_path.sh
-source;share/apriltag_ros/environment/library_path.sh
-source;share/apriltag_ros/environment/path.sh

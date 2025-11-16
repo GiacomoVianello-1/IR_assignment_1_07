@@ -1,9 +1,0 @@
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/uninstall.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/ir_base_uninstall.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/test.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/edit_cache.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/rebuild_cache.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/list_install_components.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/install.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/install/local.dir
-/home/salvatore/Desktop/IR_assignment_1_07/build/ir_base/CMakeFiles/install/strip.dir
