@@ -58,7 +58,7 @@ ros2 launch assignment_1_07 global.launch.py
 This launch file orchestrates the whole assignment setup. Specifically, it:
 - Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
 - Starts the **AprilTag detection node** with the correct topic remappings and parameters.
-- Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL.
+- Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL, and signals readiness.
 - Launches the **Goal Selector node**, which works using both TF lookups of detected tags and a **custom service** to deliver the computed goal to other  nodes.
 - Launches the **Goal Sender node**, which calls the `/get_current_goal` service, retrieves the latest computed goal, and sends it through the Nav2 action `navigate_to_pose`.
 - **TO BE COMPLETED**
@@ -98,77 +98,77 @@ Notice that the tables (cylindrical objects) are not in field of view of the Cam
 
 
 ## 🎼 Nav2 Orchestrator Node
-The Nav2Orchestrator node automates the initialization of the full navigation stack by interacting directly with the lifecycle managers of both localization and navigation. Instead of requiring manual service calls or user input in RViz, this node ensures that all components are correctly configured and activated in sequence.
+The **Nav2Orchestrator** node automates the initialization of the full navigation stack by interacting directly with the lifecycle managers of both localization and navigation. Instead of requiring manual service calls or user input in RViz, this node ensures that all components are correctly configured and activated in sequence, and publishes a readiness signal for the rest of the system.
 
 ### Behavior and design
 
-Our design is motivated by a key observation: after activating the localization stack via `/lifecycle_manager_localization/manage_nodes`, the navigation lifecycle manager (server) will reject a `STARTUP` request (`success=False`) if the system has not yet received a valid initial pose estimate. We have no clue on why this happens, but, to address this, we structured the orchestrator in 4 execution steps:
-1. Start localization lifecycle manager.
-2. Publish the initial pose to AMCL.
-3. Wait briefly for AMCL to process the initial pose.
-4. Start navigation lifecycle manager.
+Our design is motivated by a key observation: after activating the localization stack via `/lifecycle_manager_localization/manage_nodes`, the navigation lifecycle manager will reject a `STARTUP` request (`success=false`) if the system has not yet received a valid initial pose estimate. To address this, the orchestrator executes the following four steps:
 
-More in detail, we addressed:
-- **Lifecycle management**: 
-  - Connects to `/lifecycle_manager_localization/manage_nodes` and `/lifecycle_manager_navigation/manage_nodes`.
-  - Sends `STARTUP` commands to bring all managed nodes into the `active` state.
+1. Start the localization lifecycle manager.  
+2. Publish the initial pose to AMCL.  
+3. Wait briefly for AMCL to process the initial pose.  
+4. Start the navigation lifecycle manager.  
 
-- **Initial pose publication**:
-  - Publishes a `geometry_msgs/PoseWithCovarianceStamped` message on `/initialpose` immediately after localization is started.
-  - This initializes AMCL without requiring the user to manually set the “2D Pose Estimate” in RViz.
-  - The pose (x, y, yaw) can be customized via ROS parameters.
+Once both lifecycle managers report success, the orchestrator publishes a `std_msgs/Bool` message on the topic `/nav2_ready`. This signal is used by the **GoalSelector** and **GoalSender** nodes to activate their logic only when Nav2 is fully operational.
 
-Additionally, the node includes configurable timeouts for service discovery and service calls, along with detailed logging for each lifecycle transition and initial pose publication. This design guarantees that the navigation stack is only activated once localization is stable, resulting in a more reliable and fully automated startup procedure.
+### Features
+- **Lifecycle management**: connects to `/lifecycle_manager_localization/manage_nodes` and `/lifecycle_manager_navigation/manage_nodes`, sending `STARTUP` commands to bring all managed nodes into the `active` state.  
+- **Initial pose publication**: publishes a `geometry_msgs/PoseWithCovarianceStamped` message on `/initialpose` immediately after localization is started, initializing AMCL without requiring manual input in RViz.  
+- **Readiness signal**: publishes `/nav2_ready` once localization and navigation are active, ensuring deterministic synchronization with other nodes.  
 
 ### Parameters
-
-- **initial_x** (double, default: 0.0): X coordinate of the initial pose in the map frame.
-- **initial_y** (double, default: 0.0): Y coordinate of the initial pose in the map frame.
-- **initial_yaw** (double, default: 0.0): Orientation (yaw, in radians) of the initial pose.
-- **service_wait_timeout_sec** (double, default: 10.0): Maximum time to wait for lifecycle services to become available.
-- **call_timeout_sec** (double, default: 10.0): Maximum time to wait for a lifecycle service call to complete.
+- **initial_x** (double, default: 0.0): X coordinate of the initial pose in the map frame.  
+- **initial_y** (double, default: 0.0): Y coordinate of the initial pose in the map frame.  
+- **initial_yaw** (double, default: 0.0): Orientation (yaw, in radians) of the initial pose.  
+- **service_wait_timeout_sec** (double, default: 10.0): Maximum time to wait for lifecycle services to become available.  
+- **call_timeout_sec** (double, default: 10.0): Maximum time to wait for a lifecycle service call to complete.  
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
+This design guarantees that the navigation stack is only activated once localization is stable, and that dependent nodes (GoalSelector and GoalSender) start working only after Nav2 is fully ready, resulting in a reliable and fully automated startup procedure.
 
 ## 🎯 Goal Selector Node
-The Goal Selector node reads AprilTag detections and publishes a navigation goal computed from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` (preferred) and the `/detections` topic.
+The **Goal Selector** node reads AprilTag detections and computes a navigation goal from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` and the `/detections` topic.
 
 ### Behavior and design
-- **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.
-
-- **Pose acquisition**: obtains each tag pose by doing a TF lookup from the configured target_frame (`odom` or `map`) to the tag frame (e.g. `tag36h11:1`).
-
-- **Goal calculation**: computes a goal as the midpoint between two detected tags (first two detections). The published goal is a `geometry_msgs/PoseStamped` in the chosen target frame.
-
-- **Output**: Serves this goal through a **ROS 2 service**
+- **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.  
+- **Pose acquisition**: obtains each tag pose by performing a TF lookup from the configured `target_frame` (`map` or `odom`) to the tag frame (e.g. `tag36h11:1`).  
+- **Goal calculation**: computes a goal as the midpoint between two specified tags. The result is a `geometry_msgs/PoseStamped` in the chosen target frame.  
+- **Output**: exposes this goal through a **ROS 2 service**:
   ```
   /get_current_goal    (GetGoal.srv)
   ```
   whose interface is
   ```
   # Request
-  # empty request
+  int32 tag_id_1
+  int32 tag_id_2
   ---
   # Response
+  bool success
+  string message
   geometry_msgs/PoseStamped goal
   ```
-  **Why a service?** Previously, the node published goals periodically to a topic (`/goal_pose_raw`), but this caused synchronization issues. The service-based approach ensures that the GoalSender always receives the most up-to-date goal and no unnecessary topic publishing is required.
+  **Why a service?** Previously, the node published goals periodically to a topic (`/goal_pose_raw`), which caused synchronization issues. The service-based approach ensures that the GoalSender always receives the most up-to-date goal deterministically, only when requested.
+
+- **Synchronization**: the node subscribes to `/nav2_ready` and rejects service calls until Nav2 is fully operational, ensuring deterministic startup and avoiding invalid goals.
 
 ### Parameters
-- **target_frame** (string, default: `"map"`): frame in which the goal is published and in which TF lookups are performed.
-- **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.
-- **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.
+- **target_frame** (string, default: `"map"`): frame in which the goal is published and in which TF lookups are performed.  
+- **tag_frame_prefix** (string, default: `"tag36h11:"`): prefix used to build the tag frame name from the integer tag ID (prefix + ID, e.g. `tag36h11:1`). Must match the names in `apriltag_node` configuration.  
+- **tf_timeout_sec** (double, default: `0.3`): timeout used when waiting for the TF lookup.  
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
 ## 📡 Goal Sender Node
-The Goal Sender node is responsible for requesting the latest navigation goal from the Goal Selector and sending it to Nav2 through the `navigate_to_pose` action. It does not subscribe anymore to a topic (`/goal_pose_raw`), as goals are now exchanged deterministically via a service.
+The **Goal Sender** node is responsible for requesting the latest navigation goal from the Goal Selector and sending it to Nav2 through the `navigate_to_pose` action. Goals are now exchanged deterministically via a service, eliminating the timing issues of topic-based communication.
 
 ### Behavior and design
-- **Service client**: requests the current goal by calling `/get_current_goal`.
-- **Action client**: connects to Nav2’s `navigate_to_pose` action server.
-- **Execution**: calls the `GetGoal` service to retrieve the most recent `PoseStamped` goal computed by the Goal Selector, sends the goal to Nav2 using the `NavigateToPose` action, waits for the navigation result, and logs the outcome.
+- **Service client**: requests the current goal by calling `/get_goal`.  
+- **Action client**: connects to Nav2’s `navigate_to_pose` action server.  
+- **Synchronization**: subscribes to `/nav2_ready` and remains inactive until Nav2 is fully operational.  
+- **Execution**: when active, calls the `GetGoal` service to retrieve the most recent `PoseStamped` goal computed by the Goal Selector, sends the goal to Nav2 using the `NavigateToPose` action, waits for the navigation result, and logs the outcome.  
+- **Shutdown**: after a successful navigation, the node can optionally call `rclcpp::shutdown()` to stop the system automatically.
 
 This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
 
@@ -245,3 +245,8 @@ This modular design allows each sensor to contribute complementary information, 
 
 
 This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
+### Parameters
+- **tag_id_1** (int, default: `1`): ID of the first tag used to compute the goal.  
+- **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
+
+These parameters can be adjusted in the provided launch file (`global.launch.py`).
