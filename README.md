@@ -172,6 +172,13 @@ The **Goal Sender** node is responsible for requesting the latest navigation goa
 
 This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
 
+This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
+### Parameters
+- **tag_id_1** (int, default: `1`): ID of the first tag used to compute the goal.  
+- **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
+
+These parameters can be adjusted in the provided launch file (`global.launch.py`).
+
 # Table Detection Package
 
 This package implements three ROS2 nodes for obstacle and table detection using TurtleBot3 sensors.  
@@ -244,9 +251,4 @@ It combines **LIDAR-based clustering**, **RGB/Depth camera processing**, and a *
 This modular design allows each sensor to contribute complementary information, improving robustness in cluttered environments.
 
 
-This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
-### Parameters
-- **tag_id_1** (int, default: `1`): ID of the first tag used to compute the goal.  
-- **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
 
-These parameters can be adjusted in the provided launch file (`global.launch.py`).
