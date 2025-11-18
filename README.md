@@ -179,16 +179,10 @@ This service-based design ensures that: the Goal Sender always receives the most
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
-# Table Detection Package
 
-This package implements three ROS2 nodes for obstacle and table detection using TurtleBot3 sensors.  
-It combines **LIDAR-based clustering**, **RGB/Depth camera processing**, and a **fusion node** to detect round tables in the environment.
+# Detection_Lidar Node
 
----
-
-## 1. Detection_Lidar Node
-
-- **Purpose**: Detects small obstacles (e.g., table legs) and wall segments using the onboard LDS LIDAR.  
+- **Purpose**: Detects obstacles and wall segments using the onboard LDS LIDAR.  
 - **Methods**:
   - **DBSCAN** clustering (from `scikit-learn`) to group LIDAR points into obstacles.  
   - **RANSAC** line fitting to robustly extract wall segments.  
@@ -202,53 +196,8 @@ It combines **LIDAR-based clustering**, **RGB/Depth camera processing**, and a *
 > sudo apt install python3-sklearn
 > ```
 
----
+**Nota**: RANSAC algorithm, implemented for detecting walls, will be used for the (Extra) Corridor-Controller-Node without using Nav2.
 
-## 2. Detection_Camera Node
-
-- **Purpose**: Detects obstacles using the TurtleBot’s RGB and Depth camera.  
-- **Methods**:
-  - Uses contours on the RGB image to identify candidate objects.  
-  - Samples depth values from the aligned depth image to estimate 3D positions.  
-  - Transforms detections into `/odom` using TF.  
-- **Outputs**:
-  - Publishes obstacles as `PoseArray` in `/odom`.  
-
-### TurtleBot Sensor Topics
-
-| Sensor       | Topic                                   | Message Type                |
-|--------------|-----------------------------------------|-----------------------------|
-| LIDAR        | `/scan`                                 | `sensor_msgs/msg/LaserScan` |
-| Camera RGB   | `/rgb_camera/image`                     | `sensor_msgs/msg/Image`     |
-| Camera Info  | `/rgb_camera/camera_info`               | `sensor_msgs/msg/CameraInfo`|
-| Camera Depth | `/depth_camera/camera_info`             | `sensor_msgs/msg/CameraInfo`|
-| Depth Image  | `/world/.../depth_image`                | `sensor_msgs/msg/Image`     |
-| IMU          | `/imu`                                  | `sensor_msgs/msg/Imu`       |
-| Odometry     | `/odom`                                 | `nav_msgs/msg/Odometry`     |
-| TF           | `/tf`, `/tf_static`                     | `tf2_msgs/msg/TFMessage`    |
-
----
-
-## 3. TableDetectionNode (Fusion)
-
-- **Purpose**: Fuses obstacle detections from LIDAR and Camera to identify tables.  
-- **Methods**:
-  - Receives `PoseArray` from `/obstacles_odom` (LIDAR) and `/camera_odom` (Camera).  
-  - Associates detections based on spatial proximity.  
-  - Fuses matched detections into a single obstacle position.  
-  - Logs fused obstacles and unmatched detections for debugging.  
-- **Outputs**:
-  - Currently only logs results; can be extended to publish fused `PoseArray`.
-
----
-
-## Summary
-
-- **Detection_Lidar** → DBSCAN + RANSAC for walls and table legs.  
-- **Detection_Camera** → RGB + Depth processing, transformed to `/odom`.  
-- **TableDetectionNode** → Fusion of both sources to detect tables robustly.  
-
-This modular design allows each sensor to contribute complementary information, improving robustness in cluttered environments.
-
+# Corridor_Controller Node
 
 
