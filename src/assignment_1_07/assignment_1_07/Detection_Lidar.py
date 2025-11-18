@@ -6,7 +6,7 @@ from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import PoseArray, Pose
 
 import tf2_ros
-import tf_transformations  # for quaternion → Euler (yaw) conversion if needed
+import tf_transformations  
 from math import cos, sin, sqrt, atan2
 import numpy as np
 from sklearn.cluster import DBSCAN
@@ -237,9 +237,9 @@ class DetectionLidar(Node):
                 pose.orientation.w = 1.0
                 obstacles_src.poses.append(pose)
                 obstacle_points.append((cx, cy))
-                self.get_logger().info(f"Obstacle detected at ({cx:.2f}, {cy:.2f}), diameter={diameter:.2f}")
+                self.get_logger().info(f"Obstacle detected at ({cx:.2f}, {cy:.2f}), diameter={diameter:.2f}m")
 
-        # 2) Detect wall segments via RANSAC on all points (robust line extraction)
+        # 2) Detect wall segments via RANSAC on all points 
         wall_segments = ransac_lines(
             X,
             max_iterations=self.ransac_max_iter,
@@ -270,7 +270,7 @@ class DetectionLidar(Node):
         if walls_src.poses:
             self.pub_walls_src.publish(walls_src)
 
-        # 3) Transform both PoseArrays to odom frame (manual SE(2) for robustness)
+        # 3) Transform both PoseArrays to odom frame 
         try:
             transform = self.tf_buffer.lookup_transform(
                 'odom', obstacles_src.header.frame_id, rclpy.time.Time()

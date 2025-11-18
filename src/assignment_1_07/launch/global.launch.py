@@ -77,27 +77,6 @@ def generate_launch_description():
                 'tag_id_1': 1,          # first tag
                 'tag_id_2': 10          # second tag
             }]  
-        ),
-
-        Node(
-            package='assignment_1_07',
-            executable='table_detection_node.py',
-            name='table_detection_node',
-            output='screen',
-        ),
-
-        Node(
-            package='assignment_1_07',
-            executable='Detection_Camera.py',
-            name='Detection_Camera',
-            output='screen',
-        ),
-
-        Node(
-            package='assignment_1_07',
-            executable='Detection_Lidar.py',
-            name='Detection_Lidar',
-            output='screen',
         )
 
     ])
