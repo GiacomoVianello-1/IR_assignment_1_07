@@ -86,12 +86,10 @@ def generate_launch_description():
                 'tag_id_2': 10          # second tag
             }]  
         ),
-
-
-        # Detection lidar node
+        
         Node(
             package='assignment_1_07',
-            executable='Detection_Lidar',
+            executable='Detection_Lidar.py',
             name='Detection_Lidar',
             output='screen'
         )
