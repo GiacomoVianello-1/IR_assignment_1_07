@@ -16,7 +16,8 @@ public:
   : Node("goal_selector"),
     tf_buffer_(this->get_clock()),
     tf_listener_(tf_buffer_),
-    nav2_ready_(false)
+    nav2_ready_(false),
+    nav2_enable_(true)   // ✅ inizializzato a true per default
   {
     // Subscription to AprilTag detections for logging purposes
     detections_sub_ = this->create_subscription<apriltag_msgs::msg::AprilTagDetectionArray>(
@@ -37,6 +38,14 @@ public:
         RCLCPP_INFO(this->get_logger(), "Nav2 ready = %s", nav2_ready_ ? "true" : "false");
       });
 
+    // Subscription to Nav2 enable signal (Corridor_Controller)
+    nav2_enable_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+      "/nav2_enable", 10,
+      [this](const std_msgs::msg::Bool::SharedPtr msg) {
+        nav2_enable_ = msg->data;
+        RCLCPP_INFO(this->get_logger(), "Nav2 enable = %s", nav2_enable_ ? "true" : "false");
+      });
+
     target_frame_     = this->declare_parameter<std::string>("target_frame", "map");
     tag_frame_prefix_ = this->declare_parameter<std::string>("tag_frame_prefix", "tag36h11:");
     tf_timeout_sec_   = this->declare_parameter<double>("tf_timeout_sec", 0.3);
@@ -53,10 +62,10 @@ private:
     const std::shared_ptr<assignment_1_07::srv::GetGoal::Request> request,
     std::shared_ptr<assignment_1_07::srv::GetGoal::Response> response)
   {
-    if (!nav2_ready_) {
+    if (!nav2_ready_ || !nav2_enable_) {
       response->success = false;
-      response->message = "Nav2 not ready yet";
-      RCLCPP_WARN(get_logger(), "Service call rejected: Nav2 not ready.");
+      response->message = "Nav2 not ready or disabled";
+      RCLCPP_WARN(get_logger(), "Service call rejected: Nav2 not ready or disabled.");
       return;
     }
 
@@ -91,6 +100,7 @@ private:
   rclcpp::Subscription<apriltag_msgs::msg::AprilTagDetectionArray>::SharedPtr detections_sub_;
   rclcpp::Service<assignment_1_07::srv::GetGoal>::SharedPtr goal_service_;
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_ready_sub_;
+  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_enable_sub_;
   tf2_ros::Buffer tf_buffer_;
   tf2_ros::TransformListener tf_listener_;
 
@@ -99,6 +109,7 @@ private:
   double tf_timeout_sec_;
 
   bool nav2_ready_;
+  bool nav2_enable_;
 };
 
 int main(int argc, char **argv){

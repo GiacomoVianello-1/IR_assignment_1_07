@@ -200,4 +200,18 @@ These parameters can be adjusted in the provided launch file (`global.launch.py`
 
 # Corridor_Controller Node
 
+The `Corridor_Controller` node implements a simple supervisory logic for navigation inside corridors:
 
+- **Input:** It subscribes to the topic `table_detection/walls_odom`, which publishes wall segments detected by the LIDAR using RANSAC.
+- **Corridor detection:** When exactly **two walls** are detected, the robot is assumed to be inside a corridor. In this state:
+  - Nav2 is disabled.
+  - The node publishes forward velocity commands (`cmd_vel`) to drive the robot straight along the corridor.
+- **Corridor exit:** When **more than two walls** are detected, the corridor is considered finished. In this state:
+  - The node stops manual control.
+  - Nav2 is re-enabled to resume normal navigation.
+- **Robustness:** To avoid oscillations due to noisy detections, the node requires the condition (two walls or more than two walls) to be stable for several consecutive cycles before switching states.
+- **Outputs:**
+  - `cmd_vel` → velocity commands during corridor traversal.
+  - `nav2_enable` (Bool) → flag to enable/disable Nav2 depending on corridor state.
+
+This design ensures that the robot moves forward reliably inside corridors without obstacles, and hands control back to Nav2 once the corridor ends.

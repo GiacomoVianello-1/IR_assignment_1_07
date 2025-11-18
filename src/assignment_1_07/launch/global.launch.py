@@ -1,6 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription, TimerAction
+from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -66,8 +66,16 @@ def generate_launch_description():
             }]
         ),
 
-        # Goal sender node: Delayed start to ensure everything else is up and running
-        
+        # Corridor controller node
+        Node(
+            package='assignment_1_07',
+            executable='Corridor_Controller.py',
+            name='corridor_controller',
+            output='screen'
+        ),
+
+
+        # Goal sender node
         Node(
             package='assignment_1_07',
             executable='goal_sender',
@@ -77,6 +85,14 @@ def generate_launch_description():
                 'tag_id_1': 1,          # first tag
                 'tag_id_2': 10          # second tag
             }]  
-        )
+        ),
 
+
+        # Detection lidar node
+        Node(
+            package='assignment_1_07',
+            executable='Detection_Lidar',
+            name='Detection_Lidar',
+            output='screen'
+        )
     ])

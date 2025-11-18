@@ -14,7 +14,7 @@ public:
   using NavigateToPose = nav2_msgs::action::NavigateToPose;
   using GoalHandleNavigateToPose = rclcpp_action::ClientGoalHandle<NavigateToPose>;
 
-  GoalSender() : Node("goal_sender"), goal_in_progress_(false), nav2_ready_(false) {
+  GoalSender() : Node("goal_sender"), goal_in_progress_(false), nav2_ready_(false), nav2_enable_(true) {
     // Action client for Nav2
     action_client_ = rclcpp_action::create_client<NavigateToPose>(this, "navigate_to_pose");
 
@@ -29,6 +29,14 @@ public:
         RCLCPP_INFO(this->get_logger(), "Nav2 ready = %s", nav2_ready_ ? "true" : "false");
       });
 
+    // Subscription al segnale di abilitazione (Corridor_Controller)
+    nav2_enable_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+      "/nav2_enable", 10,
+      [this](const std_msgs::msg::Bool::SharedPtr msg) {
+        nav2_enable_ = msg->data;
+        RCLCPP_INFO(this->get_logger(), "Nav2 enable = %s", nav2_enable_ ? "true" : "false");
+      });
+
     // Declare parameters for tag IDs
     tag_id_1_ = this->declare_parameter<int>("tag_id_1", 1);
     tag_id_2_ = this->declare_parameter<int>("tag_id_2", 10);
@@ -41,9 +49,9 @@ public:
 
 private:
   void requestGoal() {
-    // Wait for Nav2 readiness
-    if (!nav2_ready_) {
-      RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator signal...");
+    // Wait for Nav2 readiness and enable
+    if (!nav2_ready_ || !nav2_enable_) {
+      RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator/enable signal...");
       return;
     }
 
@@ -86,8 +94,8 @@ private:
   }
 
   void sendGoal(const geometry_msgs::msg::PoseStamped &goal_msg){
-    if (!nav2_ready_) {
-      RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready, skipping goal send.");
+    if (!nav2_ready_ || !nav2_enable_) {
+      RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready or disabled, skipping goal send.");
       return;
     }
 
@@ -145,9 +153,11 @@ private:
   rclcpp_action::Client<NavigateToPose>::SharedPtr action_client_;
   rclcpp::Client<assignment_1_07::srv::GetGoal>::SharedPtr goal_client_;
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_ready_sub_;
+  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_enable_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
   bool goal_in_progress_;
   bool nav2_ready_;
+  bool nav2_enable_;
   geometry_msgs::msg::PoseStamped last_goal_;
 };
 
