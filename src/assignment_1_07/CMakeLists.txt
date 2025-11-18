@@ -14,10 +14,10 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(apriltag_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 # generate service files
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -56,11 +56,20 @@ ament_target_dependencies(goal_sender
   tf2_geometry_msgs
 )
 
+# build cancel_nav2_goal node
+add_executable(cancel_nav2_goal src/cancel_nav2_goal.cpp)
+ament_target_dependencies(cancel_nav2_goal 
+  rclcpp 
+  rclcpp_action 
+  nav2_msgs
+)
+
 # install executables
 install(TARGETS
   goal_selector
   goal_sender
   nav2_orchestrator
+  cancel_nav2_goal
   DESTINATION lib/${PROJECT_NAME}/
 )
 

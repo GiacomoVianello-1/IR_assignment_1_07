@@ -80,6 +80,5 @@ def generate_launch_description():
                 'tag_id_1': 1,          # first tag
                 'tag_id_2': 10          # second tag
             }]  
-        )
-
+        ),
     ])
