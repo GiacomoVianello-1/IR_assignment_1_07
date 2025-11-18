@@ -42,19 +42,19 @@ Python executables must include the shebang:
 ```
 #!/usr/bin/env python3
 ```
-#!/usr/bin/env python3
-```
+
+
 
 ## 🏃‍♂️‍➡️ Run the Project
 The first step is to build and source the entire ROS 2 workspace:
-```
+
 colcon build
 source install/setup.bash
-```
+
 To run our project, we provide a structured and configurable launch file called `global.launch.py`. It can be started with:
-```
+
 ros2 launch assignment_1_07 global.launch.py
-```
+
 This launch file orchestrates the whole assignment setup. Specifically, it:
 - Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
 - Starts the **AprilTag detection node** with the correct topic remappings and parameters.
