@@ -13,15 +13,23 @@ using namespace std::chrono_literals;
 class Nav2Orchestrator : public rclcpp::Node {
 public:
   Nav2Orchestrator() : Node("nav2_orchestrator") {
-    init_x_ = this->declare_parameter<double>("initial_x", 0.0);
-    init_y_ = this->declare_parameter<double>("initial_y", 0.0);
+    // Declare parameters for initial pose
+    init_x_   = this->declare_parameter<double>("initial_x", 0.0);
+    init_y_   = this->declare_parameter<double>("initial_y", 0.0);
     init_yaw_ = this->declare_parameter<double>("initial_yaw", 0.0);
 
+    // Declare parameters for covariance
+    cov_x_   = this->declare_parameter<double>("covariance_x", 0.5);
+    cov_y_   = this->declare_parameter<double>("covariance_y", 0.5);
+    cov_yaw_ = this->declare_parameter<double>("covariance_yaw", 0.1);
+
+    // Create clients for lifecycle managers (localization and navigation)
     cli_localization_ = this->create_client<nav2_msgs::srv::ManageLifecycleNodes>(
       "/lifecycle_manager_localization/manage_nodes");
     cli_navigation_ = this->create_client<nav2_msgs::srv::ManageLifecycleNodes>(
       "/lifecycle_manager_navigation/manage_nodes");
-
+    
+    // Create publishers to publish initial pose and readiness
     initpose_pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/initialpose", 10);
     ready_pub_    = this->create_publisher<std_msgs::msg::Bool>("/nav2_ready", 1);
   }
@@ -45,8 +53,7 @@ public:
   }
 
 private:
-  bool send_startup(const rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr &cli,
-                    const std::string &name) {
+  bool send_startup(const rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr &cli, const std::string &name) {
     if (!cli->wait_for_service(10s)) {
       RCLCPP_ERROR(get_logger(), "Service %s not available", name.c_str());
       return false;
@@ -54,11 +61,9 @@ private:
     auto req = std::make_shared<nav2_msgs::srv::ManageLifecycleNodes::Request>();
     req->command = nav2_msgs::srv::ManageLifecycleNodes::Request::STARTUP;
     auto fut = cli->async_send_request(req);
-    if (rclcpp::spin_until_future_complete(shared_from_this(), fut) ==
-        rclcpp::FutureReturnCode::SUCCESS) {
+    if (rclcpp::spin_until_future_complete(shared_from_this(), fut) == rclcpp::FutureReturnCode::SUCCESS) {
       auto res = fut.get();
-      RCLCPP_INFO(get_logger(), "STARTUP on %s -> success=%s",
-                  name.c_str(), res->success ? "true" : "false");
+      RCLCPP_INFO(get_logger(), "STARTUP on %s -> success=%s", name.c_str(), res->success ? "true" : "false");
       return res->success;
     }
     return false;
@@ -72,11 +77,20 @@ private:
     msg.pose.pose.position.y = init_y_;
     msg.pose.pose.orientation.w = std::cos(init_yaw_ / 2.0);
     msg.pose.pose.orientation.z = std::sin(init_yaw_ / 2.0);
+
+    // Covariance matrix (only x, y, yaw)
+    msg.pose.covariance[0]  = cov_x_;   // varianza su x
+    msg.pose.covariance[7]  = cov_y_;   // varianza su y
+    msg.pose.covariance[35] = cov_yaw_; // varianza su yaw
+
     initpose_pub_->publish(msg);
-    RCLCPP_INFO(get_logger(), "Initial pose published: x=%.2f y=%.2f yaw=%.2f rad", init_x_, init_y_, init_yaw_);
+    RCLCPP_INFO(get_logger(),
+      "Initial pose published: x=%.2f y=%.2f yaw=%.2f rad (cov: x=%.3f, y=%.3f, yaw=%.3f)",
+      init_x_, init_y_, init_yaw_, cov_x_, cov_y_, cov_yaw_);
   }
 
   double init_x_, init_y_, init_yaw_;
+  double cov_x_, cov_y_, cov_yaw_;
   rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr cli_localization_;
   rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr cli_navigation_;
   rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr initpose_pub_;

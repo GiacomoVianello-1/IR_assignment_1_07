@@ -14,19 +14,38 @@ public:
   using NavigateToPose = nav2_msgs::action::NavigateToPose;
   using GoalHandleNavigateToPose = rclcpp_action::ClientGoalHandle<NavigateToPose>;
 
-  GoalSender() : Node("goal_sender"), goal_in_progress_(false), nav2_ready_(false), nav2_enable_(true) {
+  GoalSender() : 
+    Node("goal_sender"), 
+    goal_in_progress_(false), 
+    nav2_ready_(false),
+    paused_(false) 
+    {
     // Action client for Nav2
     action_client_ = rclcpp_action::create_client<NavigateToPose>(this, "navigate_to_pose");
 
     // Client for the GetGoal service
     goal_client_ = this->create_client<assignment_1_07::srv::GetGoal>("/get_goal");
 
-    // Subscription al segnale dell’orchestrator
+    // Subscription to the Nav2 readiness topic
     nav2_ready_sub_ = this->create_subscription<std_msgs::msg::Bool>(
       "/nav2_ready", 10,
       [this](const std_msgs::msg::Bool::SharedPtr msg) {
         nav2_ready_ = msg->data;
         RCLCPP_INFO(this->get_logger(), "Nav2 ready = %s", nav2_ready_ ? "true" : "false");
+      });
+    
+    // Subscription to the corridor status topic: pause/resume navigation
+    corridor_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+      "/corridor_active", 10,
+      [this](const std_msgs::msg::Bool::SharedPtr msg) {
+        paused_ = msg->data;
+        RCLCPP_INFO(this->get_logger(), "Corridor active = %s", paused_ ? "true" : "false");
+
+        // Se il corridoio è terminato (false) e ho un goal memorizzato, riprendo la navigazione
+        if (!paused_ && !goal_in_progress_ && last_goal_.header.frame_id != "") {
+          RCLCPP_INFO(get_logger(), "Resuming navigation to last goal...");
+          sendGoal(last_goal_);
+        }
       });
 
     // Subscription al segnale di abilitazione (Corridor_Controller)
@@ -52,6 +71,12 @@ private:
     // Wait for Nav2 readiness and enable
     if (!nav2_ready_ || !nav2_enable_) {
       RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator/enable signal...");
+      return;
+    }
+
+    // If corridor is active, pause navigation
+    if (paused_) {
+      RCLCPP_INFO(get_logger(), "Corridor active, skipping Nav2 goal request.");
       return;
     }
 
@@ -104,6 +129,11 @@ private:
       return;
     }
 
+    if (paused_) {
+      RCLCPP_INFO(get_logger(), "⚠️ Corridor active, not sending goal.");
+      return;
+    }
+
     if (!action_client_->wait_for_action_server(1s)) {
       RCLCPP_ERROR(get_logger(), "❌ NavigateToPose action server not available");
       return;
@@ -153,11 +183,9 @@ private:
   rclcpp_action::Client<NavigateToPose>::SharedPtr action_client_;
   rclcpp::Client<assignment_1_07::srv::GetGoal>::SharedPtr goal_client_;
   rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_ready_sub_;
-  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr nav2_enable_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
   bool goal_in_progress_;
   bool nav2_ready_;
-  bool nav2_enable_;
   geometry_msgs::msg::PoseStamped last_goal_;
 };
 

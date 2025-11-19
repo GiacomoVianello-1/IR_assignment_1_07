@@ -47,6 +47,9 @@ def generate_launch_description():
                 'initial_x': 0.0,
                 'initial_y': 0.0,
                 'initial_yaw': 0.0,
+                'covariance_x': 0.5,
+                'covariance_y': 0.5,
+                'covariance_yaw': 0.1,
                 'service_wait_timeout_sec': 10.0,
                 'call_timeout_sec': 10.0,
                 'amcl_pose_wait_sec': 10.0

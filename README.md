@@ -163,11 +163,17 @@ These parameters can be adjusted in the provided launch file (`global.launch.py`
 ## 📡 Goal Sender Node
 The **Goal Sender** node is responsible for requesting the latest navigation goal from the Goal Selector and sending it to Nav2 through the `navigate_to_pose` action. Goals are now exchanged deterministically via a service, eliminating the timing issues of topic-based communication.
 
+The Goal Sender node is responsible for requesting the latest navigation goal from the Goal Selector and sending it to Nav2 through the `navigate_to_pose` action. Goals are exchanged deterministically via a service, eliminating the timing issues of topic-based communication. The node has been extended with **pause/resume logic** to support hybrid navigation scenarios (e.g., switching to a corridor controller).
+
 ### Behavior and design
-- **Service client**: requests the current goal by calling `/get_goal`.  
+- **Service client**: requests the current goal by calling `/get_goal` service.  
 - **Action client**: connects to Nav2’s `navigate_to_pose` action server.  
 - **Synchronization**: subscribes to `/nav2_ready` and remains inactive until Nav2 is fully operational.  
+- **Pause/resume**: subscribes to `/corridor_active` topic.
+  - When `true`, the node pauses and stops sending new goals.
+  - When `false`, the node resumes and re-sends the last stored goal to Nav2.
 - **Execution**: when active, calls the `GetGoal` service to retrieve the most recent `PoseStamped` goal computed by the Goal Selector, sends the goal to Nav2 using the `NavigateToPose` action, waits for the navigation result, and logs the outcome.  
+- **Result handling**: processes action result codes (`SUCCEEDED`, `ABORTED`, `CANCELED`) and updates its internal state accordingly.
 - **Shutdown**: after a successful navigation, the node can optionally call `rclcpp::shutdown()` to stop the system automatically.
 
 This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
