@@ -59,6 +59,15 @@ ament_target_dependencies(goal_sender
 )
 
 # install executables C++
+# build cancel_nav2_goal node
+add_executable(cancel_nav2_goal src/cancel_nav2_goal.cpp)
+ament_target_dependencies(cancel_nav2_goal 
+  rclcpp 
+  rclcpp_action 
+  nav2_msgs
+)
+
+# install executables
 install(TARGETS
   goal_selector
   goal_sender
