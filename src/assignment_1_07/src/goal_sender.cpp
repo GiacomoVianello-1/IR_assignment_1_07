@@ -60,15 +60,9 @@ public:
 
 private:
   void requestGoal() {
-    // Wait for Nav2 readiness and enable
-    if (!nav2_ready_ || !nav2_enable_) {
-      RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator/enable signal...");
-      return;
-    }
-
-    // If corridor is active, pause navigation
-    if (paused_) {
-      RCLCPP_INFO(get_logger(), "Corridor active, skipping Nav2 goal request.");
+    // Wait for Nav2 readiness
+    if (!nav2_ready_) {
+      RCLCPP_DEBUG(get_logger(), "⏳ Waiting for Nav2 orchestrator signal...");
       return;
     }
 
@@ -117,8 +111,8 @@ private:
   }
 
   void sendGoal(const geometry_msgs::msg::PoseStamped &goal_msg){
-    if (!nav2_ready_ || !nav2_enable_) {
-      RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready or disabled, skipping goal send.");
+    if (!nav2_ready_) {
+      RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready, skipping goal send.");
       return;
     }
 
