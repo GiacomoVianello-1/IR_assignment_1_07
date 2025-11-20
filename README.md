@@ -10,7 +10,7 @@ This repository contains our solution to [Assignment 1](Assignment_1.pdf) for th
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
 
 We provide a comprehensive UML diagram to better visualize our solution.
-![alt text](Assignment1_UML.png)
+![alt text](Assignment1_UML.svg)
 
 ## 🏃‍♂️‍➡️ Run the Project
 The first step is to build and source the entire ROS 2 workspace:
