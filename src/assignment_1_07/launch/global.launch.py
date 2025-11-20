@@ -95,5 +95,16 @@ def generate_launch_description():
             executable='Detection_Lidar.py',
             name='Detection_Lidar',
             output='screen'
+        ),
+
+        # Cancel nav2 goal node
+        Node(
+            package='assignment_1_07',
+            executable='cancel_nav2_goal',
+            name='cancel_nav2_goal',
+            output='screen',
+            parameters=[{
+                'cancel_wait_sec': 2.0
+            }]  
         )
     ])
