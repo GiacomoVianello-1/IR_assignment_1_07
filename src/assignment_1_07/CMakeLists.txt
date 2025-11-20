@@ -81,6 +81,7 @@ install(TARGETS
 # Install Python executables
 install(PROGRAMS
   assignment_1_07/Detection_Lidar.py
+  assignment_1_07/corridor_detector.py
   assignment_1_07/Corridor_Controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
