@@ -145,3 +145,16 @@ The Goal Sender node is responsible for requesting the latest navigation goal fr
 - **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
 
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
+
+## 🛑 Cancel Nav2 Goal Node
+
+The CancelNav2Goal node is responsible for canceling all active navigation goals in Nav2 when the `corridor_detector` node senses the walls in the corridor. It integrates with the hybrid navigation architecture by listening to the `/corridor_active` topic and triggering cancellation only when corridor mode is active.
+
+### Behavior and Design
+- **Action client**: connects to Nav2’s `navigate_to_pose` action server.
+- **Subscription**: listens to `/corridor_active` (`std_msgs/Bool`).
+  - When `true`, the node sends a cancellation request to Nav2, stopping the current navigation goal.
+  - When `false`, no cancellation is sent (Nav2 continues normally).
+- **Integration**: works alongside the Goal Sender and Corridor Controller.
+  - Goal Sender pauses when `/corridor_active=true`.
+  - CancelNav2Goal ensures Nav2’s current goal is canceled at the same time.
