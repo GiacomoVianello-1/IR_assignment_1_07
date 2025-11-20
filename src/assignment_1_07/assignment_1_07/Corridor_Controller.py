@@ -2,85 +2,77 @@
 import rclpy
 from rclpy.node import Node
 
-from geometry_msgs.msg import Twist, PoseArray
+from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool
 
 class CorridorController(Node):
     def __init__(self):
         super().__init__('corridor_controller')
 
-        # Subscriber: walls detected in odom frame
-        self.sub_walls = self.create_subscription(
-            PoseArray, 'table_detection/walls_odom', self.walls_callback, 10
+        # --- SUBSCRIBERS ---
+        # Subscribe to the /corridor_active' topic published by the Corridor_Detector
+        self.sub_corridor_flag = self.create_subscription(
+            Bool, 
+            '/corridor_active', 
+            self.corridor_status_callback, 
+            10
         )
 
-        # Publisher: velocity commands
+        # --- PUBLISHERS ---
+        # PPublish cmd_vel to control the robot directly
         self.pub_cmd_vel = self.create_publisher(Twist, 'cmd_vel', 10)
 
-        # Publisher: Nav2 enable/disable flag
-        self.pub_nav2_enable = self.create_publisher(Bool, 'nav2_enable', 10)
+        # --- PARAMETRS ---
+        self.forward_speed = 0.05   # m/s (constant velocity when in corridor)
+        self.is_active = False      # internal state: are we currently controlling the robot?
 
-        # Parameters
-        self.forward_speed = 0.15   # m/s
-        self.stability_cycles = 5   # number of cycles to confirm corridor state
+        self.get_logger().info("Corridor_Controller started via /is_in_corridor flag")
 
-        # State
-        self.in_corridor = False
-        self.counter_corridor = 0
-        self.counter_exit = 0
+    def corridor_status_callback(self, msg: Bool):
 
-        self.get_logger().info("Corridor_Controller started")
+        in_corridor = msg.data
 
-    def walls_callback(self, msg: PoseArray):
-        num_walls = len(msg.poses)
+        if in_corridor:
+            # --- IN CORRIDOR ---
+            if not self.is_active:
+                self.get_logger().info("Corridor detected: Taking control -> Forward Motion")
+                self.is_active = True
+            
+            # Continue driving forward
+            self.drive_forward()
 
-        # Case: exactly 2 walls → corridor
-        if num_walls == 2:
-            self.counter_corridor += 1
-            self.counter_exit = 0
-            if self.counter_corridor >= self.stability_cycles and not self.in_corridor:
-                self.in_corridor = True
-                self.get_logger().info("Entering corridor: disabling Nav2, manual forward control")
-                self.set_nav2_enabled(False)
-            if self.in_corridor:
-                self.drive_forward()
-
-        # Case: more than 2 walls → corridor end
-        elif num_walls > 2:
-            self.counter_exit += 1
-            self.counter_corridor = 0
-            if self.counter_exit >= self.stability_cycles and self.in_corridor:
-                self.in_corridor = False
-                self.get_logger().info("Corridor ended: re-enabling Nav2")
-                self.set_nav2_enabled(True)
-                self.stop_robot()
-
-        # Other cases (0 or 1 wall): stop robot, keep Nav2 enabled
         else:
-            self.counter_corridor = 0
-            self.counter_exit = 0
-            if self.in_corridor:
-                self.in_corridor = False
-                self.get_logger().info("Corridor condition lost: re-enabling Nav2")
-                self.set_nav2_enabled(True)
-            self.stop_robot()
+            # --- SITUAZIONE: FUORI DAL CORRIDOIO / FINE CORRIDOIO ---
+            if self.is_active:
+                self.get_logger().info("Corridor ended: Stopping -> Releasing control to Nav2")
+                self.is_active = False
+                
+                # 1. Robot Stop
+                self.stop_robot()
+                
+            
+            # Se non siamo attivi, ci assicuriamo che il robot stia fermo 
+            # (o lasciamo che Nav2 pubblichi su cmd_vel, a seconda del tuo setup TwistMux)
+            # Qui per sicurezza inviamo stop se il nodo è inteso come esclusivo.
+            # self.stop_robot() 
 
     def drive_forward(self):
+        
         twist = Twist()
         twist.linear.x = self.forward_speed
-        twist.angular.z = 0.0
+        twist.angular.z = 0.0  # Vai dritto perfetto
+        
+        # Nota: In un corridoio reale, "dritto perfetto" potrebbe far sbattere il robot 
+        # se entra storto. Un miglioramento futuro sarebbe leggere l'orientamento 
+        # dei muri e correggere angular.z. Per ora, come richiesto, va solo avanti.
         self.pub_cmd_vel.publish(twist)
 
     def stop_robot(self):
+       
         twist = Twist()
         twist.linear.x = 0.0
         twist.angular.z = 0.0
         self.pub_cmd_vel.publish(twist)
-
-    def set_nav2_enabled(self, enabled: bool):
-        msg = Bool()
-        msg.data = enabled
-        self.pub_nav2_enable.publish(msg)
 
 
 def main(args=None):
@@ -91,6 +83,13 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
+        # For safety, stop the robot on shutdown
+        if rclpy.ok():
+            # Temporary publisher to cmd_vel
+            tmp_pub = node.create_publisher(Twist, 'cmd_vel', 10)
+            stop_msg = Twist()
+            tmp_pub.publish(stop_msg)
+        
         node.destroy_node()
         rclpy.shutdown()
 
