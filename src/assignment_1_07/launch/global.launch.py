@@ -77,7 +77,6 @@ def generate_launch_description():
             output='screen'
         ),
 
-
         # Goal sender node
         Node(
             package='assignment_1_07',
@@ -90,10 +89,27 @@ def generate_launch_description():
             }]  
         ),
         
+        # Lidar detection node
         Node(
             package='assignment_1_07',
             executable='Detection_Lidar.py',
             name='Detection_Lidar',
+            output='screen'
+        ),
+        
+        # Corridor detector node
+        Node(
+            package='assignment_1_07',
+            executable='corridor_detector.py',
+            name='corridor_detector',
+            output='screen'
+        ),
+
+        # Corridor controller node
+        Node(
+            package='assignment_1_07',
+            executable='Corridor_Controller.py',
+            name='Corridor_Controller',
             output='screen'
         ),
 
