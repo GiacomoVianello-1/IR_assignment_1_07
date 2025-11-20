@@ -68,7 +68,7 @@ private:
 
     // If corridor is active, pause navigation
     if (paused_) {
-      RCLCPP_INFO(get_logger(), "Corridor active, skipping Nav2 goal request.");
+      // RCLCPP_INFO(get_logger(), "Corridor active, skipping Nav2 goal request.");
       return;
     }
 
