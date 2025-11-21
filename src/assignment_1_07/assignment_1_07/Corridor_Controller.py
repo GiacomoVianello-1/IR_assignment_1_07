@@ -2,14 +2,13 @@
 import rclpy
 from rclpy.node import Node
 
-from geometry_msgs.msg import Twist, PoseArray, PoseStamped
+from geometry_msgs.msg import Twist, PoseArray
 from std_msgs.msg import Bool
 import tf2_ros
 import tf_transformations
-import numpy as np
 import math
 
-class CorridorController(Node):
+class SimpleCorridorController(Node):
     def __init__(self):
         super().__init__('corridor_controller')
 
@@ -21,7 +20,6 @@ class CorridorController(Node):
             10
         )
 
-        # PoseArray coming from detector, expected in some frame (usually 'odom')
         self.sub_walls_odom = self.create_subscription(
             PoseArray,
             'table_detection/walls_odom',
@@ -37,63 +35,57 @@ class CorridorController(Node):
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
 
         # --- PARAMETERS ---
-        self.declare_parameter('forward_speed', 0.18)      # m/s
-        # P gain for lateral error (mid_y) -> angular z (REDUCED for less aggressiveness)
-        self.declare_parameter('kp_lateral', 0.6)         
-        # I gain for lateral error integral -> angular z # NEW PARAMETER
-        self.declare_parameter('ki_lateral', 0.15)        
-        # P gain for angular error (phi) -> angular z (REDUCED for less aggressiveness)
-        self.declare_parameter('kp_angle', 1.0)           
-        # rad/s (REDUCED for fewer oscillations)
-        self.declare_parameter('max_angular', 0.7)        
-        self.declare_parameter('control_rate', 10.0)      # Hz
-        # Max value for the integral term (anti-windup) # NEW PARAMETER
-        self.declare_parameter('max_integral', 0.5)       
+        # Constant forward speed 
+        self.declare_parameter('forward_speed', 0.2)
+        
+        # KP ANGLE: High value. Keeps the robot strictly parallel to walls.
+        self.declare_parameter('kp_angle', 1.5)
+        
+        # KP CENTER: Low value. Only gently pushes robot back if wheel drift occurs.
+        self.declare_parameter('kp_centering', 0.2)
+        
+        # DEADBAND: Error threshold [m].
+        # If lateral error is less than this (e.g., 5cm), ignore it.
+        # This stops the robot from shimmying/hunting for perfect zero.
+        self.declare_parameter('lateral_deadband', 0.05)
+
+        self.declare_parameter('max_angular', 0.6)
+        self.declare_parameter('control_rate', 10.0)
 
         self.forward_speed = float(self.get_parameter('forward_speed').value)
-        # New Ki
-        self.kp_lateral = float(self.get_parameter('kp_lateral').value)
-        self.ki_lateral = float(self.get_parameter('ki_lateral').value) 
         self.kp_angle = float(self.get_parameter('kp_angle').value)
+        self.kp_centering = float(self.get_parameter('kp_centering').value)
+        self.lateral_deadband = float(self.get_parameter('lateral_deadband').value)
         self.max_angular = float(self.get_parameter('max_angular').value)
         self.control_rate = float(self.get_parameter('control_rate').value)
-        # Anti-windup limit
-        self.max_integral = float(self.get_parameter('max_integral').value) 
 
         # --- STATE ---
-        self.is_active = False              # True when corridor detected
-        self.latest_walls = None            # last received PoseArray
-        self.latest_walls_frame = None      # frame_id of latest_walls.header
-        # Accumulator for lateral error (y_mid) # INTEGRAL STATE
-        self.integral_error_y = 0.0         
-        
-        # Periodic control timer setup
-        self.control_period = 1.0 / max(1.0, self.control_rate)
-        self.control_timer = self.create_timer(self.control_period, self.control_step)
+        self.is_active = False
+        self.latest_walls = None
+        self.latest_walls_frame = None
 
-        self.get_logger().info('CorridorController initialized with P-I (Lateral) + P (Angular)')
+        # Timer
+        period = 1.0 / max(1.0, self.control_rate)
+        self.control_timer = self.create_timer(period, self.control_step)
 
-    # store latest walls (PoseArray)
+        #self.get_logger().info('SimpleCorridorController: Heading-Priority Logic Initialized')
+
     def walls_callback(self, msg: PoseArray):
         if msg is None or len(msg.poses) < 2:
-            self.get_logger().debug('walls_callback: <2 poses, ignoring')
             return
         self.latest_walls = msg
         self.latest_walls_frame = getattr(msg.header, 'frame_id', 'odom')
 
-    # corridor active flag
     def corridor_status_callback(self, msg: Bool):
         flag = bool(msg.data)
-        if flag and not self.is_active:
-            self.get_logger().info('Corridor detected: controller engaged')
-        if not flag and self.is_active:
-            self.get_logger().info('Corridor lost: controller disengaged and stopping')
-            # Reset integral when the corridor is no longer active
-            self.integral_error_y = 0.0 
-            self.stop_robot()
+        if flag != self.is_active:
+            if flag:
+                self.get_logger().info('Corridor detected: Moving forward')
+            else:
+                self.get_logger().info('Corridor lost: Stopping')
+                self.stop_robot()
         self.is_active = flag
 
-    # transform a 2D point (px,py) in source_frame into base_link frame (OMITTED FOR BREVITY)
     def transform_point_to_base(self, px, py, source_frame):
         try:
             now = rclpy.time.Time()
@@ -107,23 +99,20 @@ class CorridorController(Node):
             x_b = ca * px - sa * py + t.x
             y_b = sa * px + ca * py + t.y
             return x_b, y_b
-        except Exception as e:
-            self.get_logger().debug(f'transform_point_to_base: transform error: {e}')
+        except Exception:
             return None, None
 
-    # main periodic control step
     def control_step(self):
         if not self.is_active:
-            # Ensure the integrator is reset if inactive
-            self.integral_error_y = 0.0
             return
 
+        # If no walls detected, perform "Safety Straight": move slowly forward without turning
+        # assuming we are still in the corridor but lost detection momentarily.
         if self.latest_walls is None or len(self.latest_walls.poses) < 2:
-            self.get_logger().debug('control_step: no walls available, publishing forward only')
-            twist = Twist()
-            twist.linear.x = float(self.forward_speed)
-            twist.angular.z = 0.0
-            self.pub_cmd_vel.publish(twist)
+            cmd = Twist()
+            cmd.linear.x = self.forward_speed
+            cmd.angular.z = 0.0
+            self.pub_cmd_vel.publish(cmd)
             return
 
         p1 = self.latest_walls.poses[0].position
@@ -134,62 +123,49 @@ class CorridorController(Node):
         p2_x, p2_y = self.transform_point_to_base(p2.x, p2.y, source_frame)
 
         if p1_x is None or p2_x is None:
-            self.get_logger().debug('control_step: TF unavailable, publishing forward only')
-            twist = Twist()
-            twist.linear.x = float(self.forward_speed)
-            twist.angular.z = 0.0
-            self.pub_cmd_vel.publish(twist)
             return
 
-        # --- P-I (Lateral) + P (Angular) FEEDBACK LOGIC ---
+        # --- SIMPLIFIED ROBUST LOGIC ---
 
-        # 1. Lateral Error: y coordinate of the midpoint (mid_y)
+        # 1. Calculate Lateral Error (Distance from center)
         mid_y = 0.5 * (p1_y + p2_y)
 
-        # 2. Angular Error: Angle phi
+        # 2. Calculate Heading Error (Angle relative to corridor)
         dx = p2_x - p1_x
         dy = p2_y - p1_y
         phi = math.atan2(dy, dx)
         
-        # Quadrant correction for minimum angular error
+        # Normalize angle to [-pi/2, pi/2]
         if phi > math.pi / 2.0:
             phi -= math.pi
         elif phi < -math.pi / 2.0:
             phi += math.pi
 
-        # 3. Integral Term Calculation (for Lateral Error)
+        # 3. Apply Deadband to Lateral Error
+        # If we are within +/- 5cm (or set value) of the center, consider error as 0.
+        # This prevents the robot from trying to fix microscopic errors.
+        effective_mid_y = mid_y
+        if abs(mid_y) < self.lateral_deadband:
+            effective_mid_y = 0.0
+
+        # 4. Compute Control Command
+        # Strong correction on Angle (Keep straight) + Weak correction on Position (Fix drift)
         
-        # Error accumulation (simple rectangular integration: error * time)
-        self.integral_error_y += mid_y * self.control_period
+        term_angle = -self.kp_angle * phi
+        term_center = -self.kp_centering * effective_mid_y
         
-        # Anti-windup (integrator saturation)
-        self.integral_error_y = max(min(self.integral_error_y, self.max_integral), -self.max_integral)
-        
-        # Calculation of control terms
-        angular_z_lateral_p = - self.kp_lateral * mid_y
-        angular_z_lateral_i = - self.ki_lateral * self.integral_error_y
-        angular_z_angle_p = - self.kp_angle * phi
-        
-        # Total angular command
-        angular_z = angular_z_lateral_p + angular_z_lateral_i + angular_z_angle_p
-        
-        # Saturation of angular_z
+        angular_z = term_angle + term_center
+
+        # Clamp max speed
         angular_z = max(min(angular_z, self.max_angular), -self.max_angular)
 
-        # --- END OF FEEDBACK LOGIC ---
-
-        # build and publish Twist
+        # Publish
         twist = Twist()
-        twist.linear.x = float(self.forward_speed)
-        twist.angular.z = float(angular_z)
+        twist.linear.x = self.forward_speed
+        twist.angular.z = angular_z
         self.pub_cmd_vel.publish(twist)
 
-        # debug
-        self.get_logger().debug(
-            f'control_step: mid_y={mid_y:.3f}, Integral={self.integral_error_y:.3f}, phi={phi:.3f}, '
-            f'P_lat={angular_z_lateral_p:.3f}, I_lat={angular_z_lateral_i:.3f}, P_ang={angular_z_angle_p:.3f}, '
-            f'cmd_ang={twist.angular.z:.3f}'
-        )
+        # self.get_logger().debug( f'Logic: phi={phi:.3f}, mid_y={mid_y:.3f}, eff_y={effective_mid_y:.3f} -> cmd={angular_z:.3f}'    )
 
     def stop_robot(self):
         twist = Twist()
@@ -199,7 +175,7 @@ class CorridorController(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = CorridorController()
+    node = SimpleCorridorController()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

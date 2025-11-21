@@ -15,7 +15,7 @@ import time
 
 # Parametri RANSAC e di filtro configurabili (valori di default)
 DEFAULT_DIST_THRESHOLD = 0.05
-DEFAULT_MIN_INLIERS = 40
+DEFAULT_MIN_INLIERS = 50
 DEFAULT_MAX_ITER = 200
 DEFAULT_SIDE_ANGLE_RANGE = (0.2, 1.3)  # rad
 DEFAULT_MIN_RANGE = 0.05
