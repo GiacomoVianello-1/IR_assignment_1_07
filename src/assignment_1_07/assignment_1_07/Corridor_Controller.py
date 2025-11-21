@@ -36,21 +36,21 @@ class SimpleCorridorController(Node):
 
         # --- PARAMETERS ---
         # Constant forward speed 
-        self.declare_parameter('forward_speed', 0.2)
+        self.declare_parameter('forward_speed', 0.25)
         
         # KP ANGLE: High value. Keeps the robot strictly parallel to walls.
-        self.declare_parameter('kp_angle', 1.5)
+        self.declare_parameter('kp_angle', 0)                                       # CAMBIATOOOOOOOOOOOOOOOOO
         
         # KP CENTER: Low value. Only gently pushes robot back if wheel drift occurs.
-        self.declare_parameter('kp_centering', 0.2)
+        self.declare_parameter('kp_centering', 0.1)
         
         # DEADBAND: Error threshold [m].
         # If lateral error is less than this (e.g., 5cm), ignore it.
         # This stops the robot from shimmying/hunting for perfect zero.
-        self.declare_parameter('lateral_deadband', 0.05)
+        self.declare_parameter('lateral_deadband', 0.5)
 
         self.declare_parameter('max_angular', 0.6)
-        self.declare_parameter('control_rate', 10.0)
+        self.declare_parameter('control_rate', 20.0)
 
         self.forward_speed = float(self.get_parameter('forward_speed').value)
         self.kp_angle = float(self.get_parameter('kp_angle').value)
