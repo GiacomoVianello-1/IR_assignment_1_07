@@ -38,26 +38,34 @@ class CorridorController(Node):
 
         # --- PARAMETERS ---
         self.declare_parameter('forward_speed', 0.18)      # m/s
-        self.declare_parameter('kp_lateral', 0.6)         # P gain for lateral error (mid_y) -> angular z (RIDOTTO per meno aggressività)
-        self.declare_parameter('ki_lateral', 0.15)        # I gain for lateral error integral -> angular z # NUOVO PARAMETRO
-        self.declare_parameter('kp_angle', 1.0)           # P gain for angular error (phi) -> angular z (RIDOTTO per meno aggressività)
-        self.declare_parameter('max_angular', 0.7)        # rad/s (RIDOTTO per meno oscillazioni)
+        # P gain for lateral error (mid_y) -> angular z (REDUCED for less aggressiveness)
+        self.declare_parameter('kp_lateral', 0.6)         
+        # I gain for lateral error integral -> angular z # NEW PARAMETER
+        self.declare_parameter('ki_lateral', 0.15)        
+        # P gain for angular error (phi) -> angular z (REDUCED for less aggressiveness)
+        self.declare_parameter('kp_angle', 1.0)           
+        # rad/s (REDUCED for fewer oscillations)
+        self.declare_parameter('max_angular', 0.7)        
         self.declare_parameter('control_rate', 10.0)      # Hz
-        self.declare_parameter('max_integral', 0.5)       # Max value for the integral term (anti-windup) # NUOVO PARAMETRO
+        # Max value for the integral term (anti-windup) # NEW PARAMETER
+        self.declare_parameter('max_integral', 0.5)       
 
         self.forward_speed = float(self.get_parameter('forward_speed').value)
+        # New Ki
         self.kp_lateral = float(self.get_parameter('kp_lateral').value)
-        self.ki_lateral = float(self.get_parameter('ki_lateral').value) # Nuovo Ki
+        self.ki_lateral = float(self.get_parameter('ki_lateral').value) 
         self.kp_angle = float(self.get_parameter('kp_angle').value)
         self.max_angular = float(self.get_parameter('max_angular').value)
         self.control_rate = float(self.get_parameter('control_rate').value)
-        self.max_integral = float(self.get_parameter('max_integral').value) # Anti-windup limit
+        # Anti-windup limit
+        self.max_integral = float(self.get_parameter('max_integral').value) 
 
         # --- STATE ---
         self.is_active = False              # True when corridor detected
         self.latest_walls = None            # last received PoseArray
         self.latest_walls_frame = None      # frame_id of latest_walls.header
-        self.integral_error_y = 0.0         # Accumulator for lateral error (y_mid) # STATO INTEGRALE
+        # Accumulator for lateral error (y_mid) # INTEGRAL STATE
+        self.integral_error_y = 0.0         
         
         # Periodic control timer setup
         self.control_period = 1.0 / max(1.0, self.control_rate)
@@ -80,12 +88,12 @@ class CorridorController(Node):
             self.get_logger().info('Corridor detected: controller engaged')
         if not flag and self.is_active:
             self.get_logger().info('Corridor lost: controller disengaged and stopping')
-            # Reset integrale quando il corridoio non è più attivo
+            # Reset integral when the corridor is no longer active
             self.integral_error_y = 0.0 
             self.stop_robot()
         self.is_active = flag
 
-    # transform a 2D point (px,py) in source_frame into base_link frame (OMESSO PER BREVITA')
+    # transform a 2D point (px,py) in source_frame into base_link frame (OMITTED FOR BREVITY)
     def transform_point_to_base(self, px, py, source_frame):
         try:
             now = rclpy.time.Time()
@@ -106,7 +114,7 @@ class CorridorController(Node):
     # main periodic control step
     def control_step(self):
         if not self.is_active:
-            # Assicurati che l'integratore sia resettato se inattivo
+            # Ensure the integrator is reset if inactive
             self.integral_error_y = 0.0
             return
 
@@ -133,42 +141,42 @@ class CorridorController(Node):
             self.pub_cmd_vel.publish(twist)
             return
 
-        # --- LOGICA DI FEEDBACK P-I (Laterale) + P (Angolare) ---
+        # --- P-I (Lateral) + P (Angular) FEEDBACK LOGIC ---
 
-        # 1. Errore Laterale: y coordinata del punto medio (mid_y)
+        # 1. Lateral Error: y coordinate of the midpoint (mid_y)
         mid_y = 0.5 * (p1_y + p2_y)
 
-        # 2. Errore Angolare: Angolo phi
+        # 2. Angular Error: Angle phi
         dx = p2_x - p1_x
         dy = p2_y - p1_y
         phi = math.atan2(dy, dx)
         
-        # Correzione del quadrante per errore angolare minimo
+        # Quadrant correction for minimum angular error
         if phi > math.pi / 2.0:
             phi -= math.pi
         elif phi < -math.pi / 2.0:
             phi += math.pi
 
-        # 3. Calcolo del Termine Integrale (per l'Errore Laterale)
+        # 3. Integral Term Calculation (for Lateral Error)
         
-        # Accumulo dell'errore (integrazione rettangolare semplice: errore * tempo)
+        # Error accumulation (simple rectangular integration: error * time)
         self.integral_error_y += mid_y * self.control_period
         
-        # Anti-windup (saturazione dell'integratore)
+        # Anti-windup (integrator saturation)
         self.integral_error_y = max(min(self.integral_error_y, self.max_integral), -self.max_integral)
         
-        # Calcolo dei termini del controllo
+        # Calculation of control terms
         angular_z_lateral_p = - self.kp_lateral * mid_y
         angular_z_lateral_i = - self.ki_lateral * self.integral_error_y
         angular_z_angle_p = - self.kp_angle * phi
         
-        # Comando angolare totale
+        # Total angular command
         angular_z = angular_z_lateral_p + angular_z_lateral_i + angular_z_angle_p
         
-        # Saturazione di angular_z
+        # Saturation of angular_z
         angular_z = max(min(angular_z, self.max_angular), -self.max_angular)
 
-        # --- FINE LOGICA DI FEEDBACK ---
+        # --- END OF FEEDBACK LOGIC ---
 
         # build and publish Twist
         twist = Twist()
