@@ -9,6 +9,24 @@ This repository contains our solution to [Assignment 1](Assignment_1.pdf) for th
 
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
 
+## 🛠️ System Integration & Setup
+
+**Prerequisites:**
+The operation of the control loop depends on the [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git) library. This dependency must be manually integrated into the build environment.
+
+**Setup Procedure:**
+
+1.  **Workspace Initialization:**
+    Clone the main controller repository into your target directory.
+
+2.  **Dependency Injection:**
+    Import the required `ir_2526` package into the source tree to ensure proper linking during compilation.
+
+    ```bash
+    cd src
+    git clone [https://github.com/PieroSimonet/ir_2526.git](https://github.com/PieroSimonet/ir_2526.git)
+    ```
+
 ## 📌 Workspace
 
 This project uses a **hybrid ROS2 workspace** to develop nodes in both **C++** and **Python**, ensuring flexibility and avoiding compatibility issues.  
