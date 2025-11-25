@@ -112,8 +112,8 @@ class DetectionLidar(Node):
         self.max_range = 6.0
         self.dbscan_eps = 0.14          
         self.dbscan_min_samples = 4
-        self.leg_diameter_min = 0.015   # minimum obstacle size (diameter) in meters
-        self.leg_diameter_max = 0.25    # maximum obstacle size (diameter) in meters
+        self.leg_diameter_min = 0.01    # minimum obstacle size (diameter) in meters
+        self.leg_diameter_max = 0.22    # maximum obstacle size (diameter) in meters
 
         # Initialize the stabilization tracker
         self.tracker = ObstacleTracker(threshold=0.05) 

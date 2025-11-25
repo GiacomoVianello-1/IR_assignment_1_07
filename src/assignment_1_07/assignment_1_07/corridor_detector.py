@@ -13,21 +13,21 @@ import numpy as np
 import random
 import time
 
-# Parametri RANSAC e di filtro configurabili (valori di default)
-DEFAULT_DIST_THRESHOLD = 0.05
+# RANSAC and corridor detection parameters
+DEFAULT_DIST_THRESHOLD = 0.02
 DEFAULT_MIN_INLIERS = 50
-DEFAULT_MAX_ITER = 200
-DEFAULT_SIDE_ANGLE_RANGE = (0.2, 1.3)  # rad
+DEFAULT_MAX_ITER = 500
+DEFAULT_SIDE_ANGLE_RANGE = (0.2, 1.4)   # rad
 DEFAULT_MIN_RANGE = 0.05
-DEFAULT_MAX_RANGE = 10.0
-DEFAULT_CONFIRM_FRAMES = 3   # numero di frame consecutivi necessari per confermare corridoio
-DEFAULT_LOST_FRAMES = 3      # numero di frame consecutivi senza rilevazione per annullare corridoio
+DEFAULT_MAX_RANGE = 8.5
+DEFAULT_CONFIRM_FRAMES = 5              # number of consecutive frames to confirm corridor
+DEFAULT_LOST_FRAMES = 9                 # number of consecutive frames to declare lost
 
 class CorridorDetector(Node):
     def __init__(self):
         super().__init__('corridor_detector')
 
-        # Params (configurabili)
+        # Params 
         self.declare_parameter('dist_threshold', DEFAULT_DIST_THRESHOLD)
         self.declare_parameter('min_inliers', DEFAULT_MIN_INLIERS)
         self.declare_parameter('max_iter', DEFAULT_MAX_ITER)
