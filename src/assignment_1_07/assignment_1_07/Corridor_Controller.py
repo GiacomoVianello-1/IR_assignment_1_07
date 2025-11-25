@@ -162,9 +162,14 @@ class SimpleCorridorController(Node):
         # Publish
         twist = Twist()
         twist.linear.x = self.forward_speed
+        twist.linear.y = 0.0
+        twist.linear.z = 0.0
+        twist.angular.x = 0.0
+        twist.angular.y = 0.0
         twist.angular.z = angular_z
         self.pub_cmd_vel.publish(twist)
 
+        # self.get_logger( f'!!! linear x ={twist.linear.x:.3f}, linear y ={twist.linear.y:.3f},  angular z ={twist.angular.z:.3f}')
         # self.get_logger().debug( f'Logic: phi={phi:.3f}, mid_y={mid_y:.3f}, eff_y={effective_mid_y:.3f} -> cmd={angular_z:.3f}'    )
 
     def stop_robot(self):
