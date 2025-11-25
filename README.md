@@ -297,14 +297,13 @@ The `Corridor_Detector` node performs geometric wall detection using LIDAR data 
    When **exactly two** stable walls are detected, the robot is considered inside a corridor.  
    When **more than two** or **fewer than two** walls are observed, the corridor is considered inactive.
 4. **Temporal stabilization**: To prevent oscillatory state transitions caused by noisy detections, the node uses consecutive positive/negative counters.  
-   - Corridor is activated only after *N* consecutive frames confirming two walls.  
-   - Corridor is deactivated only after *M* consecutive frames confirming loss of corridor structure.
-
-### Outputs
-- **/table_detection/walls_odom (PoseArray)**: Stabilized wall segments expressed in the odometry frame.
-- **/corridor_active (Bool)**:  
-  `True` -> The robot is inside a corridor  
-  `False` -> Corridor condition not satisfied
+    - Corridor is activated only after *N* consecutive frames confirming two walls.  
+    - Corridor is deactivated only after *M* consecutive frames confirming loss of corridor structure.
+5. **Outputs**
+    - `/table_detection/walls_odom` (PoseArray)**: Stabilized wall segments expressed in the odometry frame.
+    - `/corridor_active` (Bool):  
+        - `True` -> The robot is inside a corridor  
+        - `False` -> Corridor condition not satisfied
 
 
 ## 🚨 Corridor Controller Node
@@ -318,7 +317,7 @@ The `Corridor_Controller` node implements a minimal steering law that drives the
 
 **Feedback**
 1. **Lateral error computation**: The midpoint of the two detected wall endpoints is projected into the robot frame. Its `y` coordinate represents the lateral displacement relative to the corridor centerline.
-2. **Heading error computation**: The orientation of the corridor is estimated from the direction of the segment connecting the two wall points. The angle is normalized to the interval \([- \pi/2, \pi/2]\).
+2. **Heading error computation**: The orientation of the corridor is estimated from the direction of the segment connecting the two wall points. The angle is normalized to the interval $[- \pi/2, \pi/2]$.
 3. **Deadband filtering**: Small lateral errors within a configurable threshold are set to zero. This prevents oscillations due to microscopic deviations and ensures stable straight motion.
 
 **Control synthesis**  
