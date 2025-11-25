@@ -1,4 +1,5 @@
 # 🤖 Intelligent Robotics — Assignment 1  
+
 ## Group 07  
 - Giacomo Vianello (ID: 2140028)  
 - Salvatore Ferracane (ID: 2154255)  
@@ -204,38 +205,99 @@ This service-based design ensures that: the Goal Sender always receives the most
 These parameters can be adjusted in the provided launch file (`global.launch.py`).
 
 
-# Detection_Lidar Node
+## Detection Lidar Node
 
-- **Purpose**: Detects obstacles and wall segments using the onboard LDS LIDAR.  
-- **Methods**:
-  - **DBSCAN** clustering (from `scikit-learn`) to group LIDAR points into obstacles.  
-  - **RANSAC** line fitting to robustly extract wall segments.  
-- **Outputs**:
-  - Publishes obstacles as `PoseArray` in the LIDAR frame and transformed into `/odom`.  
-  - Publishes wall segments similarly.  
+The `Detection_Lidar` node performs obstacle detection from raw LiDAR scans using geometric preprocessing, DBSCAN clustering, and temporal stabilization. It outputs the detected obstacle centers in the `odom` frame and produces a stabilized estimate of three obstacles when their positions remain sufficiently stable.
 
-> **Dependency**: Install scikit-learn for DBSCAN  
+### Behavior and design
+
+1. **Range filtering and Cartesian projection**: LiDAR polar data are converted into `(x,y)` points in the sensor frame after rejecting invalid or out-of-range values.
+
+2. **DBSCAN clustering**: The incoming point cloud is segmented into clusters with DBSCAN (`eps`, `min_samples`). Each cluster centroid is considered a potential obstacle.
+
+3. **Size-based obstacle filtering**: The cluster diameter is computed. Only clusters whose diameter falls within a physically plausible interval are accepted as obstacles.
+
+4. **Coordinate transformation (TF)**: Valid obstacle centroids in the sensor frame are transformed into the `odom` frame using SE(2) geometry:
+   - translation (`tx`, `ty`)
+   - yaw angle extracted from the TF quaternion
+
+5. **Publishing**: All valid obstacles are published as a `PoseArray` on:
+   - **/table_detection/obstacles_odom**
+
+6. **Temporal stabilization (ObstacleTracker)**: The node implements a stabilization layer to track **exactly three obstacles**:
+   - positions are sorted for consistent ordering  
+   - variation over time is measured  
+   - stable positions are updated only when variation exceeds a threshold  
+   - when all three obstacle positions remain stable for consecutive frames, the list is printed once
+
+### Stabilization Logic Summary
+The `ObstacleTracker` class:
+- tracks three obstacle points across time  
+- updates the internal model only when changes exceed a spatial threshold  
+- detects when the obstacle configuration becomes stable  
+- prints the stabilized coordinates exactly once  
+- resets if fewer than three obstacles are detected  
+
+This prevents oscillations due to clustering noise and ensures a clean, reliable estimate of the three tracked obstacle positions.
+
+**NOTA**
+> **Dependency**: Install scikit-learn for DBSCAN 
 > ```bash
-> sudo apt update
 > sudo apt install python3-sklearn
 > ```
 
 **Nota**: RANSAC algorithm, implemented for detecting walls, will be used for the (Extra) Corridor-Controller-Node without using Nav2.
 
-# Corridor_Controller Node
 
-The `Corridor_Controller` node implements a simple supervisory logic for navigation inside corridors:
 
-- **Input:** It subscribes to the topic `table_detection/walls_odom`, which publishes wall segments detected by the LIDAR using RANSAC.
-- **Corridor detection:** When exactly **two walls** are detected, the robot is assumed to be inside a corridor. In this state:
-  - Nav2 is disabled.
-  - The node publishes forward velocity commands (`cmd_vel`) to drive the robot straight along the corridor.
-- **Corridor exit:** When **more than two walls** are detected, the corridor is considered finished. In this state:
-  - The node stops manual control.
-  - Nav2 is re-enabled to resume normal navigation.
-- **Robustness:** To avoid oscillations due to noisy detections, the node requires the condition (two walls or more than two walls) to be stable for several consecutive cycles before switching states.
-- **Outputs:**
-  - `cmd_vel` → velocity commands during corridor traversal.
-  - `nav2_enable` (Bool) → flag to enable/disable Nav2 depending on corridor state.
 
-This design ensures that the robot moves forward reliably inside corridors without obstacles, and hands control back to Nav2 once the corridor ends.
+## Corridor Detector Node
+
+The `Corridor_Detector` node performs geometric wall detection using LIDAR data and determines whether the robot is currently inside a corridor. The node extracts wall segments from raw LaserScan measurements and applies a temporal stability filter to avoid false detections caused by noise.
+
+### Behavior and design
+1. **Segmentation and filtering**: The node extracts line segments from the LaserScan. Only segments satisfying minimum length and geometric consistency constraints are accepted as valid walls.  
+2. **Coordinate transformation**: Detected walls are mapped from the sensor frame into the odometry frame using `tf_transformations` and an SE(2) rigid-body transform.
+3. **Corridor identification**:  
+   When **exactly two** stable walls are detected, the robot is considered inside a corridor.  
+   When **more than two** or **fewer than two** walls are observed, the corridor is considered inactive.
+4. **Temporal stabilization**: To prevent oscillatory state transitions caused by noisy detections, the node uses consecutive positive/negative counters.  
+   - Corridor is activated only after *N* consecutive frames confirming two walls.  
+   - Corridor is deactivated only after *M* consecutive frames confirming loss of corridor structure.
+
+### Outputs
+- **/table_detection/walls_odom (PoseArray)**: Stabilized wall segments expressed in the odometry frame.
+- **/corridor_active (Bool)**:  
+  `True` → The robot is inside a corridor  
+  `False` → Corridor condition not satisfied
+
+**NOTA**
+> **Dependency**: Install python3-tf-transformations.
+> ```bash
+> sudo apt install ros-${ROS_DISTRO}-tf-transformations
+> ```
+
+
+
+## Corridor Controller Node
+
+The Corridor_Controller node implements a minimal steering law that drives the robot forward whenever the corridor detector reports the presence of two approximately parallel walls. The controller exploits the geometric information provided by the detected wall endpoints to maintain both lateral centering and heading alignment inside the corridor. The control action consists of a constant forward velocity combined with a steering command proportional to the lateral deviation and orientation error derived from the wall geometry. In other words, the node implements a purely proportional controller.
+
+### Behavior and design
+1. **Activation**: When `/corridor_active` becomes `True`, the controller begins driving forward at a constant speed. When the flag becomes `False`, the robot is stopped immediately.
+2. **Wall projection into base frame**: Wall endpoints are transformed into `base_link` coordinates via TF2. If transformation fails or walls are temporarily missing, the controller applies a fallback behavior.
+3. **Fallback forward motion**: If fewer than two walls are available but the corridor flag is still active, the controller publishes straight motion with zero angular velocity to maintain forward progress.
+
+**Feedback**
+1. **Lateral error computation**: The midpoint of the two detected wall endpoints is projected into the robot frame. Its `y` coordinate represents the lateral displacement relative to the corridor centerline.
+2. **Heading error computation**: The orientation of the corridor is estimated from the direction of the segment connecting the two wall points. The angle is normalized to the interval \([- \pi/2, \pi/2]\).
+3. **Deadband filtering**: Small lateral errors within a configurable threshold are set to zero. This prevents oscillations due to microscopic deviations and ensures stable straight motion.
+
+**Control synthesis**  
+   The controller applies:
+   - a strong angular correction proportional to the heading error,
+   - a weaker correction proportional to the lateral offset,
+   - clamping of angular velocity to a maximum magnitude.
+
+   Linear velocity remains constant while navigating the corridor.
+
