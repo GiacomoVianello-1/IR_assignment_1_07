@@ -74,7 +74,7 @@ class SimpleCorridorController(Node):
         if msg is None or len(msg.poses) < 2:
             return
         self.latest_walls = msg
-        self.latest_walls_frame = getattr(msg.header, 'frame_id', 'odom')
+        self.latest_walls_frame = getattr(msg.header, 'frame_id', 'map')
 
     def corridor_status_callback(self, msg: Bool):
         flag = bool(msg.data)

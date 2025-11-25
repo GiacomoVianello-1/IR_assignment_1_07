@@ -15,11 +15,11 @@ import time
 
 # RANSAC and corridor detection parameters
 DEFAULT_DIST_THRESHOLD = 0.02
-DEFAULT_MIN_INLIERS = 50
+DEFAULT_MIN_INLIERS = 40
 DEFAULT_MAX_ITER = 500
 DEFAULT_SIDE_ANGLE_RANGE = (0.2, 1.4)   # rad
 DEFAULT_MIN_RANGE = 0.05
-DEFAULT_MAX_RANGE = 8.5
+DEFAULT_MAX_RANGE = 2.0
 DEFAULT_CONFIRM_FRAMES = 5              # number of consecutive frames to confirm corridor
 DEFAULT_LOST_FRAMES = 7                 # number of consecutive frames to declare lost
 
