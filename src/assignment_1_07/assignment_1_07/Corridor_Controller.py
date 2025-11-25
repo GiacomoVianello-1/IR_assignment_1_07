@@ -84,6 +84,8 @@ class SimpleCorridorController(Node):
             else:
                 self.get_logger().info('Corridor lost: Stopping')
                 self.stop_robot()
+                self.destroy_node()
+                rclpy.shutdown()
         self.is_active = flag
 
     def transform_point_to_base(self, px, py, source_frame):

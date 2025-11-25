@@ -1,89 +1,109 @@
 # 🤖 Intelligent Robotics — Assignment 1  
-## Group 07  
+### Group 07 Members 
 - Giacomo Vianello (ID: 2140028)  
 - Salvatore Ferracane (ID: 2154255)  
 
-## 📘 Project Overview  
-
 This repository contains our solution to [Assignment 1](Assignment_1.pdf) for the *Intelligent Robotics* course at the University of Padua. Our implementation builds upon the base repository [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git), which is included under the `src/` directory.
-
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
-
-We provide a comprehensive UML diagram to better visualize our solution.
-![alt text](Assignment1_UML.svg)
-## 🛠️ System Integration & Setup
-
-**Prerequisites:**
-The operation of the control loop depends on the [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git) library. This dependency must be manually integrated into the build environment.
-
-**Setup Procedure:**
-
-1.  **Workspace Initialization:**
-    Clone the main controller repository into your target directory.
-
-2.  **Dependency Injection:**
-    Import the required `ir_2526` package into the source tree to ensure proper linking during compilation.
-
-    ```bash
-    cd src
-    git clone [https://github.com/PieroSimonet/ir_2526.git](https://github.com/PieroSimonet/ir_2526.git)
-    ```
-
-## 📌 Workspace
-
-This project uses a **hybrid ROS2 workspace** to develop nodes in both **C++** and **Python**, ensuring flexibility and avoiding compatibility issues.  
-The package structure, together with the `CMakeLists.txt` and `package.xml`, has been adapted following the guidelines from this [tutorial](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/).
-
-📂 Package Structure
-
-```
-/IR_assignment_1_07/src/assignment_1_07
-├── assignment_1_07
-│   ├── __init__.py
-│   └── table_detection_node.py
-├── CMakeLists.txt
-├── config
-│   └── apriltag_params.yaml
-├── launch
-│   └── global.launch.py
-├── LICENSE
-├── package.xml
-└── src
-    ├── goal_selector.cpp
-    └── nav2_orchestrator.cpp
-```
-
-where:
-- All **Python nodes** are placed inside the `/assignment_1_07` folder (executables).  
-- All **C++ nodes** are placed inside the `/src` folder.  
-
-**NOTA:** 
-Python executables must include the shebang:
-```
-#!/usr/bin/env python3
-```
-
 
 
 ## 🏃‍♂️‍➡️ Run the Project
-The first step is to build and source the entire ROS 2 workspace:
 
+### 1. Preliminaries
+Clone this repository onto your local machine. In addition to the standard ROS 2 packages suggested at the beginning of the course, make sure the following dependencies are installed:
+```
+sudo apt install ros-$ROS_DISTRO-tf-transformations
+sudo apt install python3-sklearn
+```
+It is also recommended to update your system before proceeding:
+```
+sudo apt update && sudo apt upgrade
+```
+
+### 2. Import Required Package
+Inside the cloned repository, add the `ir_2526` package to the source tree to ensure proper linking during compilation:
+```
+cd src
+git clone [https://github.com/PieroSimonet/ir_2526.git](https://github.com/PieroSimonet/ir_2526.git)
+```
+
+### 3. Build the Workspace
+Compile the entire workspace and source the environment:
+```
 colcon build
 source install/setup.bash
-
-To run our project, we provide a structured and configurable launch file called `global.launch.py`. It can be started with:
-
+```
+### 4. Launch the Project
+We provide a structured and configurable launch file named `global.launch.py`. You can start the project with:
+```
 ros2 launch assignment_1_07 global.launch.py
+```
 
-This launch file orchestrates the whole assignment setup. Specifically, it:
-- Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
-- Starts the **AprilTag detection node** with the correct topic remappings and parameters.
-- Runs the **Nav2Orchestrator node**, which automatically initializes the localization and navigation stacks and publishes the initial pose to AMCL, and signals readiness.
-- Launches the **Goal Selector node**, which works using both TF lookups of detected tags and a **custom service** to deliver the computed goal to other  nodes.
-- Launches the **Goal Sender node**, which calls the `/get_current_goal` service, retrieves the latest computed goal, and sends it through the Nav2 action `navigate_to_pose`.
-- **TO BE COMPLETED**
+# 📘 Project Overview  
 
-This way, a single command brings up the entire system, ready for testing and demonstration.
+To provide a clear understanding of our architecture, we include a comprehensive UML diagram that illustrates the entire solution. The diagram highlights:
+- All the **nodes** involved (both those we developed and those provided).
+- The communication methods between them, including **topics**, **services**, and **actions**.
+
+In the following sections of this README, we provide a detailed analysis of the behavior and functionality of each node. 
+
+![alt text](Assignment1_UML.svg)
+
+
+## 📂 Workspace Structure
+
+This project uses a **hybrid ROS2 workspace** to develop nodes in both **C++** and **Python**. In particular
+- All **Python nodes** are placed inside the `/assignment_1_07` folder (executables).  
+- All **C++ nodes** are placed inside the `/src` folder.   
+
+The package structure, together with the `CMakeLists.txt` and `package.xml`, has been adapted following the guidelines from this [tutorial](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/).
+
+```
+assignment_1_07/
+├── assignment_1_07
+│   ├── Corridor_Controller.py
+│   ├── corridor_detector.py
+│   ├── Detection_Lidar.py
+│   └── __init__.py
+├── CMakeLists.txt
+├── config
+│   └── apriltag_params.yaml
+├── include
+│   └── assignment_1_07
+├── launch
+│   └── global.launch.py
+├── LICENSE
+├── package.xml
+├── src
+│   ├── cancel_nav2_goal.cpp
+│   ├── goal_selector.cpp
+│   ├── goal_sender.cpp
+│   └── nav2_orchestrator.cpp
+└── srv
+    └── GetGoal.srv
+```
+
+## 🚀 Launch File
+The `global.launch.py` file orchestrates the entire assignment setup, ensuring that all required nodes and configurations are started with a single command:
+```
+source install/setup.bash 
+ros2 launch assignment_1_07 global.launch.py
+```
+
+This launch file coordinates the following components:
+
+- **Base launch file inclusion**: integrates `ir_launch/assignment_1.launch.py` from the provided repository.
+- **AprilTag Detection Node**: starts with the correct topic remappings and parameter configuration.
+- **Nav2Orchestrator Node**: initializes the localization and navigation stacks, publishes the initial pose to AMCL, and signals readiness.
+- **Goal Selector Node**: computes navigation goals using TF lookups of detected tags and a custom service interface.
+- **Goal Sender Node**: queries the `/get_current_goal` service and forwards the result to the Nav2 `navigate_to_pose` action.
+- **Cancel Nav2 Goal Node**: cancels the current navigation goal whenever the robot detects that it has entered a corridor.
+- **Corridor Detector Node**: applies a RANSAC algorithm to determine whether the robot is inside a corridor.
+- **Corridor Controller Node**: acts as a PD controller to drive the TurtleBot through the corridor.
+- **Detection Lidar Node**: identifies tables within the simulation environment.
+
+With this setup, a single command brings up the entire system, fully configured and ready for testing or demonstration. All parameters are clearly defined within the launch file, making them easy to understand and adapt to different scenarios. 
+
 
 ## 📷 Apriltags and Camera Connections
 
