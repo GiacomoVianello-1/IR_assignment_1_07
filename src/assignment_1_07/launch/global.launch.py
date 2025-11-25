@@ -1,7 +1,6 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
-from launch.actions import TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -24,6 +23,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(other_launch),
         ),
+
         # AprilTag detection node      
         Node(
             package='apriltag_ros',
@@ -69,6 +69,14 @@ def generate_launch_description():
             }]
         ),
 
+        # Corridor controller node
+        Node(
+            package='assignment_1_07',
+            executable='Corridor_Controller.py',
+            name='corridor_controller',
+            output='screen'
+        ),
+
         # Goal sender node
         Node(
             package='assignment_1_07',
@@ -79,6 +87,30 @@ def generate_launch_description():
                 'tag_id_1': 1,          # first tag
                 'tag_id_2': 10          # second tag
             }]  
+        ),
+        
+        # Lidar detection node
+        Node(
+            package='assignment_1_07',
+            executable='Detection_Lidar.py',
+            name='Detection_Lidar',
+            output='screen'
+        ),
+        
+        # Corridor detector node
+        Node(
+            package='assignment_1_07',
+            executable='corridor_detector.py',
+            name='corridor_detector',
+            output='screen'
+        ),
+
+        # Corridor controller node
+        Node(
+            package='assignment_1_07',
+            executable='Corridor_Controller.py',
+            name='Corridor_Controller',
+            output='screen'
         ),
 
         # Cancel nav2 goal node

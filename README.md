@@ -11,17 +11,70 @@ The project is structured as a ROS 2 workspace and includes all necessary compon
 
 We provide a comprehensive UML diagram to better visualize our solution.
 ![alt text](Assignment1_UML.svg)
+## 🛠️ System Integration & Setup
+
+**Prerequisites:**
+The operation of the control loop depends on the [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git) library. This dependency must be manually integrated into the build environment.
+
+**Setup Procedure:**
+
+1.  **Workspace Initialization:**
+    Clone the main controller repository into your target directory.
+
+2.  **Dependency Injection:**
+    Import the required `ir_2526` package into the source tree to ensure proper linking during compilation.
+
+    ```bash
+    cd src
+    git clone [https://github.com/PieroSimonet/ir_2526.git](https://github.com/PieroSimonet/ir_2526.git)
+    ```
+
+## 📌 Workspace
+
+This project uses a **hybrid ROS2 workspace** to develop nodes in both **C++** and **Python**, ensuring flexibility and avoiding compatibility issues.  
+The package structure, together with the `CMakeLists.txt` and `package.xml`, has been adapted following the guidelines from this [tutorial](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/).
+
+📂 Package Structure
+
+```
+/IR_assignment_1_07/src/assignment_1_07
+├── assignment_1_07
+│   ├── __init__.py
+│   └── table_detection_node.py
+├── CMakeLists.txt
+├── config
+│   └── apriltag_params.yaml
+├── launch
+│   └── global.launch.py
+├── LICENSE
+├── package.xml
+└── src
+    ├── goal_selector.cpp
+    └── nav2_orchestrator.cpp
+```
+
+where:
+- All **Python nodes** are placed inside the `/assignment_1_07` folder (executables).  
+- All **C++ nodes** are placed inside the `/src` folder.  
+
+**NOTA:** 
+Python executables must include the shebang:
+```
+#!/usr/bin/env python3
+```
+
+
 
 ## 🏃‍♂️‍➡️ Run the Project
 The first step is to build and source the entire ROS 2 workspace:
-```
+
 colcon build
 source install/setup.bash
-```
+
 To run our project, we provide a structured and configurable launch file called `global.launch.py`. It can be started with:
-```
+
 ros2 launch assignment_1_07 global.launch.py
-```
+
 This launch file orchestrates the whole assignment setup. Specifically, it:
 - Includes the base launch file from the provided repository (`ir_launch/assignment_1.launch.py`).
 - Starts the **AprilTag detection node** with the correct topic remappings and parameters.
@@ -143,6 +196,9 @@ The Goal Sender node is responsible for requesting the latest navigation goal fr
 - **Result handling**: processes action result codes (`SUCCEEDED`, `ABORTED`, `CANCELED`) and updates its internal state accordingly.
 - **Shutdown**: after a successful navigation, the node can optionally call `rclcpp::shutdown()` to stop the system automatically.
 
+This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
+
+This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
 ### Parameters
 - **tag_id_1** (int, default: `1`): ID of the first tag used to compute the goal.  
 - **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
@@ -161,3 +217,39 @@ The CancelNav2Goal node is responsible for canceling all active navigation goals
 - **Integration**: works alongside the Goal Sender and Corridor Controller.
   - Goal Sender pauses when `/corridor_active=true`.
   - CancelNav2Goal ensures Nav2’s current goal is canceled at the same time.
+
+# Detection_Lidar Node
+
+- **Purpose**: Detects obstacles and wall segments using the onboard LDS LIDAR.  
+- **Methods**:
+  - **DBSCAN** clustering (from `scikit-learn`) to group LIDAR points into obstacles.  
+  - **RANSAC** line fitting to robustly extract wall segments.  
+- **Outputs**:
+  - Publishes obstacles as `PoseArray` in the LIDAR frame and transformed into `/odom`.  
+  - Publishes wall segments similarly.  
+
+> **Dependency**: Install scikit-learn for DBSCAN  
+> ```bash
+> sudo apt update
+> sudo apt install python3-sklearn
+> ```
+
+**Nota**: RANSAC algorithm, implemented for detecting walls, will be used for the (Extra) Corridor-Controller-Node without using Nav2.
+
+# Corridor_Controller Node
+
+The `Corridor_Controller` node implements a simple supervisory logic for navigation inside corridors:
+
+- **Input:** It subscribes to the topic `table_detection/walls_odom`, which publishes wall segments detected by the LIDAR using RANSAC.
+- **Corridor detection:** When exactly **two walls** are detected, the robot is assumed to be inside a corridor. In this state:
+  - Nav2 is disabled.
+  - The node publishes forward velocity commands (`cmd_vel`) to drive the robot straight along the corridor.
+- **Corridor exit:** When **more than two walls** are detected, the corridor is considered finished. In this state:
+  - The node stops manual control.
+  - Nav2 is re-enabled to resume normal navigation.
+- **Robustness:** To avoid oscillations due to noisy detections, the node requires the condition (two walls or more than two walls) to be stable for several consecutive cycles before switching states.
+- **Outputs:**
+  - `cmd_vel` → velocity commands during corridor traversal.
+  - `nav2_enable` (Bool) → flag to enable/disable Nav2 depending on corridor state.
+
+This design ensures that the robot moves forward reliably inside corridors without obstacles, and hands control back to Nav2 once the corridor ends.

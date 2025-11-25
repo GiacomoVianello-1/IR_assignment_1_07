@@ -5,9 +5,11 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# Find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
@@ -71,6 +73,16 @@ install(TARGETS
   nav2_orchestrator
   cancel_nav2_goal
   DESTINATION lib/${PROJECT_NAME}/
+)
+
+# Install Python modules
+#ament_python_install_package(${PROJECT_NAME})
+# Install Python executables
+install(PROGRAMS
+  assignment_1_07/Detection_Lidar.py
+  assignment_1_07/corridor_detector.py
+  assignment_1_07/Corridor_Controller.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 # install launch files
