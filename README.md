@@ -309,7 +309,7 @@ The `Corridor_Detector` node performs geometric wall detection using LIDAR data 
 
 ## 🚨 Corridor Controller Node
 
-The `Corridor_Controller` node implements a minimal steering law that drives the robot forward whenever the corridor detector reports the presence of two approximately parallel walls. The controller exploits the geometric information provided by the detected wall endpoints to maintain both lateral centering and heading alignment inside the corridor. The control action consists of a constant forward velocity combined with a steering command proportional to the lateral deviation and orientation error derived from the wall geometry. In other words, the node implements a purely proportional controller.
+The `Corridor_Controller` node implements a PD steering law that drives the robot forward whenever the corridor detector reports the presence of two approximately parallel walls. The controller uses the geometric information from the detected wall endpoints to maintain lateral centering and heading alignment. The control action consists of a constant forward velocity combined with a steering command computed as a proportional-derivative (PD) control: the lateral deviation and heading error provide the proportional components, while their rates of change contribute to the derivative components, damping oscillations and improving stability.
 
 ### Behavior and design
 1. **Activation**: When `/corridor_active` becomes `True`, the controller begins driving forward at a constant speed. When the flag becomes `False`, the robot is stopped immediately.
@@ -323,8 +323,5 @@ The `Corridor_Controller` node implements a minimal steering law that drives the
 
 **Control synthesis**  
    The controller applies:
-   - a strong angular correction proportional to the heading error,
-   - a weaker correction proportional to the lateral offset,
-   - clamping of angular velocity to a maximum magnitude.
-
-Linear velocity remains constant while navigating the corridor.
+   - Angle (heading) correction: Proportional to the heading error plus derivative term for angular damping.
+   - Centering (lateral) correction: Proportional to lateral deviation plus derivative term for damping lateral oscillations.
