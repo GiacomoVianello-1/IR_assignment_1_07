@@ -26,8 +26,7 @@ public:
     // Service to provide navigation goals
     goal_service_ = this->create_service<assignment_1_07::srv::GetGoal>(
       "/get_goal",
-      std::bind(&GoalSelector::handleGetGoal, this,
-                std::placeholders::_1, std::placeholders::_2));
+      std::bind(&GoalSelector::handleGetGoal, this, std::placeholders::_1, std::placeholders::_2));
 
     // Subscription to Nav2 readiness signal
     nav2_ready_sub_ = this->create_subscription<std_msgs::msg::Bool>(
@@ -36,7 +35,8 @@ public:
         nav2_ready_ = msg->data;
         RCLCPP_INFO(this->get_logger(), "Nav2 ready = %s", nav2_ready_ ? "true" : "false");
       });
-
+    
+    // Declare parameters
     target_frame_     = this->declare_parameter<std::string>("target_frame", "map");
     tag_frame_prefix_ = this->declare_parameter<std::string>("tag_frame_prefix", "tag36h11:");
     tf_timeout_sec_   = this->declare_parameter<double>("tf_timeout_sec", 0.3);
@@ -45,14 +45,18 @@ public:
   }
 
 private:
+
+  // Callback for AprilTag detections (for logging purposes)
   void detectionsCallback(const apriltag_msgs::msg::AprilTagDetectionArray::SharedPtr msg) {
     RCLCPP_DEBUG(get_logger(), "Detected %zu tags.", msg->detections.size());
   }
 
+  // Service handler to compute and return a navigation goal based on AprilTag positions
   void handleGetGoal(
     const std::shared_ptr<assignment_1_07::srv::GetGoal::Request> request,
     std::shared_ptr<assignment_1_07::srv::GetGoal::Response> response)
   {
+    // Check Nav2 readiness
     if (!nav2_ready_) {
       response->success = false;
       response->message = "Nav2 not ready yet";
@@ -63,6 +67,7 @@ private:
     const std::string tag_frame1 = tag_frame_prefix_ + std::to_string(request->tag_id_1);
     const std::string tag_frame2 = tag_frame_prefix_ + std::to_string(request->tag_id_2);
 
+    // Lookup transforms for the two tags and compute midpoint
     try {
       auto tf1 = tf_buffer_.lookupTransform(target_frame_, tag_frame1, tf2::TimePointZero, tf2::durationFromSec(tf_timeout_sec_));
       auto tf2 = tf_buffer_.lookupTransform(target_frame_, tag_frame2, tf2::TimePointZero, tf2::durationFromSec(tf_timeout_sec_));

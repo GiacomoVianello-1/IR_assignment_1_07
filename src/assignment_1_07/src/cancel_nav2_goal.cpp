@@ -12,7 +12,9 @@ public:
   using NavigateToPose = nav2_msgs::action::NavigateToPose;
   using GoalHandleNavigateToPose = rclcpp_action::ClientGoalHandle<NavigateToPose>;
 
-  CancelNav2Goal() : Node("cancel_nav2_goal") {
+  CancelNav2Goal() : 
+    Node("cancel_nav2_goal") 
+    {
     client_ = rclcpp_action::create_client<NavigateToPose>(this, "navigate_to_pose");
 
     // Subscription to corridor_active: trigger cancellation when true
@@ -25,6 +27,7 @@ public:
   }
 
 private:
+  // Callback for /corridor_active topic to cancel Nav2 goals when corridor is active
   void corridorCallback(const std_msgs::msg::Bool::SharedPtr msg) {
     if (msg->data) {
       RCLCPP_INFO(get_logger(), "Corridor active = true -> sending cancel request to Nav2");

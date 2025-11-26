@@ -12,7 +12,9 @@ using namespace std::chrono_literals;
 
 class Nav2Orchestrator : public rclcpp::Node {
 public:
-  Nav2Orchestrator() : Node("nav2_orchestrator") {
+  Nav2Orchestrator() : 
+    Node("nav2_orchestrator") 
+  {
     // Declare parameters for initial pose
     init_x_   = this->declare_parameter<double>("initial_x", 0.0);
     init_y_   = this->declare_parameter<double>("initial_y", 0.0);
@@ -53,6 +55,7 @@ public:
   }
 
 private:
+  // Helper function to send STARTUP command to a lifecycle manager service and wait for the response  
   bool send_startup(const rclcpp::Client<nav2_msgs::srv::ManageLifecycleNodes>::SharedPtr &cli, const std::string &name) {
     if (!cli->wait_for_service(10s)) {
       RCLCPP_ERROR(get_logger(), "Service %s not available", name.c_str());
@@ -69,6 +72,7 @@ private:
     return false;
   }
 
+  // Helper function to publish the initial pose with covariance on /initialpose topic  
   void publish_initial_pose() {
     geometry_msgs::msg::PoseWithCovarianceStamped msg;
     msg.header.frame_id = "map";

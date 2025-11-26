@@ -21,13 +21,13 @@ find_package(std_srvs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
-# generate service files
+# Generate service files
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetGoal.srv"
   DEPENDENCIES geometry_msgs
 )
 
-# build goal_selector node
+# Build goal_selector node
 add_executable(goal_selector src/goal_selector.cpp)
 ament_target_dependencies(goal_selector
   rclcpp
@@ -38,7 +38,7 @@ ament_target_dependencies(goal_selector
   apriltag_msgs
 )
 
-# build nav2_orchestrator node
+# Build nav2_orchestrator node
 add_executable(nav2_orchestrator src/nav2_orchestrator.cpp)
 ament_target_dependencies(nav2_orchestrator 
   rclcpp
@@ -46,7 +46,7 @@ ament_target_dependencies(nav2_orchestrator
   nav2_msgs
 )
 
-# build goal_sender node
+# Build goal_sender node
 add_executable(goal_sender src/goal_sender.cpp)
 ament_target_dependencies(goal_sender 
   rclcpp 
@@ -58,7 +58,7 @@ ament_target_dependencies(goal_sender
   tf2_geometry_msgs
 )
 
-# build cancel_nav2_goal node
+# Build cancel_nav2_goal node
 add_executable(cancel_nav2_goal src/cancel_nav2_goal.cpp)
 ament_target_dependencies(cancel_nav2_goal 
   rclcpp 
@@ -66,7 +66,7 @@ ament_target_dependencies(cancel_nav2_goal
   nav2_msgs
 )
 
-# install executables
+# Install executables
 install(TARGETS
   goal_selector
   goal_sender
@@ -75,8 +75,6 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}/
 )
 
-# Install Python modules
-#ament_python_install_package(${PROJECT_NAME})
 # Install Python executables
 install(PROGRAMS
   assignment_1_07/Detection_Lidar.py
@@ -85,20 +83,20 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# install launch files
+# Install launch files
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/
 )
 
-# install configuration files
+# Install configuration files
 install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}/
 )
 
-# link generated service files
+# Link generated service files
 rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
 
-# link the target libraries
+# Link the target libraries
 target_link_libraries(goal_selector "${cpp_typesupport_target}")
 target_link_libraries(goal_sender "${cpp_typesupport_target}")
 

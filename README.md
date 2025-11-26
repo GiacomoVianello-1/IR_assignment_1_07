@@ -1,7 +1,7 @@
 # 🤖 Intelligent Robotics — Assignment 1  
 ### Group 07 Members 
-- Giacomo Vianello (ID: 2140028)  
-- Salvatore Ferracane (ID: 2154255)  
+- Giacomo Vianello (ID: 2140028, [mail](mailto:giacomo.vianello.2@studenti.unipd.it)) 
+- Salvatore Ferracane (ID: 2154255, [mail](mailto:salvatore.ferracane@studenti.unipd.it))
 
 This repository contains our solution to [Assignment 1](Assignment_1.pdf) for the *Intelligent Robotics* course at the University of Padua. Our implementation builds upon the base repository [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git), which is included under the `src/` directory.
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
@@ -12,7 +12,7 @@ The project is structured as a ROS 2 workspace and includes all necessary compon
 ### 1. Preliminaries
 Clone this repository onto your local machine. In addition to the standard ROS 2 packages suggested at the beginning of the course, make sure the following dependencies are installed:
 ```
-sudo apt install ros-$ROS_DISTRO-tf-transformations
+sudo apt install ros-${ROS_DISTRO}-tf-transformations
 sudo apt install python3-sklearn
 ```
 It is also recommended to update your system before proceeding:
@@ -24,7 +24,7 @@ sudo apt update && sudo apt upgrade
 Inside the cloned repository, add the `ir_2526` package to the source tree to ensure proper linking during compilation:
 ```
 cd src
-git clone [https://github.com/PieroSimonet/ir_2526.git](https://github.com/PieroSimonet/ir_2526.git)
+git clone https://github.com/PieroSimonet/ir_2526.git
 ```
 
 ### 3. Build the Workspace
@@ -105,25 +105,25 @@ This launch file coordinates the following components:
 With this setup, a single command brings up the entire system, fully configured and ready for testing or demonstration. All parameters are clearly defined within the launch file, making them easy to understand and adapt to different scenarios. 
 
 
-## 📷 Apriltags and Camera Connections
+## 📷 Apriltags Ros Node (and Camera Linking)
 
 We rely on the external package `apriltag_ros`, which uses the AprilTag library to detect tags in camera images and publish their pose, ID, and metadata.
-Normally, enabling AprilTag detection requires adjusting the default configuration file (`tags_36h11.yaml`) inside the `apriltag_ros` package. For example, one could run:
+Normally, enabling AprilTag detection requires adjusting the default configuration file (`tags_36h11.yaml`) inside the `apriltag_ros` package, and then running the node with the correct topic remappings. In our case, this could be done with 
 ```sh
 ros2 run apriltag_ros apriltag_node --ros-args \
   -r image_rect:=/rgb_camera/image \
   -r camera_info:=/rgb_camera/camera_info \
   --params-file $(ros2 pkg prefix apriltag_ros)/share/apriltag_ros/cfg/tags_36h11.yaml
 ```
-However, instead of modifying the default configuration file, we created our own custom launch file (`global.launch.py`) inside the `assignment_1_07` package. This approach has several advantages:
-- **Correct parameters**: The launch file automatically loads the configuration from `assignment_1_07/config/apriltag_params.yaml`, which specifies the actual tag size (**0.05 m × 0.05 m**) and other relevant parameters.
-- **Maintainability**: If the AprilTag setup changes in the future (e.g., different tag family or size), we only need to update our YAML file without touching the external package.
-- **Integration**: The launch file ensures that the AprilTag node runs alongside the rest of our system (goal selector, orchestrator, etc.), so everything is initialized consistently.
+However, *instead of modifying the default configuration file in the `apriltag_ros` package*, we integrated these adjustments and remappings in our own custom launch file (`global.launch.py`). In this way:
+- The launch file automatically loads the configuration from `assignment_1_07/config/apriltag_params.yaml`, which specifies the actual tag size (**0.05 m × 0.05 m**) and other relevant parameters.
+- If the AprilTag setup changes in the future (e.g., different tag family or size), we only need to update *our* YAML file without touching the external package.
+- The launch file ensures that the AprilTag node runs alongside the rest of our system (goal selector, orchestrator, etc.), so everything is initialized consistently.
 
 ### Published topics
 Once running, the node provides:
 - `/tf` - publishes transforms (`tf2_msgs/msg/TFMessage`) for each detected tag.
-- `detections` - publishes detection results (`apriltag_msgs/msg/AprilTagDetectionArray`) including tag IDs, poses, and metadata
+- `/detections` - publishes detection results (`apriltag_msgs/msg/AprilTagDetectionArray`) including tag IDs, poses, and metadata.
 
 ### Visualization Tips
 To confirm that the node is working:
@@ -134,7 +134,7 @@ To confirm that the node is working:
 
 Now we should see the two apriltag frames (`tag36h11:1`, and `tag36h11:10`) wrt the `odom` frame. 
 
-Notice that the tables (cylindrical objects) are not in field of view of the Camera. Hence, we will need to localize them using the turltebot sensors.
+**REMARK:** the tables (cylindrical objects in Gazebo) are not in field of view of the Camera. Hence, we will need to localize them using the on-board TurlteBot LiDAR sensor (see below).
 
 
 ## 🎼 Nav2 Orchestrator Node
@@ -145,11 +145,11 @@ The **Nav2Orchestrator** node automates the initialization of the full navigatio
 Our design is motivated by a key observation: after activating the localization stack via `/lifecycle_manager_localization/manage_nodes`, the navigation lifecycle manager will reject a `STARTUP` request (`success=false`) if the system has not yet received a valid initial pose estimate. To address this, the orchestrator executes the following four steps:
 
 1. Start the localization lifecycle manager.  
-2. Publish the initial pose to AMCL.  
+2. Publish the initial pose to AMCL (with a configurable covariance).  
 3. Wait briefly for AMCL to process the initial pose.  
 4. Start the navigation lifecycle manager.  
 
-Once both lifecycle managers report success, the orchestrator publishes a `std_msgs/Bool` message on the topic `/nav2_ready`. This signal is used by the **GoalSelector** and **GoalSender** nodes to activate their logic only when Nav2 is fully operational.
+Once both lifecycle managers confirm success, the orchestrator publishes a `std_msgs/Bool` message on the `/nav2_ready` topic. This readiness signal ensures that the **GoalSelector** and **GoalSender** nodes activate their logic only after Nav2 is fully operational. By gating their execution on this condition, the system guarantees that the navigation stack comes online only once localization is stable. As a result, dependent nodes begin functioning at the right moment, delivering a reliable and fully automated startup sequence.
 
 ### Features
 - **Lifecycle management**: connects to `/lifecycle_manager_localization/manage_nodes` and `/lifecycle_manager_navigation/manage_nodes`, sending `STARTUP` commands to bring all managed nodes into the `active` state.  
@@ -157,18 +157,19 @@ Once both lifecycle managers report success, the orchestrator publishes a `std_m
 - **Readiness signal**: publishes `/nav2_ready` once localization and navigation are active, ensuring deterministic synchronization with other nodes.  
 
 ### Parameters
-- **initial_x** (double, default: 0.0): X coordinate of the initial pose in the map frame.  
-- **initial_y** (double, default: 0.0): Y coordinate of the initial pose in the map frame.  
-- **initial_yaw** (double, default: 0.0): Orientation (yaw, in radians) of the initial pose.  
-- **service_wait_timeout_sec** (double, default: 10.0): Maximum time to wait for lifecycle services to become available.  
-- **call_timeout_sec** (double, default: 10.0): Maximum time to wait for a lifecycle service call to complete.  
+- `initial_x`: X coordinate of the initial pose in the map frame.  
+- `initial_y`: Y coordinate of the initial pose in the map frame.  
+- `initial_yaw`: Orientation (yaw, in radians) of the initial pose. 
+- `covariance_x`: Initial covariance in the X-coordinate estimate.
+- `covariance_y`: Initial covariance in the Y-coordinate estimate.
+- `covariance_yaw`: Initial covariance in the heading angle estimate. 
+- `service_wait_timeout_sec`: Maximum time to wait for lifecycle services to become available.  
+- `call_timeout_sec`: Maximum time to wait for a lifecycle service call to complete.  
 
-These parameters can be adjusted in the provided launch file (`global.launch.py`).
-
-This design guarantees that the navigation stack is only activated once localization is stable, and that dependent nodes (GoalSelector and GoalSender) start working only after Nav2 is fully ready, resulting in a reliable and fully automated startup procedure.
+These parameters can be adjusted at will in the provided launch file (`global.launch.py`).
 
 ## 🎯 Goal Selector Node
-The **Goal Selector** node reads AprilTag detections and computes a navigation goal from the detected tags. It is designed to work with the `apriltag_node` that publishes tag frames on `/tf` and the `/detections` topic.
+The **Goal Selector** node reads AprilTag detections and computes a navigation goal from the detected tags. It is designed to work with the `apriltag_ros` node that publishes tag frames on `/tf` and the `/detections` topic.
 
 ### Behavior and design
 - **Input**: subscribes to `/detections` (`apriltag_msgs/AprilTagDetectionArray`) to learn which tag IDs are visible.  
@@ -218,7 +219,7 @@ The Goal Sender node is responsible for requesting the latest navigation goal fr
 
 This separation of responsibilities ensures that the Goal Selector only computes goals, while the Goal Sender handles navigation requests.
 
-This service-based design ensures that: the Goal Sender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
+This service-based design ensures that the GoalSender always receives the most up-to-date goal, no periodic publishing is needed, timing issues between publishers and subscribers are eliminated, the node integrates reliably with the Nav2 action server.
 ### Parameters
 - **tag_id_1** (int, default: `1`): ID of the first tag used to compute the goal.  
 - **tag_id_2** (int, default: `10`): ID of the second tag used to compute the goal.  
@@ -240,7 +241,7 @@ The CancelNav2Goal node is responsible for canceling all active navigation goals
 
 ## 🔎 Detection Lidar Node
 
-This node requires to install
+*This node requires to install*
 ```
 sudo apt install python3-sklearn
 ```
@@ -249,7 +250,7 @@ The `Detection_Lidar` node performs obstacle detection from raw LiDAR scans usin
 
 ### Behavior and design
 
-1. **Range filtering and Cartesian projection**: LiDAR polar data are converted into `(x,y)` points in the sensor frame after rejecting invalid or out-of-range values.
+1. **Range filtering and Cartesian projection**: LiDAR polar data are converted into $(x,y)$ points in the sensor frame after rejecting invalid or out-of-range values.
 
 2. **DBSCAN clustering**: The incoming point cloud is segmented into clusters with DBSCAN (`eps`, `min_samples`). Each cluster centroid is considered a potential obstacle.
 
@@ -260,7 +261,7 @@ The `Detection_Lidar` node performs obstacle detection from raw LiDAR scans usin
    - yaw angle extracted from the TF quaternion
 
 5. **Publishing**: All valid obstacles are published as a `PoseArray` on:
-   - **/table_detection/obstacles_odom**
+   - `/table_detection/obstacles_odom`
 
 6. **Temporal stabilization (ObstacleTracker)**: The node implements a stabilization layer to track **exactly three obstacles**:
    - positions are sorted for consistent ordering  
@@ -283,7 +284,7 @@ This prevents oscillations due to clustering noise and ensures a clean, reliable
 
 ## 🧠 Corridor Detector Node
 
-This node requires to install
+*This node requires to install*
 ```
 sudo apt install ros-${ROS_DISTRO}-tf-transformations
 ```
@@ -292,15 +293,15 @@ The `Corridor_Detector` node performs geometric wall detection using LIDAR data 
 
 ### Behavior and design
 1. **Segmentation and filtering**: The node extracts line segments from the LaserScan. Only segments satisfying minimum length and geometric consistency constraints are accepted as valid walls.  
-2. **Coordinate transformation**: Detected walls are mapped from the sensor frame into the odometry frame using `tf_transformations` and an SE(2) rigid-body transform.
+2. **Coordinate transformation**: Detected walls are mapped from the sensor frame into the odometry frame using `tf_transformations` and an $\mathbb{SE}(2)$ rigid-body transform.
 3. **Corridor identification**:  
    When **exactly two** stable walls are detected, the robot is considered inside a corridor.  
    When **more than two** or **fewer than two** walls are observed, the corridor is considered inactive.
 4. **Temporal stabilization**: To prevent oscillatory state transitions caused by noisy detections, the node uses consecutive positive/negative counters.  
-    - Corridor is activated only after *N* consecutive frames confirming two walls.  
-    - Corridor is deactivated only after *M* consecutive frames confirming loss of corridor structure.
+    - Corridor is activated only after $N$ consecutive frames confirming two walls.  
+    - Corridor is deactivated only after $M$ consecutive frames confirming loss of corridor structure.
 5. **Outputs**
-    - `/table_detection/walls_odom` (PoseArray)**: Stabilized wall segments expressed in the odometry frame.
+    - `/table_detection/walls_odom` (PoseArray): Stabilized wall segments expressed in the odometry frame.
     - `/corridor_active` (Bool):  
         - `True` -> The robot is inside a corridor  
         - `False` -> Corridor condition not satisfied

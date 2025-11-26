@@ -12,13 +12,14 @@ def generate_launch_description():
         'apriltag_params.yaml'
     )
 
-    # path to another launch file to include
+    # Path to the provided launch file that sets up the robot and simulation
     other_launch = os.path.join(
         get_package_share_directory('ir_launch'),
         'launch',
         'assignment_1.launch.py'
     )
 
+    # Create the launch description and populate
     return LaunchDescription([
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(other_launch),
@@ -63,7 +64,7 @@ def generate_launch_description():
             name='goal_selector',
             output='screen',
             parameters=[{
-                'target_frame': 'map',            
+                'target_frame': 'map',             # frame in which to send goals (must be 'map' for nav2)
                 'tag_frame_prefix': 'tag36h11:',   # must match the prefix in apriltag_params.yaml
                 'tf_timeout_sec': 0.3
             }]

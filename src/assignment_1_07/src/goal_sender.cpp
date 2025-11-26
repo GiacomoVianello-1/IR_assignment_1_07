@@ -41,7 +41,7 @@ public:
         paused_ = msg->data;
         RCLCPP_INFO(this->get_logger(), "Corridor active = %s", paused_ ? "true" : "false");
 
-        // Se il corridoio è terminato (false) e ho un goal memorizzato, riprendo la navigazione
+        // If corridor just became inactive, resume last goal (if any)  
         if (!paused_ && !goal_in_progress_ && last_goal_.header.frame_id != "") {
           RCLCPP_INFO(get_logger(), "Resuming navigation to last goal...");
           sendGoal(last_goal_);
@@ -78,6 +78,7 @@ private:
       return;
     }
 
+    // Request a new goal from the GetGoal service
     if (!goal_client_->wait_for_service(1s)) {
       RCLCPP_WARN(get_logger(), "⚠️ Service /get_goal not available yet.");
       return;
@@ -110,12 +111,13 @@ private:
     );
   }
 
+  // Function to send a navigation goal to Nav2
   void sendGoal(const geometry_msgs::msg::PoseStamped &goal_msg){
     if (!nav2_ready_) {
       RCLCPP_INFO(get_logger(), "⏳ Nav2 not ready, skipping goal send.");
       return;
     }
-
+    
     if (goal_in_progress_) {
       RCLCPP_DEBUG(get_logger(), "⚠️ Goal already in progress");
       return;
