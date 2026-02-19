@@ -1,7 +1,7 @@
 # 🤖 Intelligent Robotics — Assignment 1  
 ### Group 07 Members 
-- Giacomo Vianello (ID: 2140028, [mail](mailto:giacomo.vianello.2@studenti.unipd.it)) 
-- Salvatore Ferracane (ID: 2154255, [mail](mailto:salvatore.ferracane@studenti.unipd.it))
+- Giacomo Vianello 
+- Salvatore Ferracane
 
 This repository contains our solution to [Assignment 1](Assignment_1.pdf) for the *Intelligent Robotics* course at the University of Padua. Our implementation builds upon the base repository [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git), which is included under the `src/` directory.
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
