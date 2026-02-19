@@ -1,13 +1,10 @@
-# 🤖 Intelligent Robotics — Assignment 1  
-### Group 07 Members 
-- Giacomo Vianello 
-- Salvatore Ferracane
+# Intelligent Robotics — TurtleBot 3 Navigation
 
+This project implements an **autonomous navigation pipeline** for a TurtleBot 3 that integrates **AprilTag recognition** with a **hybrid control** strategy. The system calculates target goals between detected markers and transitions from global Nav2 planning to a custom LiDAR-based PD controller for stable corridor traversal. By combining modular C++ orchestration with real-time DBSCAN clustering, the robot effectively **localizes** cylindrical **obstacles** while maintaining seamless mission continuity.
+  
+## 🏃‍♂️‍➡️ Run the Project
 This repository contains our solution to [Assignment 1](Assignment_1.pdf) for the *Intelligent Robotics* course at the University of Padua. Our implementation builds upon the base repository [`ir_2526`](https://github.com/PieroSimonet/ir_2526.git), which is included under the `src/` directory.
 The project is structured as a ROS 2 workspace and includes all necessary components to run, test, and extend our assignment solution.
-
-
-## 🏃‍♂️‍➡️ Run the Project
 
 ### 1. Preliminaries
 Clone this repository onto your local machine. In addition to the standard ROS 2 packages suggested at the beginning of the course, make sure the following dependencies are installed:
